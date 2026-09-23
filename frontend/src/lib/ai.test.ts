@@ -2,9 +2,12 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import Anthropic from "@anthropic-ai/sdk";
 import type { SpeakingPrompt, WritingPrompt } from "./content";
 
-const h = vi.hoisted(() => ({ key: "sk-test", create: vi.fn(), opts: [] as unknown[] }));
+const h = vi.hoisted(() => ({ key: "sk-test", gkey: "", provider: "", create: vi.fn(), opts: [] as unknown[] }));
 
-vi.mock("../db", () => ({ getSetting: async (_k: string, fb: unknown) => h.key || fb }));
+vi.mock("../db", () => ({
+  getSetting: async (k: string, fb: unknown) =>
+    (k === "anthropicKey" ? h.key : k === "geminiKey" ? h.gkey : k === "aiProvider" ? h.provider : "") || fb,
+}));
 vi.mock("@anthropic-ai/sdk", async (orig) => {
   const actual = (await orig()) as { default: typeof Anthropic };
   class Mock extends actual.default {
@@ -17,7 +20,7 @@ vi.mock("@anthropic-ai/sdk", async (orig) => {
   return { ...actual, default: Mock };
 });
 
-const { buildSpeakingMessage, buildWritingMessage, friendlyError, gradeSpeaking, gradeWriting, hasApiKey, parseFeedback, asFeedback } = await import("./ai");
+const { buildSpeakingMessage, buildWritingMessage, friendlyError, gradeSpeaking, gradeWriting, hasApiKey, parseFeedback, asFeedback, getProvider, geminiText, GEMINI_MODELS } = await import("./ai");
 
 const w1: WritingPrompt = { id: "W1-x", task: 1, theme: "t", level: "A2", title: "x", instructions: "Écrivez un message à un ami." };
 const w3: WritingPrompt = { id: "W3-x", task: 3, theme: "t", level: "B2", title: "x", instructions: "Comparez.", docs: ["Document 1 — Pour.", "Document 2 — Contre."] };
@@ -124,5 +127,70 @@ describe("grading calls", () => {
     expect(friendlyError(new Anthropic.RateLimitError(429, {}, "slow", new Headers()))).toMatch(/Too many requests/);
     expect(friendlyError(new Anthropic.APIConnectionError({ message: "offline" }))).toMatch(/No connection/);
     expect(friendlyError(new Anthropic.InternalServerError(500, {}, "boom", new Headers()))).toMatch(/\(500\)/);
+  });
+});
+
+
+describe("Gemini (free) provider", () => {
+  const ok = (o: unknown) => ({ ok: true, status: 200, json: async () => ({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify(o) }] } }] }) });
+  const fail = (status: number, message = "x") => ({ ok: false, status, statusText: "", json: async () => ({ error: { code: status, message } }) });
+  let fetchMock: ReturnType<typeof vi.fn>;
+  beforeEach(() => {
+    h.key = "";
+    h.gkey = "AIza-test";
+    h.provider = "";
+    fetchMock = vi.fn();
+    vi.stubGlobal("fetch", fetchMock);
+  });
+
+  it("is picked when a Gemini key is set, and an explicit choice wins", async () => {
+    expect(await getProvider()).toBe("gemini");
+    h.key = "sk-x";
+    h.provider = "claude";
+    expect(await getProvider()).toBe("claude");
+    h.provider = "";
+    h.gkey = "";
+    expect(await getProvider()).toBe("claude");
+  });
+
+  it("grades via generateContent with the key in a header and JSON mode", async () => {
+    fetchMock.mockResolvedValueOnce(ok(good));
+    const f = await gradeWriting(w1, "Salut Marie.");
+    expect(f.score20).toBe(11.5);
+    const [url, init] = fetchMock.mock.calls[0];
+    expect(url).toContain(`/v1beta/models/${GEMINI_MODELS[0]}:generateContent`);
+    expect(init.headers["x-goog-api-key"]).toBe("AIza-test");
+    const body = JSON.parse(init.body);
+    expect(body.generationConfig.responseMimeType).toBe("application/json");
+    expect(body.systemInstruction.parts[0].text).toContain("JSON Schema");
+    expect(body.contents[0].parts[0].text).toContain("Tâche 1");
+  });
+
+  it("falls back to the lighter model when the free limit is hit", async () => {
+    fetchMock.mockResolvedValueOnce(fail(429)).mockResolvedValueOnce(ok(good));
+    await gradeWriting(w1, "x");
+    expect(fetchMock.mock.calls[1][0]).toContain(GEMINI_MODELS[1]);
+  });
+
+  it("explains the daily limit when both models are exhausted", async () => {
+    fetchMock.mockResolvedValue(fail(429));
+    await expect(gradeWriting(w1, "x")).rejects.toThrow(/free Gemini limit/);
+  });
+
+  it("reports a bad key plainly", async () => {
+    fetchMock.mockResolvedValueOnce(fail(400, "API key not valid. Please pass a valid API key."));
+    await expect(gradeSpeaking(s2, "bonjour")).rejects.toThrow(/Gemini API key was rejected/);
+  });
+
+  it("handles blocks, truncation and fenced JSON", () => {
+    expect(() => geminiText({ promptFeedback: { blockReason: "SAFETY" } })).toThrow(/declined/);
+    expect(() => geminiText({ candidates: [{ finishReason: "MAX_TOKENS", content: { parts: [{ text: "{" }] } }] })).toThrow(/cut off/);
+    expect(geminiText({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: "```json\n{\"a\":1}\n```" }] } }] })).toBe('{"a":1}');
+  });
+
+  it("asks for a key when none is set", async () => {
+    h.gkey = "";
+    expect(await hasApiKey()).toBe(false);
+    await expect(gradeWriting(w1, "x")).rejects.toThrow(/free Gemini API key/);
   });
 });

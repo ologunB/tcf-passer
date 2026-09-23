@@ -147,6 +147,7 @@ export async function recordAnswer(m: Omit<Mistake, "key" | "streak" | "resolved
 // ---------- backup ----------
 
 const EXPORT_FORMAT = "tcf-passer-backup";
+const SECRET_KEYS = ["anthropicKey", "geminiKey"];
 
 async function blobToDataUrl(b: Blob): Promise<string> {
   return new Promise((res, rej) => {
@@ -176,8 +177,8 @@ export async function exportAll({ includeAudio = false } = {}) {
     format: EXPORT_FORMAT,
     version: 2,
     exportedAt: new Date().toISOString(),
-    // The API key stays on this device only.
-    settings: settings.filter((s) => s.key !== "anthropicKey"),
+    // API keys stay on this device only.
+    settings: settings.filter((s) => !SECRET_KEYS.includes(s.key)),
     entries,
     estimates,
     cards,
@@ -196,11 +197,11 @@ export async function importAll(data: unknown) {
   );
   const tables = [db.entries, db.settings, db.estimates, db.cards, db.mistakes, db.attempts, db.writings, db.recordings];
   await db.transaction("rw", tables, async () => {
-    const key = await db.settings.get("anthropicKey");
+    const keys = (await db.settings.bulkGet(SECRET_KEYS)).filter((k) => k !== undefined);
     await Promise.all(tables.map((t) => t.clear()));
     await db.entries.bulkAdd(d.entries);
-    await db.settings.bulkPut(d.settings ?? []);
-    if (key) await db.settings.put(key);
+    await db.settings.bulkPut((d.settings ?? []).filter((x) => !SECRET_KEYS.includes(x.key)));
+    await db.settings.bulkPut(keys);
     await db.estimates.bulkAdd(d.estimates ?? []);
     await db.cards.bulkPut(d.cards ?? []);
     await db.mistakes.bulkPut(d.mistakes ?? []);

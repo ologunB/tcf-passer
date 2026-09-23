@@ -1,10 +1,14 @@
-// AI grading of writing and speaking with Claude, straight from the browser with the user's own key.
+// AI grading of writing and speaking, straight from the browser with the user's own key.
+// Two providers: Google Gemini (free tier) and Anthropic Claude (paid, strictest grading).
 import Anthropic from "@anthropic-ai/sdk";
 import { getSetting } from "../db";
 import { countWords, SPEAKING_TASKS, WRITING_TASKS, type SpeakingPrompt, type WritingPrompt } from "./content";
 import { cefrFrom20 } from "./scoring";
 
 export const MODEL = "claude-opus-5";
+// Gemini free tier: best current Flash model first, lighter model if it's unavailable or rate-limited.
+export const GEMINI_MODELS = ["gemini-3.8-flash", "gemini-3.5-flash-lite"] as const;
+export type Provider = "gemini" | "claude";
 
 export interface AiFeedback {
   score20: number;
@@ -139,16 +143,23 @@ export function friendlyError(e: unknown): string {
 
 // ---------- API ----------
 
-async function getApiKey(): Promise<string> {
-  const k = await getSetting<unknown>("anthropicKey", "");
-  return typeof k === "string" ? k.trim() : "";
+const str = async (k: string) => {
+  const v = await getSetting<unknown>(k, "");
+  return typeof v === "string" ? v.trim() : "";
+};
+
+/** Explicit choice wins; otherwise whichever key is set (Gemini first, since it's free). */
+export async function getProvider(): Promise<Provider> {
+  const chosen = await str("aiProvider");
+  if (chosen === "gemini" || chosen === "claude") return chosen;
+  if (await str("geminiKey")) return "gemini";
+  if (await str("anthropicKey")) return "claude";
+  return "gemini";
 }
 
-export const hasApiKey = async () => !!(await getApiKey());
+export const hasApiKey = async () => !!(await str((await getProvider()) === "gemini" ? "geminiKey" : "anthropicKey"));
 
-async function grade(userMessage: string): Promise<AiFeedback> {
-  const apiKey = await getApiKey();
-  if (!apiKey) throw new Error("Add your Anthropic API key in Settings to use AI grading.");
+async function gradeClaude(apiKey: string, userMessage: string): Promise<AiFeedback> {
   const client = new Anthropic({ apiKey, dangerouslyAllowBrowser: true });
   let res: Anthropic.Beta.BetaMessage;
   try {
@@ -170,6 +181,74 @@ async function grade(userMessage: string): Promise<AiFeedback> {
   const text = res.content.find((b): b is Anthropic.Beta.BetaTextBlock => b.type === "text");
   if (!text) throw new Error("The AI sent no feedback. Try again.");
   return parseFeedback(text.text);
+}
+
+// Gemini gets the schema in the instructions and JSON mode; the reply is validated by parseFeedback either way.
+const GEMINI_SYSTEM = `${SYSTEM_PROMPT}
+
+Reply with ONLY a JSON object (no markdown fences) that matches this JSON Schema:
+${JSON.stringify(FEEDBACK_SCHEMA)}`;
+
+interface GeminiResponse {
+  promptFeedback?: { blockReason?: string };
+  candidates?: { finishReason?: string; content?: { parts?: { text?: string }[] } }[];
+  error?: { code?: number; message?: string; status?: string };
+}
+
+export function geminiText(r: GeminiResponse): string {
+  if (r.promptFeedback?.blockReason) throw new Error("Gemini declined to grade this answer. Try the self-assessment instead.");
+  const c = r.candidates?.[0];
+  if (!c) throw new Error("Gemini sent no feedback. Try again.");
+  if (c.finishReason === "MAX_TOKENS") throw new Error("The AI's feedback was cut off. Try again.");
+  if (c.finishReason && c.finishReason !== "STOP") throw new Error("Gemini declined to grade this answer. Try the self-assessment instead.");
+  const text = (c.content?.parts ?? []).map((p) => p.text ?? "").join("").trim();
+  if (!text) throw new Error("Gemini sent no feedback. Try again.");
+  return text.replace(/^```(?:json)?\s*|\s*```$/g, "");
+}
+
+async function gradeGemini(apiKey: string, userMessage: string): Promise<AiFeedback> {
+  const body = JSON.stringify({
+    systemInstruction: { parts: [{ text: GEMINI_SYSTEM }] },
+    contents: [{ role: "user", parts: [{ text: userMessage }] }],
+    generationConfig: { responseMimeType: "application/json", maxOutputTokens: 8192 },
+  });
+  let last = "";
+  for (const model of GEMINI_MODELS) {
+    let res: Response;
+    try {
+      res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
+        method: "POST",
+        headers: { "content-type": "application/json", "x-goog-api-key": apiKey },
+        body,
+      });
+    } catch {
+      throw new Error("No connection — AI grading needs internet.");
+    }
+    const data = (await res.json().catch(() => ({}))) as GeminiResponse;
+    if (res.ok) return parseFeedback(geminiText(data));
+    const msg = data.error?.message ?? res.statusText;
+    if (res.status === 400 && /api key/i.test(msg)) throw new Error("Your Gemini API key was rejected — check it in Settings.");
+    if (res.status === 401 || res.status === 403) throw new Error("Your Gemini API key was rejected — check it in Settings.");
+    // Model unavailable or free-tier limit hit: try the lighter model before giving up.
+    if (res.status === 404 || res.status === 429 || res.status >= 500) {
+      last = res.status === 429 ? "You've hit today's free Gemini limit (it resets at midnight Pacific time). Use the self-assessment for now." : `Gemini is unavailable right now (${res.status}). Try again later.`;
+      continue;
+    }
+    throw new Error(`AI grading failed (${res.status}): ${msg}`);
+  }
+  throw new Error(last || "AI grading failed.");
+}
+
+async function grade(userMessage: string): Promise<AiFeedback> {
+  const provider = await getProvider();
+  if (provider === "gemini") {
+    const key = await str("geminiKey");
+    if (!key) throw new Error("Add your free Gemini API key in Settings to use AI grading.");
+    return gradeGemini(key, userMessage);
+  }
+  const key = await str("anthropicKey");
+  if (!key) throw new Error("Add your Anthropic API key in Settings to use AI grading.");
+  return gradeClaude(key, userMessage);
 }
 
 export const gradeWriting = (prompt: WritingPrompt, text: string) => grade(buildWritingMessage(prompt, text));

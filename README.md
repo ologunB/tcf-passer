@@ -17,6 +17,7 @@ Mobile-first, works offline, and all data stays on your device.
 You need [Node.js](https://nodejs.org) 20 or newer.
 
 ```bash
+cd frontend
 npm install
 npm run dev
 ```
@@ -29,39 +30,49 @@ To try a future day without waiting, add `?today=2026-10-05` to the address.
 ## Test it
 
 ```bash
-npm test                                   # logic: rollover, status, streak, backup
+cd frontend
+npm test                                   # unit tests: scoring, rollover, SRS, adaptive plan, AI parsing, backup
 npm run build && npx vite preview --port 4173 &
-node scripts/e2e.mjs                       # real browser on a phone-sized screen
+node scripts/e2e.mjs                       # real browser on a phone-sized screen (37 checks)
 ```
 
 ## Where things live
 
 | What | Where |
 |---|---|
+| The app (Vite + React + TypeScript PWA) | `frontend/` |
+| Study content (decks, drills, TCF items, prompts, plan, resources) | `frontend/data/` |
+| Plan generator, e2e test, icon script | `frontend/scripts/` |
 | Research (format, scores, booking, resources) | `docs/research.md` |
-| The study plan (generated) | `data/plan.json`, from `scripts/generate-plan.mjs` |
-| Resources list | `data/resources.json` |
+| The brief | `resource.md` |
 | Your progress | In the browser (IndexedDB) on your device. Export it from **Settings → Export backup**. |
 
 ## Change the plan or add content
 
-All content is plain JSON in `data/`. Add a file or entry, then rebuild; nothing else is needed.
+All content is plain JSON in `frontend/data/`. Add a file or entry, then rebuild; nothing else is needed.
 
 | Content | File(s) | Shape |
 |---|---|---|
-| Flashcard decks | `data/decks/*.json` | `{ id, title, week, level, cards: [[fr, en, example?], …] }`. Decks unlock at their plan `week`. |
-| Grammar drills | `data/grammar.json` | `{ id, week, topic, type: "choice" \| "type", q, options?, answer, accept?, explain }` |
-| Verb drills | `src/lib/conjugation.ts` (`VERBS`) | Add a verb with its present forms, participle and auxiliary |
-| Listening / reading | `data/tcf/*.json` (any file with "listening" in the name counts as listening) | `{ id, level: A1–C2, audio (script, "A:"/"B:" lines = two voices) or text, q, options[4], answer, explain? }`. Add `audioUrl` to use a real recording. |
-| Writing / speaking prompts | `data/prompts/writing.json`, `data/prompts/speaking.json` | See existing entries |
-| The plan | `scripts/generate-plan.mjs`, then `npm run plan` | Ticked tasks are kept: task IDs are `date-template`. |
-| Resources | `data/resources.json` | `id, name, url, skills, levels, paid, type, status, use`. Reference an `id` from a plan task's `resources`. |
+| Flashcard decks | `frontend/data/decks/*.json` | `{ id, title, week, level, cards: [[fr, en, example?], …] }`. Decks unlock at their plan `week`. |
+| Grammar drills | `frontend/data/grammar.json` | `{ id, week, topic, type: "choice" \| "type", q, options?, answer, accept?, explain }` |
+| Verb drills | `frontend/src/lib/conjugation.ts` (`VERBS`) | Add a verb with its present forms, participle and auxiliary |
+| Listening / reading | `frontend/data/tcf/*.json` (any file with "listening" in the name counts as listening) | `{ id, level: A1–C2, audio (script, "A:"/"B:" lines = two voices) or text, q, options[4], answer, explain? }`. Add `audioUrl` to use a real recording. |
+| Writing / speaking prompts | `frontend/data/prompts/writing.json`, `frontend/data/prompts/speaking.json` | See existing entries |
+| The plan | `frontend/scripts/generate-plan.mjs`, then `npm run plan` | Ticked tasks are kept: task IDs are `date-template`. |
+| Resources | `frontend/data/resources.json` | `id, name, url, skills, levels, paid, type, status, use`. Reference an `id` from a plan task's `resources`. |
 
 All exam items are original, not copied from official tests. For official-style extra practice, use the free TV5Monde TCF simulator (linked in the app).
 
 ## AI grading (optional)
 
-Settings → AI grading → paste an Anthropic API key. It's stored only in this browser: never in backups, never in the repo, and only sent to Anthropic. Writing and speaking are graded by Claude Opus 5 against the TCF 0–20 grid, with server-side fallbacks enabled. Speaking is graded from the transcript, so it can't judge pronunciation. Without a key, you score yourself with the rubric.
+In **Settings → AI grading**, pick a provider and paste a key. The key is stored only in this browser: never in backups, never in the repo.
+
+- **Gemini (free):** get a key at https://aistudio.google.com/apikey.
+  - Uses `gemini-3.8-flash`, falling back to `gemini-3.5-flash-lite` if it's unavailable or the daily limit is reached.
+  - On the free tier, Google may use what you send to improve its products, and human reviewers may read it. Don't put personal details in practice answers.
+- **Claude (paid, strictest):** Claude Opus 5 with server-side fallbacks. It costs a few cents per grade on your own Anthropic account.
+
+Both grade against the TCF 0–20 grid. Speaking is graded from the transcript, so pronunciation isn't judged. Without a key, you score yourself with the rubric.
 
 ## How scores are estimated
 
@@ -83,8 +94,8 @@ Settings → AI grading → paste an Anthropic API key. It's stored only in this
 
 It's a static site, so any free static host works.
 
-- **Netlify:** `npm run build`, then drag the `dist/` folder onto https://app.netlify.com/drop.
-- **Cloudflare Pages:** `npx wrangler pages deploy dist`
+- **Vercel (current setup):** every push to `main` deploys automatically. `vercel.json` builds from `frontend/`.
+- **Netlify:** `cd frontend && npm run build`, then drag `frontend/dist/` onto https://app.netlify.com/drop.
 
 Open the URL on your phone and add it to your home screen: Safari → Share → **Add to Home Screen**, or Chrome → ⋮ → **Install app**. After the first load it works with no connection.
 

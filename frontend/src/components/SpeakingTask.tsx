@@ -415,7 +415,7 @@ export function SpeakingAssessment({ id, prompt, today }: { id: number; prompt?:
         <p className="muted small ws-tight">
           {keySet
             ? "The AI reads the transcript only. It can't hear you, so it can't judge your pronunciation or accent: use your own ear (or a teacher) for that."
-            : <>Add your Anthropic API key in <a href="#/settings">Settings</a> to get feedback on what you said. (It reads the transcript only, so it can't judge pronunciation.)</>}
+            : <>Add a free Gemini key (or a Claude key) in <a href="#/settings">Settings</a> to get feedback on what you said. (It reads the transcript only, so it can't judge pronunciation.)</>}
         </p>
         {err && <div className="notice bad"><Icon name="alert" size={18} /><span>{err}</span></div>}
         {keySet && p && (

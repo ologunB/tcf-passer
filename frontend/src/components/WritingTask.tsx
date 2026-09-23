@@ -230,7 +230,7 @@ export function WritingAssessment({ id, prompt, today, showText = true }: { id: 
             {keySet ? (
               <p className="muted small ws-tight">Claude grades your text like a strict TCF examiner and rewrites it correctly. Needs internet; takes up to a minute.</p>
             ) : (
-              <p className="muted small ws-tight">Add your Anthropic API key in <a href="#/settings">Settings</a> to get a strict examiner grade and a corrected version.</p>
+              <p className="muted small ws-tight">Add a free Gemini key (or a Claude key) in <a href="#/settings">Settings</a> to get a strict examiner grade and a corrected version.</p>
             )}
           </>
         )}

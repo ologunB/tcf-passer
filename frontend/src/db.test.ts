@@ -19,12 +19,17 @@ describe("db", () => {
     await setSetting("examDate", "2027-06-09");
     await db.estimates.add({ date: "2026-09-28", skill: "listening", nclc: 3, source: "placement" });
 
+    await setSetting("geminiKey", "AIza-secret");
+    await setSetting("anthropicKey", "sk-secret");
     const backup = JSON.parse(JSON.stringify(await exportAll()));
-    await Promise.all([db.entries.clear(), db.settings.clear(), db.estimates.clear()]);
+    expect(JSON.stringify(backup)).not.toMatch(/secret/);
+    // Wipe the data (not settings: API keys live on the device and must survive an import).
+    await Promise.all([db.entries.clear(), db.estimates.clear(), db.settings.delete("examDate")]);
 
     expect(await importAll(backup)).toBe(2);
     expect(await db.entries.count()).toBe(2);
     expect((await db.settings.get("examDate"))?.value).toBe("2027-06-09");
+    expect((await db.settings.get("geminiKey"))?.value).toBe("AIza-secret"); // keys on this device survive an import
     expect(await db.estimates.count()).toBe(1);
   });
 

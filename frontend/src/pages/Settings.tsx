@@ -13,7 +13,12 @@ export function SettingsPage({ today }: { today: string }) {
   const theme = useSetting<Theme>("theme", "system");
   const lastExport = useSetting<string | null>("lastExport", null);
   const [msg, setMsg] = useState<{ kind: "ok" | "bad"; text: string } | null>(null);
-  const apiKey = useSetting<string>("anthropicKey", "");
+  const anthropicKey = useSetting<string>("anthropicKey", "");
+  const geminiKey = useSetting<string>("geminiKey", "");
+  const chosen = useSetting<string>("aiProvider", "");
+  const provider = chosen === "claude" || chosen === "gemini" ? chosen : geminiKey || !anthropicKey ? "gemini" : "claude";
+  const keyName = provider === "gemini" ? "geminiKey" : "anthropicKey";
+  const apiKey = provider === "gemini" ? geminiKey : anthropicKey;
   const perDay = useSetting<number>("newPerDay", 20);
   const autoSpeak = useSetting<boolean>("autoSpeak", true);
   const [keyDraft, setKeyDraft] = useState<string | null>(null);
@@ -134,15 +139,27 @@ export function SettingsPage({ today }: { today: string }) {
       </div>
 
       <div className="list-label">AI grading (optional)</div>
-      <section className="card" style={{ display: "grid", gap: 10 }}>
-        <p className="small" style={{ margin: 0 }}>
-          Paste an Anthropic API key to get examiner-style feedback on your writing and speaking (Claude Opus 5). The key is stored <b>only on this device</b>: it's never in backups, never in the code, and only sent to Anthropic. Without a key, you score yourself with the rubric. Get a key at <a href="https://console.anthropic.com/" target="_blank" rel="noreferrer">console.anthropic.com</a>. Each grading costs a few cents.
-        </p>
-        <input type="password" autoComplete="off" spellCheck={false} placeholder="sk-ant-…" value={keyDraft ?? (apiKey ? "••••••••••••" + apiKey.slice(-4) : "")} onFocus={() => keyDraft === null && setKeyDraft("")} onChange={(e) => setKeyDraft(e.target.value)} aria-label="Anthropic API key" />
-        <div className="btns" style={{ display: "flex", gap: 8 }}>
-          <button className="btn primary" disabled={!keyDraft?.trim()} onClick={() => { setSetting("anthropicKey", keyDraft!.trim()); setKeyDraft(null); setMsg({ kind: "ok", text: "API key saved on this device." }); }}>Save key</button>
-          {apiKey && <button className="btn ghost danger" onClick={() => { setSetting("anthropicKey", ""); setKeyDraft(null); }}>Remove</button>}
+      <section className="card" style={{ display: "grid", gap: 12 }}>
+        <div className="seg" role="group" aria-label="AI provider">
+          <button aria-pressed={provider === "gemini"} onClick={() => { setSetting("aiProvider", "gemini"); setKeyDraft(null); }}>Gemini · free</button>
+          <button aria-pressed={provider === "claude"} onClick={() => { setSetting("aiProvider", "claude"); setKeyDraft(null); }}>Claude · paid</button>
         </div>
+        {provider === "gemini" ? (
+          <p className="small" style={{ margin: 0 }}>
+            Free with a Google account: get a key at <a href="https://aistudio.google.com/apikey" target="_blank" rel="noreferrer">aistudio.google.com/apikey</a> and paste it below. It has a daily limit that resets at midnight Pacific time.{" "}
+            <b>On the free tier, Google may use what you send to improve its products, and human reviewers may read it.</b> Only your practice answers are sent, so don't put personal details in them.
+          </p>
+        ) : (
+          <p className="small" style={{ margin: 0 }}>
+            The strictest grading (Claude Opus 5). It costs a few cents per grade on your own Anthropic account: get a key at <a href="https://console.anthropic.com/" target="_blank" rel="noreferrer">console.anthropic.com</a>.
+          </p>
+        )}
+        <input type="password" autoComplete="off" spellCheck={false} placeholder={provider === "gemini" ? "Gemini API key (AIza…)" : "sk-ant-…"} value={keyDraft ?? (apiKey ? "••••••••••••" + apiKey.slice(-4) : "")} onFocus={() => keyDraft === null && setKeyDraft("")} onChange={(e) => setKeyDraft(e.target.value)} aria-label={`${provider === "gemini" ? "Gemini" : "Anthropic"} API key`} />
+        <div className="btns" style={{ display: "flex", gap: 8 }}>
+          <button className="btn primary" disabled={!keyDraft?.trim()} onClick={() => { setSetting(keyName, keyDraft!.trim()); setSetting("aiProvider", provider); setKeyDraft(null); setMsg({ kind: "ok", text: "API key saved on this device." }); }}>Save key</button>
+          {apiKey && <button className="btn ghost danger" onClick={() => { setSetting(keyName, ""); setKeyDraft(null); }}>Remove</button>}
+        </div>
+        <p className="muted tiny" style={{ margin: 0 }}>Keys are stored only on this device: never in backups, never in the code. Without a key, you score yourself with the rubric.</p>
       </section>
 
       <div className="list-label">Appearance</div>
