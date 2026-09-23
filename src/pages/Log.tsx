@@ -1,14 +1,20 @@
 import { useMemo, useState } from "react";
 import { Icon, SkillBadge } from "../components/Icon";
-import { db } from "../db";
-import { useEntries } from "../hooks";
-import { addDays, fmtDay, fmtHours } from "../lib/dates";
-import { skillLabel } from "../lib/labels";
+import { Ring } from "../components/Ring";
+import { db, type Estimate } from "../db";
+import { useEntries, useEstimates } from "../hooks";
+import { latestBySkill, readiness, type Readiness } from "../lib/adapt";
+import { addDays, daysBetween, fmtDay, fmtHours, parseISO } from "../lib/dates";
+import { CORE_SKILLS, skillLabel, type CoreSkill } from "../lib/labels";
+import { fmtNclc } from "../lib/scoring";
 import { loggedMinutes, type Entry } from "../lib/logic";
 import { findWeek, plan, type Skill } from "../lib/plan";
+import { groupMocks, MockList } from "./Mock";
+import "./mock-progress.css";
 
 export function LogPage({ today }: { today: string }) {
   const entries = useEntries();
+  const estimates = useEstimates();
   const [showAll, setShowAll] = useState(false);
 
   const current = findWeek(plan, today)?.week ?? (today < plan.start ? 0 : plan.weeks.length);
@@ -30,7 +36,9 @@ export function LogPage({ today }: { today: string }) {
     return [...m.entries()].sort((a, b) => b[0].localeCompare(a[0]));
   }, [entries]);
 
-  if (!entries) return null;
+  if (!entries || !estimates) return null;
+  const latest = latestBySkill(estimates);
+  const mocks = groupMocks(estimates);
 
   const week7 = loggedMinutes(entries, addDays(today, -6), today);
   const total = entries.reduce((a, e) => a + e.minutes, 0);
@@ -45,6 +53,24 @@ export function LogPage({ today }: { today: string }) {
           <h1 className="title">Progrès<em>.</em></h1>
         </div>
       </header>
+
+      <ReadinessCard latest={latest} ready={readiness(latest)} />
+
+      <div className="list">
+        <a className="list-row" href="#/review">
+          <span className="ico"><Icon name="note" size={17} /></span>
+          <span className="txt"><b>Weekly review</b><span>Time by skill, what moved, what changes next week</span></span>
+          <Icon name="chevronR" size={18} />
+        </a>
+      </div>
+
+      <div className="section-title"><h2>Level over time</h2><span>NCLC by skill</span></div>
+      <section className="card">
+        <LevelCharts estimates={estimates} today={today} />
+      </section>
+
+      <div className="section-title"><h2>Mock exams</h2><a className="small" href="#/mock">Take a mock →</a></div>
+      <MockList mocks={mocks} />
 
       <div className="grid-3">
         <div className="stat"><div className="v num">{fmtHours(week7)}</div><div className="k">last 7 days</div></div>
@@ -75,7 +101,7 @@ export function LogPage({ today }: { today: string }) {
             ))}
           </div>
         )}
-        <p className="muted tiny" style={{ margin: "14px 0 0" }}>The full weekly review (what improved, what's weak, what changes next week) comes with the tests in stage 4.</p>
+        <p className="muted tiny" style={{ margin: "14px 0 0" }}>What improved, what's weak and what changes next week: <a href="#/review">weekly review →</a></p>
       </section>
 
       <div className="section-title"><h2>History</h2></div>
@@ -115,6 +141,7 @@ export function LogPage({ today }: { today: string }) {
 
 function titleFor(taskId: string | null) {
   if (!taskId) return null;
+  if (taskId.endsWith("-rebalance")) return "Catch-up drill (plan adjustment)";
   const date = taskId.slice(0, 10);
   const d = findWeek(plan, date)?.days.find((x) => x.date === date);
   return d?.tasks.find((t) => t.id === taskId)?.title ?? d?.events.find((e) => `${e.date}-ev-${e.type}` === taskId)?.title ?? null;
@@ -178,5 +205,157 @@ function WeekChart({ weeks, entries, today }: { weeks: typeof plan.weeks; entrie
         <span><i style={{ background: "var(--ink)", opacity: 0.55, height: 2, borderRadius: 1 }} /> Planned for the week</span>
       </div>
     </>
+  );
+}
+
+// ---------- readiness ----------
+
+/** The one question that matters: would today's levels get NCLC 7 in all four? */
+export function ReadinessCard({ latest, ready, title = "If you sat the exam today" }: {
+  latest: Partial<Record<CoreSkill, Estimate>>;
+  ready: Readiness;
+  title?: string;
+}) {
+  const tone = ready.passToday ? (ready.safe ? "good" : "warn") : latest && Object.keys(latest).length ? "bad" : "neutral";
+  return (
+    <section className="card mp-ready" data-tone={tone}>
+      <div className="mp-ready-top">
+        <Ring value={ready.score / 100} size={82} stroke={8} track="var(--surface-2)" color="var(--brand)">
+          <b className="num">{ready.score}</b>
+          <span>of 100</span>
+        </Ring>
+        <div style={{ minWidth: 0 }}>
+          <div className="eyebrow">{title}…</div>
+          <p className="mp-answer">{ready.answer}</p>
+        </div>
+      </div>
+      <ul className="mp-chips" aria-label="Latest NCLC by skill">
+        {CORE_SKILLS.map((s) => {
+          const n = latest[s]?.nclc;
+          const state = n === undefined ? "none" : n >= 7 ? "ok" : "no";
+          return (
+            <li key={s} className={`mp-chip ${state}`} data-skill={s}>
+              <Icon name={s} size={14} />
+              <span className="mp-chip-l">{skillLabel[s]}</span>
+              <b className="num">{n === undefined ? "—" : fmtNclc(n)}</b>
+              <Icon name={state === "ok" ? "check" : state === "no" ? "x" : "clock"} size={13} stroke={2.4} />
+              <span className="sr-only">{state === "ok" ? "passes NCLC 7" : state === "no" ? "below NCLC 7" : "not tested"}</span>
+            </li>
+          );
+        })}
+      </ul>
+      <p className="muted tiny" style={{ margin: 0 }}>
+        Score = each skill's NCLC against the NCLC 8 target, averaged. It's only a gauge: IRCC counts your weakest skill, so one skill at 6 fails no matter how high the others are.
+      </p>
+    </section>
+  );
+}
+
+// ---------- level over time (small multiples) ----------
+
+const Y_MIN = 3;
+const Y_MAX = 10;
+
+function LevelCharts({ estimates, today }: { estimates: Estimate[]; today: string }) {
+  const sorted = useMemo(() => [...estimates].sort((a, b) => a.date.localeCompare(b.date) || (a.id ?? 0) - (b.id ?? 0)), [estimates]);
+  if (!sorted.length)
+    return <p className="empty">Nothing tested yet. The placement test, progress checks and mocks each add a point here.</p>;
+  // One shared x range so the four panels line up.
+  const from = sorted[0].date < plan.start ? sorted[0].date : plan.start;
+  const lastDate = sorted.at(-1)!.date;
+  const to = lastDate > today ? lastDate : today;
+  return (
+    <>
+      <div className="mp-multiples">
+        {CORE_SKILLS.map((s) => (
+          <LevelPanel key={s} skill={s} points={sorted.filter((e) => e.skill === s)} from={from} to={to} />
+        ))}
+      </div>
+      <div className="legend" style={{ marginTop: 10 }}>
+        <span><svg width="18" height="6" aria-hidden="true"><line x1="0" x2="18" y1="3" y2="3" stroke="var(--ink)" strokeWidth="1.5" strokeDasharray="4 3" opacity="0.6" /></svg> NCLC 7 · pass</span>
+        <span><svg width="18" height="6" aria-hidden="true"><line x1="0" x2="18" y1="3" y2="3" stroke="var(--good)" strokeWidth="1.5" opacity="0.8" /></svg> NCLC 8 · safe</span>
+      </div>
+      <details className="mp-table small">
+        <summary>Show as a table</summary>
+        <table>
+          <thead><tr><th>Date</th><th>Skill</th><th>Score</th><th>NCLC</th><th>From</th></tr></thead>
+          <tbody>
+            {[...sorted].reverse().map((e) => (
+              <tr key={e.id}>
+                <td>{fmtDay(e.date, { day: "numeric", month: "short" })}</td>
+                <td>{skillLabel[e.skill]}</td>
+                <td className="num">{e.score === undefined ? "—" : fmtScore(e)}</td>
+                <td className="num">{fmtNclc(e.nclc)}</td>
+                <td>{sourceLabel[e.source]}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </details>
+    </>
+  );
+}
+
+const sourceLabel: Record<Estimate["source"], string> = { placement: "Placement", check: "Progress check", mock: "Mock", practice: "Practice", graded: "Graded task" };
+const fmtScore = (e: Estimate) => (e.skill === "listening" || e.skill === "reading" ? `${e.score}/699` : `${e.score}/20`);
+
+function LevelPanel({ skill, points, from, to }: { skill: CoreSkill; points: Estimate[]; from: string; to: string }) {
+  const [sel, setSel] = useState<number | null>(null);
+  const W = 160, H = 108, pad = { l: 16, r: 6, t: 8, b: 16 };
+  const span = Math.max(1, daysBetween(from, to));
+  const x = (d: string) => pad.l + ((W - pad.l - pad.r) * daysBetween(from, d)) / span;
+  const y = (n: number) => pad.t + (H - pad.t - pad.b) * (1 - (Math.max(Y_MIN, Math.min(Y_MAX, n)) - Y_MIN) / (Y_MAX - Y_MIN));
+  const cur = points.length ? points[sel ?? points.length - 1] : null;
+  const month = (d: string) => parseISO(d).toLocaleDateString("en-GB", { month: "short" });
+
+  return (
+    <figure className="mp-panel" data-skill={skill}>
+      <figcaption>
+        <span className="mp-panel-t"><Icon name={skill} size={13} /> {skillLabel[skill]}</span>
+        {cur ? (
+          <span className="mp-panel-v">
+            <b className="num">NCLC {fmtNclc(cur.nclc)}{cur.score !== undefined && <span className="muted tiny"> · {fmtScore(cur)}</span>}</b>
+            <span className="muted tiny">{sourceLabel[cur.source]} · {fmtDay(cur.date, { day: "numeric", month: "short" })}</span>
+          </span>
+        ) : (
+          <span className="mp-panel-v"><b className="muted">Not tested</b><span className="muted tiny">no score yet</span></span>
+        )}
+      </figcaption>
+      <svg className="chart" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`${skillLabel[skill]} NCLC over time: ${points.length ? points.map((p) => `${fmtDay(p.date, { day: "numeric", month: "short" })} ${fmtNclc(p.nclc)}`).join(", ") : "not tested yet"}`}>
+        {[4, 10].map((t) => (
+          <g key={t}>
+            <line x1={pad.l} x2={W - pad.r} y1={y(t)} y2={y(t)} stroke="var(--line)" strokeWidth={1} />
+            <text x={pad.l - 4} y={y(t) + 3} textAnchor="end">{t}</text>
+          </g>
+        ))}
+        <line x1={pad.l} x2={W - pad.r} y1={y(7)} y2={y(7)} stroke="var(--ink)" strokeWidth={1.5} strokeDasharray="4 3" opacity={0.6} />
+        <text x={pad.l - 4} y={y(7) + 3} textAnchor="end" style={{ fill: "var(--ink)" }}>7</text>
+        <line x1={pad.l} x2={W - pad.r} y1={y(8)} y2={y(8)} stroke="var(--good)" strokeWidth={1.5} opacity={0.8} />
+        <text x={pad.l - 4} y={y(8) + 3} textAnchor="end" style={{ fill: "var(--good)" }}>8</text>
+        <text x={pad.l} y={H - 3} textAnchor="start">{month(from)}</text>
+        <text x={W - pad.r} y={H - 3} textAnchor="end">{month(to)}</text>
+        {points.length > 1 && (
+          <path d={points.map((p, i) => `${i ? "L" : "M"}${x(p.date).toFixed(1)},${y(p.nclc).toFixed(1)}`).join(" ")} fill="none" stroke="var(--brand)" strokeWidth={2} strokeLinejoin="round" strokeLinecap="round" />
+        )}
+        {points.map((p, i) => {
+          const on = (sel ?? points.length - 1) === i;
+          return (
+            <g
+              key={p.id ?? i}
+              tabIndex={0}
+              role="button"
+              aria-label={`${fmtDay(p.date, { day: "numeric", month: "short" })}: NCLC ${fmtNclc(p.nclc)}, ${sourceLabel[p.source]}`}
+              onMouseEnter={() => setSel(i)}
+              onFocus={() => setSel(i)}
+              onClick={() => setSel(i)}
+              style={{ cursor: "pointer", outline: "none" }}
+            >
+              <circle cx={x(p.date)} cy={y(p.nclc)} r={12} fill="transparent" />
+              <circle cx={x(p.date)} cy={y(p.nclc)} r={on ? 5 : 4} fill="var(--brand)" stroke="var(--surface)" strokeWidth={2} />
+            </g>
+          );
+        })}
+      </svg>
+    </figure>
   );
 }

@@ -156,7 +156,6 @@ for (let w = 32; w <= 36; w++) {
 events.push({ date: addWeeks(START, 19), type: "booking", title: "Email AF Lagos for Apr–Jul 2027 TCF Canada sessions + fee (certification.lagos@afnigeria.org)", minutes: 10 });
 events.push({ date: addWeeks(START, 24), type: "booking", title: "BOOK first TCF Canada sitting (~7–11 June 2027) if week-24 check is on track", minutes: 20, critical: true });
 events.push({ date: addWeeks(START, 31), type: "booking", title: "Decide on retake slot (~12–23 July) based on mocks", minutes: 15 });
-events.push({ date: addWeeks(START, 8), type: "admin", title: "Check you have a valid English test (CLB 5+) for the extra 25 CRS points; book IELTS General if not", minutes: 15 });
 events.push({ date: addWeeks(START, EXAM_WEEK - 1), type: "exam", title: "TCF Canada — first sitting (exact date per AF Lagos session)", minutes: 180, critical: true });
 
 const phaseOf = (w) => phases.find((p) => w >= p.weeks[0] && w <= p.weeks[1]);

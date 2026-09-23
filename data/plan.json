@@ -118,12 +118,6 @@
       "minutes": 15
     },
     {
-      "date": "2026-11-23",
-      "type": "admin",
-      "title": "Check you have a valid English test (CLB 5+) for the extra 25 CRS points; book IELTS General if not",
-      "minutes": 15
-    },
-    {
       "date": "2027-06-07",
       "type": "exam",
       "title": "TCF Canada — first sitting (exact date per AF Lagos session)",
@@ -5297,7 +5291,7 @@
         "grammar": "Reflexive verbs, imperative",
         "vocab": "Health, body, doctor"
       },
-      "plannedHours": 27.3,
+      "plannedHours": 27,
       "days": [
         {
           "date": "2026-11-23",
@@ -5396,15 +5390,8 @@
               "template": "speak"
             }
           ],
-          "events": [
-            {
-              "date": "2026-11-23",
-              "type": "admin",
-              "title": "Check you have a valid English test (CLB 5+) for the extra 25 CRS points; book IELTS General if not",
-              "minutes": 15
-            }
-          ],
-          "plannedMinutes": 255
+          "events": [],
+          "plannedMinutes": 240
         },
         {
           "date": "2026-11-24",

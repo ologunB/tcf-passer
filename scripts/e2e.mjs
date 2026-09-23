@@ -11,10 +11,13 @@ const page = await ctx.newPage();
 const errors = [];
 page.on("pageerror", (e) => errors.push(e.message));
 page.on("console", (m) => m.type() === "error" && errors.push(m.text()));
-const ok = (cond, msg) => { if (!cond) throw new Error("FAIL: " + msg); console.log("✓", msg); };
+const ok = (cond, msg) => { if (!cond) throw new Error("FAIL: " + msg + (errors.length ? "\nPage errors: " + errors.join(" | ") : "")); console.log("✓", msg); };
+process.on("unhandledRejection", (e) => { console.error(String(e).slice(0, 400), "\nPage errors:", errors.join(" | ")); process.exit(1); });
 const shot = async (n, full = true) => { await page.waitForTimeout(500); return page.screenshot({ path: `${OUT}/${n}.png`, fullPage: full }); };
 const noHScroll = async (where) => ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `no sideways scroll on ${where}`);
 const sheet = () => page.locator(".sheet");
+// Wait until the question counter shows question n (1-based), so clicks never hit the previous question.
+const atQuestion = (n) => page.locator(".mcq-top").filter({ hasText: new RegExp(`Question ${n} /`) }).waitFor();
 
 // 1. Before week 1
 await page.goto(`${BASE}/?today=2026-09-23#/`);
@@ -117,7 +120,7 @@ await page.goto(`${BASE}/?today=2026-09-29#/settings`);
 const [dl] = await Promise.all([page.waitForEvent("download"), page.getByRole("button", { name: /Export backup/ }).click()]);
 const file = await dl.path();
 const backup = JSON.parse(readFileSync(file, "utf8"));
-ok(backup.format === "tcf-passer-backup" && backup.entries.length === 4, `export has all entries (${backup.entries.length})`);
+ok(backup.format === "tcf-passer-backup" && backup.entries.length === 4 && !JSON.stringify(backup).includes("anthropicKey"), `export has all entries (${backup.entries.length}) and no API key`);
 await page.evaluate(() => new Promise((r) => { const q = indexedDB.deleteDatabase("tcf-passer"); q.onsuccess = q.onblocked = r; }));
 await page.reload();
 await page.getByText("Your data").waitFor();
@@ -142,6 +145,86 @@ await page.reload();
 await page.getByText("Also today").waitFor({ timeout: 5000 });
 ok(await page.evaluate(() => document.fonts.check('600 20px "Fraunces"')), "loads with no connection, fonts included");
 await ctx.setOffline(false);
+
+// 12. Study hub → flashcards: grade 3 cards, finish, time logged against today's flashcards task
+await page.goto(`${BASE}/?today=2026-09-30#/study`);
+await page.getByText("Placement test").first().waitFor();
+await noHScroll("Study");
+await shot("10-study");
+await page.goto(`${BASE}/?today=2026-09-30#/cards`);
+await page.getByRole("button", { name: /Start/ }).click();
+for (let k = 0; k < 3; k++) {
+  await page.getByRole("button", { name: "Show answer" }).click();
+  await page.locator(".grades .good").click();
+}
+await shot("11-flashcards", false);
+ok((await page.evaluate(() => new Promise((r) => { const q = indexedDB.open("tcf-passer"); q.onsuccess = () => { const t = q.result.transaction("cards").objectStore("cards").count(); t.onsuccess = () => r(t.result); }; }))) === 3, "3 flashcards scheduled with FSRS");
+await page.getByRole("button", { name: "Done" }).click();
+await page.getByText("Ticked off today's flashcards task.").waitFor();
+ok(true, "finishing flashcards ticks today's flashcards task");
+
+// 13. Grammar drill: answer every question (right or wrong), results + mistake bank
+await page.goto(`${BASE}/?today=2026-09-30#/grammar`);
+await page.getByRole("button", { name: /Start drill/ }).click();
+const drillLen = Number((await page.locator(".mcq-top").innerText()).match(/\/ (\d+)/)[1]);
+for (let k = 0; k < drillLen; k++) {
+  await atQuestion(k + 1);
+  if (await page.locator(".mcq-opt").count()) await page.locator(".mcq-opt").first().click();
+  else {
+    await page.locator(".answer-input").fill("xyz");
+    await page.getByRole("button", { name: "Check" }).click();
+  }
+  await shot("12-grammar", false);
+  await page.getByRole("button", { name: /Next|Finish/ }).click();
+}
+await page.locator(".celebrate").waitFor();
+ok(true, "grammar drill runs to the end with feedback");
+await page.goto(`${BASE}/?today=2026-09-30#/mistakes`);
+await page.locator(".tasks .task").first().waitFor({ timeout: 5000 });
+ok(await page.locator(".tasks .task").count() > 0, "wrong answers land in the mistake bank");
+await shot("15-mistakes");
+
+// 14. Listening practice, 5 questions, instant feedback
+await page.goto(`${BASE}/?today=2026-09-30#/practice?skill=listening`);
+await page.getByRole("button", { name: "5", exact: true }).click();
+await page.getByRole("button", { name: /Start 5 questions/ }).click();
+for (let k = 0; k < 5; k++) {
+  await atQuestion(k + 1);
+  await page.locator(".mcq-opt").nth(1).click();
+  await page.locator(".notice").first().waitFor();
+  if (k === 0) await shot("13-listening", false);
+  await page.getByRole("button", { name: /Next|Finish/ }).click();
+}
+await page.getByText(/≈ \d+ · /).waitFor();
+ok(true, "listening practice gives a level-weighted estimate");
+await noHScroll("Practice");
+
+// 15. Placement test: 12 listening + 12 reading (exam mode), skip writing/speaking, levels appear on Today
+await page.goto(`${BASE}/?today=2026-09-30#/check?kind=placement`);
+await page.getByRole("button", { name: /Start/ }).click();
+await page.getByText("step 1 of 5").waitFor();
+ok(await page.locator("nav.tabs").count() === 0, "tab bar hidden during a test");
+for (const sec of ["listening", "reading"]) {
+  for (let k = 0; k < 12; k++) {
+    await atQuestion(k + 1);
+    await page.locator(".mcq-opt").nth(k % 4).click();
+    await page.getByRole("button", { name: /Next|Finish/ }).click();
+  }
+}
+await page.getByRole("button", { name: /can't write/ }).click();
+await page.getByRole("button", { name: /can't speak/ }).click();
+await page.getByRole("button", { name: "See my progress" }).waitFor();
+await shot("14-placement-results");
+await page.getByRole("button", { name: "See my progress" }).click();
+await page.getByText("If you sat").first().waitFor({ timeout: 5000 }).catch(() => {});
+await shot("16-progress-after-placement");
+await page.locator("nav.tabs a", { hasText: "Today" }).click();
+await page.getByRole("heading", { name: "Your level" }).waitFor({ timeout: 8000 }).catch(async (e) => {
+  await shot("debug-today");
+  console.error("Page errors:", errors.join(" | "), "\nBody:", (await page.locator("body").innerText()).slice(0, 600));
+  throw e;
+});
+ok(await page.locator(".skill-tile .val.untested").count() === 0, "placement fills in all four skill levels on Today");
 
 ok(errors.length === 0, `no console errors${errors.length ? ": " + errors.join(" | ") : ""}`);
 await browser.close();

@@ -30,10 +30,8 @@ Source: [IRCC – Language test results](https://www.canada.ca/en/immigration-re
 
 ### What NCLC 7 is worth (CRS points)
 From [IRCC – CRS criteria](https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/check-score/crs-criteria.html):
-- **+50 points** for NCLC 7+ in all four French skills *and* CLB 5+ in all four English skills.
-- **+25 points** for NCLC 7+ in French with CLB 4 or lower in English, or no English test.
+- **Bonus CRS points** for NCLC 7+ in all four French skills.
 - If English is your first official language, French also earns **second-language points**: 3 per skill at NCLC 7–8 and 6 per skill at NCLC 9+, up to 22/24.
-- ⚠️ **Action item:** if you don't already have a valid English test (IELTS General / CELPIP / PTE Core), taking one gets you the extra 25 points. That's cheap points for a Nigerian candidate.
 
 ### Recent French-category draws (context, not a promise)
 - 2026 French draws cleared at **CRS ~382–420**, usually 4,000–5,000 invitations each and ~2 draws/month. The latest were 382 on 19 Aug 2026 and 391 on 6 Aug 2026. General draws were 500+.
@@ -196,4 +194,3 @@ Link status as checked on 2026-09-23:
 5. **Listening plays each audio once** in exam mode, like the real test.
 6. **Offline-first (PWA).** Nigerian power and data are unreliable; the app must work without a connection and cache content.
 7. **Booking reminders** at weeks 20 and 25, plus a retake-buffer countdown.
-8. **English test nudge** for the extra 25 CRS points if you don't have CLB 5+ English.

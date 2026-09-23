@@ -1,0 +1,86 @@
+/* Writing & speaking: prompts, editor, recorder, rubric, feedback. Uses design tokens only. */
+.ws-task, .ws-assess { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; }
+.ws-center { text-align: center; }
+.ws-tight { margin: 0 0 10px; }
+.ws-assess .card h3 { display: flex; align-items: center; gap: 6px; }
+
+/* prompt */
+.ws-prompt-title { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; line-height: 1.25; margin: 6px 0 8px; }
+.ws-fr { margin: 0 0 10px; font-size: 1rem; line-height: 1.55; overflow-wrap: anywhere; }
+.ws-doc { margin: 0 0 10px; padding: 10px 12px; border-left: 3px solid var(--c); background: var(--surface-2); border-radius: 0 12px 12px 0; font-size: 0.93rem; line-height: 1.5; }
+.ws-ideas { margin-top: 12px; }
+.ws-ideas ul, .ws-asked { margin: 6px 0 0; padding-left: 20px; display: grid; gap: 3px; }
+.ws-ideas summary { cursor: pointer; color: var(--muted); font-weight: 600; }
+
+/* editor */
+.ws-bar {
+  position: sticky; top: 0; z-index: 5; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;
+  padding: 8px 12px; border-radius: var(--radius-sm); background: color-mix(in srgb, var(--surface) 92%, transparent);
+  border: 1px solid var(--line); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+}
+.ws-text { min-height: 300px; font-size: 17px; line-height: 1.6; resize: vertical; }
+.ws-count { font-size: 0.85rem; color: var(--muted); display: inline-flex; align-items: baseline; gap: 4px; flex-wrap: wrap; }
+.ws-count b { font-size: 1.1rem; }
+.ws-count[data-state="ok"] b, .ws-count[data-state="ok"] .ws-count-rule { color: var(--good); }
+.ws-count[data-state="low"] b { color: var(--warn); }
+.ws-count[data-state="high"] b, .ws-count[data-state="high"] .ws-count-rule { color: var(--bad); font-weight: 600; }
+.ws-clock { display: inline-flex; align-items: center; gap: 5px; font-weight: 650; font-size: 0.95rem; }
+.ws-clock.low { color: var(--warn); }
+.ws-clock.up { color: var(--bad); }
+
+/* exam bar */
+.ws-exam-bar { position: sticky; top: 0; z-index: 6; display: grid; gap: 8px; padding: 10px 12px; border-radius: var(--radius-sm); background: color-mix(in srgb, var(--surface) 94%, transparent); border: 1px solid var(--line); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+.ws-exam-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.ws-exam-clock { font-family: var(--serif); font-size: 1.8rem; font-weight: 600; line-height: 1; }
+.ws-exam-clock.low { color: var(--bad); }
+
+/* recorder */
+.ws-stage { display: grid; justify-items: center; gap: 14px; padding: 20px 16px; }
+.ws-stage .btn.block { max-width: 360px; }
+.ws-ring-time { font-family: var(--serif); font-size: 2.6rem; font-weight: 600; line-height: 1; letter-spacing: -0.02em; }
+.ws-ring-label { display: inline-flex; align-items: center; justify-content: center; gap: 6px; margin-top: 6px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.ws-actions { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+.ws-live p { margin: 6px 0 0; line-height: 1.55; min-height: 1.5em; overflow-wrap: anywhere; }
+.ws-audio { width: 100%; margin: 4px 0 6px; }
+
+/* rubric */
+.ws-rubric { display: grid; gap: 14px; }
+.ws-crit { display: grid; gap: 6px; }
+.ws-crit-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 2px 8px; }
+.seg.ws-levels { gap: 2px; padding: 3px; }
+.seg.ws-levels button { padding: 7px 0; font-size: 0.8rem; min-width: 0; }
+.seg.ws-levels button[aria-pressed="true"] { background: var(--c, var(--brand)); color: var(--surface); }
+.ws-desc { min-height: 1.4em; line-height: 1.4; }
+
+/* scores & feedback */
+.ws-score { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); flex-wrap: wrap; }
+.ws-fb .ws-score { margin-top: 0; padding-top: 0; border-top: 0; }
+.ws-score-v { font-family: var(--serif); font-size: 2.2rem; font-weight: 600; line-height: 1; letter-spacing: -0.02em; }
+.ws-score-v small { font-family: var(--sans); font-size: 0.9rem; color: var(--muted); font-weight: 500; }
+.ws-score-tags { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
+.ws-fb { display: grid; gap: 14px; margin-bottom: 12px; }
+.ws-fb-summary { margin: 0; line-height: 1.5; }
+.ws-fb-crit { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.ws-fb-crit li { padding: 10px 12px; border-radius: 12px; background: var(--surface-2); }
+.ws-fb-crit p { margin: 4px 0 0; font-size: 0.9rem; color: var(--muted); line-height: 1.45; }
+.ws-fb-h { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+.ws-fb-h.good { color: var(--good); }
+.ws-fb-h.warn { color: var(--warn); }
+.ws-bullets { margin: 0; padding-left: 20px; display: grid; gap: 4px; line-height: 1.45; }
+.ws-corrected { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.6; padding: 12px; border-radius: 12px; background: var(--surface-2); font-size: 0.95rem; }
+.ws-answer summary { cursor: pointer; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.ws-answer[open] summary { margin-bottom: 10px; }
+.ws-answer .ws-fr { margin: 0 0 8px; }
+.ws-spin { width: 14px; height: 14px; border-radius: 50%; border: 2px solid currentColor; border-right-color: transparent; animation: ws-spin 0.8s linear infinite; }
+@keyframes ws-spin { to { transform: rotate(360deg); } }
+
+/* page lists */
+.ws-theme { margin: 6px 4px -4px; }
+.ws-row-meta { display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; margin-top: 3px; font-size: 0.78rem; color: var(--muted); }
+.ws-row-txt { flex: 1; min-width: 0; display: block; }
+.ws-row-txt > b { display: block; font-weight: 600; }
+.ws-back { display: flex; align-items: center; gap: 10px; }
+.ws-back .title { font-size: 1.5rem; }
+.ws-result-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin: 10px 2px -2px; }
+.ws-result-head h2 { white-space: nowrap; }
+.ws-result-head span { text-align: right; min-width: 0; }

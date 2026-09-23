@@ -6,10 +6,12 @@ import { Sheet } from "../components/Sheet";
 import { Resources, TaskRow, TaskSheet, TaskTags, type TaskFlags } from "../components/Task";
 import { db } from "../db";
 import { useDone, useEntries, useEstimates, useExamDate, useSetting } from "../hooks";
+import { latestBySkill, rebalance, skillLag, skillStatus } from "../lib/adapt";
 import { daysBetween, fmtDay, fmtHours } from "../lib/dates";
 import { CORE_SKILLS, skillLabel, skillOptions } from "../lib/labels";
 import { buildToday, computeStatus, loggedMinutes, plannedMinutes, streak, type Entry, type StatusState } from "../lib/logic";
 import { findWeek, phaseOf, plan, type Item, type Skill } from "../lib/plan";
+import { fmtNclc } from "../lib/scoring";
 import { fmtClock, useTimer } from "../timer";
 
 const tone: Record<StatusState, string> = { "not-started": "neutral", "on-track": "good", ahead: "good", behind: "warn", "at-risk": "bad" };
@@ -25,8 +27,25 @@ export function Today({ today }: { today: string }) {
   const [showDone, setShowDone] = useState(false);
   const [logOpen, setLogOpen] = useState(false);
 
-  const t = useMemo(() => buildToday(plan, today, done), [today, done]);
-  const status = useMemo(() => computeStatus(plan, entries ?? [], today), [entries, today]);
+  const estimates = useEstimates();
+  const preStartDay = today < plan.start;
+  const weekNo = preStartDay ? 1 : (findWeek(plan, today)?.week ?? plan.weeks.length);
+  const latest = useMemo(() => latestBySkill(estimates ?? []), [estimates]);
+  // Adaptive plan: if a skill is behind where the plan expects it, today gets a catch-up drill for it.
+  const t = useMemo(() => {
+    const base = buildToday(plan, today, done);
+    const r = rebalance(today, base.items, skillLag(weekNo, latest), latest);
+    return { ...base, items: r.items, rebalanceNote: r.note };
+  }, [today, done, weekNo, latest]);
+  // Status = the worse of the hours signal and the skill-level signal.
+  const status = useMemo(() => {
+    const hours = computeStatus(plan, entries ?? [], today);
+    const skills = preStartDay ? null : skillStatus(weekNo, latest);
+    const rank = { "not-started": 0, "on-track": 1, ahead: 1, behind: 2, "at-risk": 3 } as const;
+    if (!skills || rank[skills.state] < rank[hours.state]) return hours;
+    if (rank[skills.state] === rank[hours.state] && skills.state === "on-track") return { ...hours, reason: `${hours.reason} ${skills.reason}` };
+    return { ...skills, reason: rank[hours.state] >= 2 ? `${skills.reason} Hours: ${hours.reason}` : skills.reason };
+  }, [entries, today, weekNo, latest, preStartDay]);
   const byTask = useMemo(() => new Map((entries ?? []).filter((e) => e.taskId).map((e) => [e.taskId!, e])), [entries]);
 
   if (!entries) return null;
@@ -174,6 +193,9 @@ export function Today({ today }: { today: string }) {
               )}
             </section>
           )}
+          {t.rebalanceNote && (
+            <div className="notice warn"><Icon name="sparkle" size={18} /><span><b>Plan adjusted:</b> {t.rebalanceNote}</span></div>
+          )}
           {t.dropped > 0 && (
             <p className="muted tiny" style={{ margin: "-4px 4px 0" }}>
               {t.dropped} older unfinished item{t.dropped > 1 ? "s were" : " was"} let go so your backlog stays at 60 min or less. That's by design.
@@ -213,8 +235,8 @@ function SkillLevels() {
           return (
             <div key={s} className="skill-tile" data-skill={s}>
               <div className="lbl"><Icon name={s} size={14} /> {skillLabel[s]}</div>
-              <div className={`val num${n ? "" : " untested"}`}>{n ?? "—"}</div>
-              <div className="meter">{n ? <i style={{ width: pct(n) }} /> : null}<b style={{ left: pct(7) }} /></div>
+              <div className={`val num${n === undefined ? " untested" : ""}`}>{n === undefined ? "—" : fmtNclc(n)}</div>
+              <div className="meter">{n !== undefined && n > 3 ? <i style={{ width: pct(n) }} /> : null}<b style={{ left: pct(7) }} /></div>
             </div>
           );
         })}
@@ -222,7 +244,7 @@ function SkillLevels() {
       <p className="muted tiny" style={{ margin: "-4px 4px 0" }}>
         {weakest
           ? `Your level is set by your weakest skill: ${skillLabel[weakest].toLowerCase()}.`
-          : "The placement test and progress checks fill this in (coming in stage 4). Until then, your status is based on hours."}
+          : <>Take the <a href="#/check?kind=placement">placement test</a> to fill this in. After that, progress checks every 2 weeks and mock exams keep it current.</>}
       </p>
     </>
   );
@@ -234,7 +256,7 @@ function PreStart({ today }: { today: string }) {
     ["phone", "Add to your home screen", "Share → Add to Home Screen. Then it works offline."],
     ["calendar", "Look through week 1", "See what each day asks of you in the Plan tab."],
     ["library", "Bookmark your core three", "Language Transfer, TV5Monde and Coffee Break French."],
-    ["flag", "Check your English test", "Having CLB 5+ is worth up to 25 extra CRS points."],
+    ["flag", "Know your target", "NCLC 7 in all four skills: listening 458, reading 453, writing and speaking 10/20."],
     ["plus", "Want a head start?", "Log any study with the + button. It counts."],
   ];
   return (

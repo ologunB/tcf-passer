@@ -76,14 +76,26 @@ export const resourceById = new Map(resources.map((r) => [r.id, r]));
 
 // Plan items that point at parts of this app rather than external sites.
 export const appSections: Record<string, { label: string; route: string; ready: boolean }> = {
-  "app-srs": { label: "Flashcards", route: "#/", ready: false },
-  "app-grammar": { label: "Grammar drills", route: "#/", ready: false },
-  "app-writing": { label: "Writing", route: "#/", ready: false },
-  "app-speaking": { label: "Speaking", route: "#/", ready: false },
-  "app-mistakes": { label: "Mistake bank", route: "#/", ready: false },
-  "app-tcf": { label: "TCF practice", route: "#/", ready: false },
-  "app-review": { label: "Weekly review", route: "#/log", ready: true },
+  "app-srs": { label: "Flashcards", route: "#/cards", ready: true },
+  "app-grammar": { label: "Grammar drills", route: "#/grammar", ready: true },
+  "app-writing": { label: "Writing", route: "#/writing", ready: true },
+  "app-speaking": { label: "Speaking", route: "#/speaking", ready: true },
+  "app-mistakes": { label: "Mistake bank", route: "#/mistakes", ready: true },
+  "app-tcf": { label: "TCF practice", route: "#/practice?skill=listening", ready: true },
+  "app-review": { label: "Weekly review", route: "#/review", ready: true },
   "app-plan": { label: "Plan", route: "#/plan", ready: true },
+  "app-placement": { label: "Start placement test", route: "#/check?kind=placement", ready: true },
+  "app-check": { label: "Start progress check", route: "#/check?kind=progress", ready: true },
+  "app-mock": { label: "Start mock exam", route: "#/mock", ready: true },
+  "app-half-mock": { label: "Timed listening", route: "#/practice?skill=listening", ready: true },
+};
+
+// Where each plan event is done in the app.
+const eventResources: Partial<Record<PlanEvent["type"], string[]>> = {
+  placement: ["app-placement"],
+  "progress-check": ["app-check"],
+  "full-mock": ["app-mock"],
+  "half-mock": ["app-half-mock", "app-tcf"],
 };
 
 /** One checkable line on a day: a plan task or a plan event (placement, booking…). */
@@ -113,8 +125,8 @@ export function dayItems(p: Plan, date: string): Item[] {
     title: e.title,
     minutes: e.minutes,
     skill: eventSkill(e.type),
-    resources: [],
-    detail: "",
+    resources: eventResources[e.type] ?? [],
+    detail: e.type === "half-mock" ? "Run a timed 39-question listening set, then a timed reading set, from TCF practice (exam mode)." : "",
     date,
     kind: "event",
     eventType: e.type,

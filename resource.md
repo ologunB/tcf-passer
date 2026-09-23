@@ -48,7 +48,7 @@ Stored as data (`data/plan.json`), not hardcoded prose.
 - **TCF-format practice starts in week 9 (A2)**, not at the end.
 - **A human speaking partner or tutor from about week 10** (2–3 × 30 min/week). Speaking can't be self-graded reliably.
 - Progress check every 2 weeks. Full timed mocks in the final 6 weeks.
-- **Deadlines as reminders:** 23 Nov 2026 (English test check), 8 Feb 2027 (email AF Lagos), 15 Mar 2027 (book attempt 1), 3 May 2027 (retake decision), exam day.
+- **Deadlines as reminders:** 8 Feb 2027 (email AF Lagos), 15 Mar 2027 (book attempt 1), 3 May 2027 (retake decision), exam day.
 - **The plan adapts:** if hours or scores lag, rebalance the coming weeks toward the **weakest skill**. Say plainly whether the June date is at risk, and by how many hours or points.
 
 ## Step 3: Build the app
@@ -98,7 +98,7 @@ Why: no server to maintain, works offline during power cuts or with no data, fas
 - Test the main flows before saying it's done.
 
 ## Out of scope (but flagged)
-- Express Entry eligibility itself (work experience, education assessment) and the **English test (CLB 5+) needed for the +50 CRS bonus**. Sort these separately, ideally with a licensed consultant (RCIC).
+- Express Entry eligibility itself (work experience, education assessment). This app is TCF only.
 
 ## How to work with me
 - Build in stages. After each one, show me what works and let me try it:

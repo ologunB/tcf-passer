@@ -4,6 +4,7 @@ import { exportAll, importAll, setSetting } from "../db";
 import { useExamDate, useSetting } from "../hooks";
 import { fmtDay } from "../lib/dates";
 import { examEvent, plan } from "../lib/plan";
+import { frenchVoices, speak, ttsAvailable } from "../lib/tts";
 
 export type Theme = "system" | "light" | "dark";
 
@@ -12,10 +13,15 @@ export function SettingsPage({ today }: { today: string }) {
   const theme = useSetting<Theme>("theme", "system");
   const lastExport = useSetting<string | null>("lastExport", null);
   const [msg, setMsg] = useState<{ kind: "ok" | "bad"; text: string } | null>(null);
+  const apiKey = useSetting<string>("anthropicKey", "");
+  const perDay = useSetting<number>("newPerDay", 20);
+  const autoSpeak = useSetting<boolean>("autoSpeak", true);
+  const [keyDraft, setKeyDraft] = useState<string | null>(null);
+  const [withAudio, setWithAudio] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
 
   const doExport = async () => {
-    const data = await exportAll();
+    const data = await exportAll({ includeAudio: withAudio });
     const name = `tcf-passer-backup-${today}.json`;
     const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
     const file = new File([blob], name, { type: "application/json" });
@@ -98,6 +104,47 @@ export function SettingsPage({ today }: { today: string }) {
         </div>
       )}
 
+      <label className="row small" style={{ gap: 8, margin: "-4px 4px 0" }}>
+        <input type="checkbox" checked={withAudio} onChange={(e) => setWithAudio(e.target.checked)} /> Include voice recordings in the backup (much bigger file)
+      </label>
+
+      <div className="list-label">Study</div>
+      <div className="list">
+        <div className="list-row">
+          <span className="ico"><Icon name="vocabulary" size={17} /></span>
+          <span className="txt"><b>New flashcards a day</b><span>The plan assumes 20. Lower it if reviews pile up.</span></span>
+          <div className="stepper" style={{ gap: 6 }}>
+            <button onClick={() => setSetting("newPerDay", Math.max(5, perDay - 5))} aria-label="Fewer new cards" style={{ width: 36, height: 36 }}>−</button>
+            <output className="num" style={{ fontSize: "1.3rem", minWidth: 36 }}>{perDay}</output>
+            <button onClick={() => setSetting("newPerDay", Math.min(50, perDay + 5))} aria-label="More new cards" style={{ width: 36, height: 36 }}>+</button>
+          </div>
+        </div>
+        <label className="list-row">
+          <span className="ico"><Icon name="listening" size={17} /></span>
+          <span className="txt"><b>Say each flashcard aloud</b><span>Uses your phone's French voice</span></span>
+          <input type="checkbox" checked={autoSpeak} onChange={(e) => setSetting("autoSpeak", e.target.checked)} />
+        </label>
+        <button className="list-row" onClick={() => speak("Bonjour ! Je m'appelle Claire. Bonne chance pour votre examen du TCF Canada.")}>
+          <span className="ico"><Icon name="play" size={15} /></span>
+          <span className="txt">
+            <b>Test the French voice</b>
+            <span>{!ttsAvailable() ? "This browser has no speech support." : frenchVoices().length ? `Using ${frenchVoices()[0].name}. For a better voice, add a French voice in your phone's accessibility settings (spoken content).` : "No French voice found. Add one in your phone's accessibility settings (spoken content), then reopen the app."}</span>
+          </span>
+        </button>
+      </div>
+
+      <div className="list-label">AI grading (optional)</div>
+      <section className="card" style={{ display: "grid", gap: 10 }}>
+        <p className="small" style={{ margin: 0 }}>
+          Paste an Anthropic API key to get examiner-style feedback on your writing and speaking (Claude Opus 5). The key is stored <b>only on this device</b>: it's never in backups, never in the code, and only sent to Anthropic. Without a key, you score yourself with the rubric. Get a key at <a href="https://console.anthropic.com/" target="_blank" rel="noreferrer">console.anthropic.com</a>. Each grading costs a few cents.
+        </p>
+        <input type="password" autoComplete="off" spellCheck={false} placeholder="sk-ant-…" value={keyDraft ?? (apiKey ? "••••••••••••" + apiKey.slice(-4) : "")} onFocus={() => keyDraft === null && setKeyDraft("")} onChange={(e) => setKeyDraft(e.target.value)} aria-label="Anthropic API key" />
+        <div className="btns" style={{ display: "flex", gap: 8 }}>
+          <button className="btn primary" disabled={!keyDraft?.trim()} onClick={() => { setSetting("anthropicKey", keyDraft!.trim()); setKeyDraft(null); setMsg({ kind: "ok", text: "API key saved on this device." }); }}>Save key</button>
+          {apiKey && <button className="btn ghost danger" onClick={() => { setSetting("anthropicKey", ""); setKeyDraft(null); }}>Remove</button>}
+        </div>
+      </section>
+
       <div className="list-label">Appearance</div>
       <div className="seg" role="group" aria-label="Theme">
         {([["system", "phone", "Auto"], ["light", "sun", "Light"], ["dark", "moon", "Dark"]] as const).map(([t, icon, name]) => (
@@ -110,7 +157,7 @@ export function SettingsPage({ today }: { today: string }) {
       <div className="list-label">About</div>
       <section className="card">
         <p className="small" style={{ margin: 0 }}>
-          Build stage 2 of 6: dashboard, daily tasks, timer and logging. Coming next: flashcards and grammar drills, then TCF practice and the placement test, writing and speaking, then full mock exams and analytics.
+          All six stages are built: plan and dashboard; flashcards and grammar; TCF practice, placement and progress checks; writing and speaking; mock exams and analytics. Study content lives in plain JSON files, so more can be added any time.
         </p>
         <p className="muted tiny" style={{ margin: "8px 0 0" }}>
           Everything is stored on this device only, and it works offline. To install: Safari → Share → Add to Home Screen, or Chrome → ⋮ → Install app.

@@ -3,8 +3,14 @@
 A personal TCF Canada prep app: A0 → NCLC 7 in all four skills, for the Express Entry French-language category.
 Mobile-first, works offline, and all data stays on your device.
 
-**Build stage 2 of 6:** dashboard, daily tasks and logging, plan browser, resources, backup.
-Still to come: 3. flashcards and grammar · 4. TCF practice and placement test · 5. writing and speaking · 6. mock exams and analytics.
+**All six build stages are done:**
+
+1. Research and the 37-week plan.
+2. Dashboard, daily tasks with rollover, study timer and logging.
+3. Flashcards (FSRS spaced repetition with French audio), grammar and verb drills, and the mistake bank.
+4. TCF-style listening and reading practice, the placement test and a progress check every 2 weeks.
+5. Writing tasks with word limits, and speaking recordings with the real timers. Both have a self-assessment rubric and optional AI grading.
+6. The full mock exam, level-over-time analytics, a weekly review, and a plan that adapts to your weakest skill.
 
 ## Run it
 
@@ -39,9 +45,29 @@ node scripts/e2e.mjs                       # real browser on a phone-sized scree
 
 ## Change the plan or add content
 
-- **Plan:** edit the phases, weekly topics or day templates in `scripts/generate-plan.mjs`, then run `npm run plan`. Your ticked tasks are kept, because task IDs are `date-template`.
-- **Resources:** add an entry to `data/resources.json` with `id, name, url, skills, levels, paid, type, status, use`. To use it in the plan, put its `id` in a task's `resources` list.
-- Flashcard decks and practice questions will also be plain JSON files in `data/` (stages 3–4).
+All content is plain JSON in `data/`. Add a file or entry, then rebuild; nothing else is needed.
+
+| Content | File(s) | Shape |
+|---|---|---|
+| Flashcard decks | `data/decks/*.json` | `{ id, title, week, level, cards: [[fr, en, example?], …] }`. Decks unlock at their plan `week`. |
+| Grammar drills | `data/grammar.json` | `{ id, week, topic, type: "choice" \| "type", q, options?, answer, accept?, explain }` |
+| Verb drills | `src/lib/conjugation.ts` (`VERBS`) | Add a verb with its present forms, participle and auxiliary |
+| Listening / reading | `data/tcf/*.json` (any file with "listening" in the name counts as listening) | `{ id, level: A1–C2, audio (script, "A:"/"B:" lines = two voices) or text, q, options[4], answer, explain? }`. Add `audioUrl` to use a real recording. |
+| Writing / speaking prompts | `data/prompts/writing.json`, `data/prompts/speaking.json` | See existing entries |
+| The plan | `scripts/generate-plan.mjs`, then `npm run plan` | Ticked tasks are kept: task IDs are `date-template`. |
+| Resources | `data/resources.json` | `id, name, url, skills, levels, paid, type, status, use`. Reference an `id` from a plan task's `resources`. |
+
+All exam items are original, not copied from official tests. For official-style extra practice, use the free TV5Monde TCF simulator (linked in the app).
+
+## AI grading (optional)
+
+Settings → AI grading → paste an Anthropic API key. It's stored only in this browser: never in backups, never in the repo, and only sent to Anthropic. Writing and speaking are graded by Claude Opus 5 against the TCF 0–20 grid, with server-side fallbacks enabled. Speaking is graded from the transcript, so it can't judge pronunciation. Without a key, you score yourself with the rubric.
+
+## How scores are estimated
+
+- **Listening and reading:** questions are ordered A1 → C2. Each level adds up to 100 points in proportion to accuracy above chance (25%), so harder questions count more. That gives 100–699, which maps to NCLC through IRCC's table. A short set only proves the levels it asked, so the official-style estimates come from progress checks and mocks.
+- **Writing and speaking:** each rubric criterion is rated A1–C2 and averaged onto the TCF 0–20 scale (A1 ≈ 2, A2 ≈ 5, B1 ≈ 8, B2 ≈ 11.5, C1 ≈ 14.5, C2 ≈ 18). If you use AI grading, its score is used instead.
+- **"Would I pass today?"** means your latest estimate is NCLC 7 or above in all four skills. The app aims for 8 as a margin.
 
 ## Rules the app follows
 
