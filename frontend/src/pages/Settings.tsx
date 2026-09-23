@@ -154,7 +154,7 @@ export function SettingsPage({ today }: { today: string }) {
             The strictest grading (Claude Opus 5). It costs a few cents per grade on your own Anthropic account: get a key at <a href="https://console.anthropic.com/" target="_blank" rel="noreferrer">console.anthropic.com</a>.
           </p>
         )}
-        <input type="password" autoComplete="off" spellCheck={false} placeholder={provider === "gemini" ? "Gemini API key (AIza…)" : "sk-ant-…"} value={keyDraft ?? (apiKey ? "••••••••••••" + apiKey.slice(-4) : "")} onFocus={() => keyDraft === null && setKeyDraft("")} onChange={(e) => setKeyDraft(e.target.value)} aria-label={`${provider === "gemini" ? "Gemini" : "Anthropic"} API key`} />
+        <input type="password" autoComplete="off" spellCheck={false} placeholder={provider === "gemini" ? "Gemini API key" : "sk-ant-…"} value={keyDraft ?? (apiKey ? "••••••••••••" + apiKey.slice(-4) : "")} onFocus={() => keyDraft === null && setKeyDraft("")} onChange={(e) => setKeyDraft(e.target.value)} aria-label={`${provider === "gemini" ? "Gemini" : "Anthropic"} API key`} />
         <div className="btns" style={{ display: "flex", gap: 8 }}>
           <button className="btn primary" disabled={!keyDraft?.trim()} onClick={() => { setSetting(keyName, keyDraft!.trim()); setSetting("aiProvider", provider); setKeyDraft(null); setMsg({ kind: "ok", text: "API key saved on this device." }); }}>Save key</button>
           {apiKey && <button className="btn ghost danger" onClick={() => { setSetting(keyName, ""); setKeyDraft(null); }}>Remove</button>}

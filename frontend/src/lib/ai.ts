@@ -7,7 +7,8 @@ import { cefrFrom20 } from "./scoring";
 
 export const MODEL = "claude-opus-5";
 // Gemini free tier: best current Flash model first, lighter model if it's unavailable or rate-limited.
-export const GEMINI_MODELS = ["gemini-3.8-flash", "gemini-3.5-flash-lite"] as const;
+// Verified against the live models list (Sep 2026); "gemini-flash-latest" is Google's rolling alias as a last resort.
+export const GEMINI_MODELS = ["gemini-3.8-flash", "gemini-3.5-flash-lite", "gemini-flash-latest"] as const;
 export type Provider = "gemini" | "claude";
 
 export interface AiFeedback {
@@ -191,7 +192,7 @@ ${JSON.stringify(FEEDBACK_SCHEMA)}`;
 
 interface GeminiResponse {
   promptFeedback?: { blockReason?: string };
-  candidates?: { finishReason?: string; content?: { parts?: { text?: string }[] } }[];
+  candidates?: { finishReason?: string; content?: { parts?: { text?: string; thought?: boolean }[] } }[];
   error?: { code?: number; message?: string; status?: string };
 }
 
@@ -201,7 +202,8 @@ export function geminiText(r: GeminiResponse): string {
   if (!c) throw new Error("Gemini sent no feedback. Try again.");
   if (c.finishReason === "MAX_TOKENS") throw new Error("The AI's feedback was cut off. Try again.");
   if (c.finishReason && c.finishReason !== "STOP") throw new Error("Gemini declined to grade this answer. Try the self-assessment instead.");
-  const text = (c.content?.parts ?? []).map((p) => p.text ?? "").join("").trim();
+  // Skip thought-summary parts; the answer is in the regular text parts.
+  const text = (c.content?.parts ?? []).filter((p) => !p.thought).map((p) => p.text ?? "").join("").trim();
   if (!text) throw new Error("Gemini sent no feedback. Try again.");
   return text.replace(/^```(?:json)?\s*|\s*```$/g, "");
 }

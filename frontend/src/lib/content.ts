@@ -126,3 +126,34 @@ export const SPEAKING_TASKS = {
 } as const;
 
 export const countWords = (t: string) => (t.trim().match(/[\p{L}\p{N}]+(?:[’'-][\p{L}\p{N}]+)*/gu) ?? []).length;
+
+// ---------- model answers & phrase bank (optional files) ----------
+
+export interface ModelAnswer {
+  text: string;
+  notes: string[];
+}
+export interface PhraseGroup {
+  id: string;
+  title: string;
+  use: string;
+  phrases: [fr: string, en: string][];
+}
+const modelFiles = import.meta.glob<{ default: { models: Record<string, ModelAnswer> } }>("../../data/models.json", { eager: true });
+export const modelAnswers: Record<string, ModelAnswer> = Object.values(modelFiles)[0]?.default.models ?? {};
+const phraseFiles = import.meta.glob<{ default: { groups: PhraseGroup[] } }>("../../data/phrases.json", { eager: true });
+export const phraseGroups: PhraseGroup[] = Object.values(phraseFiles)[0]?.default.groups ?? [];
+
+// ---------- dictation ----------
+
+/** Sentences to dictate: flashcard examples from unlocked weeks, plus short single-voice listening scripts. */
+export function dictationPool(week: number): { id: string; fr: string; en?: string; level: string }[] {
+  const fromCards = allCards
+    .filter((c) => c.ex && c.week <= Math.max(1, week))
+    .map((c) => ({ id: `ex:${c.id}`, fr: c.ex!, en: c.en, level: c.week <= 7 ? "A1" : c.week <= 12 ? "A2" : c.week <= 22 ? "B1" : "B2" }));
+  const levels = week <= 7 ? ["A1"] : week <= 12 ? ["A1", "A2"] : week <= 22 ? ["A2", "B1"] : ["B1", "B2"];
+  const fromTcf = tcfItems
+    .filter((i) => i.skill === "listening" && i.audio && !/^[AB]:/m.test(i.audio) && levels.includes(i.level))
+    .flatMap((i) => i.audio!.split(/(?<=[.!?])\s+/).filter((s) => s.split(" ").length >= 5 && s.split(" ").length <= 18).map((s, k) => ({ id: `tcf:${i.id}:${k}`, fr: s, level: i.level })));
+  return [...fromCards, ...fromTcf];
+}

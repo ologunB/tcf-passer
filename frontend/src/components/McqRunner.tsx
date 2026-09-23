@@ -32,6 +32,7 @@ export function McqRunner({ items, mode, deadline, onFinish, initialAnswers, onP
   const [playing, setPlaying] = useState(false);
   const [plays, setPlays] = useState(0);
   const [now, setNow] = useState(Date.now());
+  const [slow, setSlow] = useState(false);
   const finished = useRef(false);
   const audioRef = useRef<HTMLAudioElement>(null);
 
@@ -73,7 +74,7 @@ export function McqRunner({ items, mode, deadline, onFinish, initialAnswers, onP
       audioRef.current.currentTime = 0;
       await audioRef.current.play().catch(() => undefined);
       await new Promise<void>((r) => audioRef.current!.addEventListener("ended", () => r(), { once: true }));
-    } else await speak(item.audio!, { rate: rateForLevel(item.level) });
+    } else await speak(item.audio!, { rate: rateForLevel(item.level) * (slow && mode === "practice" ? 0.78 : 1) });
     setPlaying(false);
   };
 
@@ -143,6 +144,12 @@ export function McqRunner({ items, mode, deadline, onFinish, initialAnswers, onP
           <div className="small muted" style={{ textAlign: "center" }}>
             {playing ? "Listening…" : mode === "exam" ? (plays ? "Played. In the real exam you hear it once." : "Plays automatically, once.") : plays ? `Played ${plays}× · tap to replay` : "Tap to listen"}
           </div>
+          {mode === "practice" && !item.audioUrl && (
+            <div className="seg" style={{ width: "100%", maxWidth: 240 }} role="group" aria-label="Speed">
+              <button aria-pressed={!slow} onClick={() => setSlow(false)}>Exam speed</button>
+              <button aria-pressed={slow} onClick={() => setSlow(true)}>Slower</button>
+            </div>
+          )}
           {!ttsAvailable() && !item.audioUrl && <div className="notice warn small"><Icon name="alert" size={16} /> This browser has no French voice. Read the script instead: « {item.audio} »</div>}
           {mode === "practice" && revealed && item.audio && (
             <details className="small">

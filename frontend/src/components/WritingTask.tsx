@@ -5,6 +5,7 @@ import { asFeedback, gradeWriting, hasApiKey } from "../lib/ai";
 import { countWords, WRITING_TASKS, writingPrompts, type WritingPrompt } from "../lib/content";
 import { nclcFor, rubricTo20 } from "../lib/scoring";
 import { fmtClock } from "../timer";
+import { ModelAnswer } from "./ModelAnswer";
 import { Icon } from "./Icon";
 import { Feedback, Rubric, ScoreLine, WRITING_CRITERIA } from "./Rubric";
 import "../pages/writing-speaking.css";
@@ -113,7 +114,10 @@ export function WritingTask({ prompt, context, today, deadline, showTimer = true
     return (
       <div className="ws-task">
         {assess ? (
-          <WritingAssessment id={savedId} prompt={prompt} today={today} />
+          <>
+            <WritingAssessment id={savedId} prompt={prompt} today={today} />
+            <ModelAnswer promptId={prompt.id} />
+          </>
         ) : (
           <div className="notice"><Icon name="check" size={18} /><span>Task {prompt.task} handed in · {words} words.</span></div>
         )}

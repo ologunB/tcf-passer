@@ -2,11 +2,13 @@ import { useEffect } from "react";
 import { Icon } from "./components/Icon";
 import { useSetting, useToday } from "./hooks";
 import { CheckPage } from "./pages/Check";
+import { DictationPage } from "./pages/Dictation";
 import { FlashcardsPage } from "./pages/Flashcards";
 import { GrammarPage } from "./pages/Grammar";
 import { LogPage } from "./pages/Log";
 import { MistakesPage } from "./pages/Mistakes";
 import { MockPage } from "./pages/Mock";
+import { PhrasesPage } from "./pages/Phrases";
 import { PlanPage } from "./pages/Plan";
 import { PracticePage } from "./pages/Practice";
 import { ResourcesPage } from "./pages/Resources";
@@ -20,7 +22,7 @@ import { useRoute } from "./router";
 
 const tabs = [
   { route: "", label: "Today", icon: "home", match: [""] },
-  { route: "study", label: "Study", icon: "reading", match: ["study", "cards", "grammar", "practice", "check", "writing", "speaking", "mistakes", "mock", "resources"] },
+  { route: "study", label: "Study", icon: "reading", match: ["study", "cards", "grammar", "practice", "check", "writing", "speaking", "mistakes", "mock", "resources", "dictation", "phrases"] },
   { route: "plan", label: "Plan", icon: "calendar", match: ["plan"] },
   { route: "log", label: "Progress", icon: "chart", match: ["log", "review"] },
   { route: "settings", label: "Settings", icon: "settings", match: ["settings"] },
@@ -52,6 +54,8 @@ export function App() {
     writing: () => <WritingPage today={today} />,
     speaking: () => <SpeakingPage today={today} />,
     mock: () => <MockPage today={today} />,
+    dictation: () => <DictationPage today={today} />,
+    phrases: () => <PhrasesPage today={today} />,
   };
   const page = (pages[route.name] ?? (() => <Today today={today} />))();
   // Focused flows hide the tab bar so a stray tap can't leave a timed test.

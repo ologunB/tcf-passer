@@ -30,6 +30,8 @@ export function StudyPage({ today }: { today: string }) {
     { href: "#/practice?skill=reading", skill: "reading", icon: "reading", title: "Reading", sub: "TCF-style, A1 → C2" },
     { href: "#/writing", skill: "writing", icon: "writing", title: "Writing", sub: stats?.writings ? `${stats.writings} written so far` : "3 real task types, word limits" },
     { href: "#/speaking", skill: "speaking", icon: "speaking", title: "Speaking", sub: stats?.recordings ? `${stats.recordings} recordings` : "Record yourself, real timers" },
+    { href: "#/dictation", skill: "listening", icon: "writing", title: "Dictation", sub: "Hear it, type it: catch every word" },
+    { href: "#/phrases", skill: "writing", icon: "note", title: "Phrase bank", sub: "Openers, connectors, opinions, polite questions" },
   ];
 
   return (
@@ -77,7 +79,7 @@ export function StudyPage({ today }: { today: string }) {
         </a>
         <a className="hub-tile wide" data-skill="planning" href="#/resources">
           <span className="skill-badge" style={{ width: 38, height: 38 }}><Icon name="library" size={19} /></span>
-          <span style={{ display: "grid", gap: 2 }}><b>Resources</b><small>46 researched sites, podcasts and tutors</small></span>
+          <span style={{ display: "grid", gap: 2 }}><b>Resources</b><small>Researched sites, podcasts, simulators and tutors</small></span>
           <Icon name="chevronR" size={18} />
         </a>
       </div>

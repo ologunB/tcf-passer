@@ -504,3 +504,19 @@ details summary { cursor: pointer; color: var(--brand); font-weight: 600; }
 .answer-input.wrong { outline: 2px solid var(--bad); }
 button.hub-tile { font: inherit; cursor: pointer; text-align: left; }
 button.hub-tile:disabled { opacity: 0.55; cursor: default; }
+
+/* ---------- dictation ---------- */
+.dict { display: flex; flex-wrap: wrap; gap: 6px; font-size: 1.1rem; line-height: 1.5; }
+.dict-w { padding: 1px 7px; border-radius: 8px; font-weight: 550; }
+.dict-w.ok { background: color-mix(in srgb, var(--good) 14%, transparent); color: var(--good); }
+.dict-w.accent { background: color-mix(in srgb, var(--warn) 16%, transparent); color: var(--warn); }
+.dict-w.wrong, .dict-w.missing { background: color-mix(in srgb, var(--bad) 13%, transparent); color: var(--bad); }
+.dict-w.missing { text-decoration: underline dotted; }
+textarea.answer-input { min-height: 90px; }
+
+/* ---------- phrase bank / models ---------- */
+.phrase { display: grid; grid-template-columns: 34px 1fr; gap: 10px; align-items: start; padding: 10px 14px; }
+.phrase + .phrase { border-top: 1px solid var(--line); }
+.phrase .fr { font-weight: 550; }
+.phrase .en { color: var(--muted); font-size: 0.85rem; }
+.model-text { white-space: pre-line; line-height: 1.6; font-size: 0.98rem; }

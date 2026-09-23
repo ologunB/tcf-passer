@@ -10,7 +10,8 @@ const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, de
 const page = await ctx.newPage();
 const errors = [];
 page.on("pageerror", (e) => errors.push(e.message));
-page.on("console", (m) => m.type() === "error" && errors.push(m.text()));
+// Gemini 429/503s are handled by the app's model fallback, so the browser's network log for them isn't an error.
+page.on("console", (m) => m.type() === "error" && !m.location().url.includes("generativelanguage.googleapis.com") && errors.push(m.text()));
 const ok = (cond, msg) => { if (!cond) throw new Error("FAIL: " + msg + (errors.length ? "\nPage errors: " + errors.join(" | ") : "")); console.log("✓", msg); };
 process.on("unhandledRejection", (e) => { console.error(String(e).slice(0, 400), "\nPage errors:", errors.join(" | ")); process.exit(1); });
 const shot = async (n, full = true) => { await page.waitForTimeout(500); return page.screenshot({ path: `${OUT}/${n}.png`, fullPage: full }); };
@@ -225,6 +226,31 @@ await page.getByRole("heading", { name: "Your level" }).waitFor({ timeout: 8000 
   throw e;
 });
 ok(await page.locator(".skill-tile .val.untested").count() === 0, "placement fills in all four skill levels on Today");
+
+// 16. Optional: real AI grading through the Writing screen (only when GEMINI_KEY is set; the key is never stored in the repo)
+if (process.env.GEMINI_KEY) {
+  await page.evaluate((key) => new Promise((r) => {
+    const q = indexedDB.open("tcf-passer");
+    q.onsuccess = () => {
+      const tx = q.result.transaction("settings", "readwrite");
+      tx.objectStore("settings").put({ key: "geminiKey", value: key });
+      tx.objectStore("settings").put({ key: "aiProvider", value: "gemini" });
+      tx.oncomplete = r;
+    };
+  }), process.env.GEMINI_KEY);
+  await page.goto(`${BASE}/?today=2026-09-30#/writing?prompt=W1-01`);
+  await page.locator("textarea").first().fill(
+    "Salut Marie, je t'invite à dîner chez moi samedi soir à dix-neuf heures. J'habite au 25 rue Saint-Denis, au troisième étage. Je vais préparer du poulet avec du riz et une salade, et pour le dessert un gâteau au chocolat. Tu peux venir avec ton frère si tu veux. Est-ce que tu manges de la viande ? Dis-moi si tu es libre. À samedi, j'espère ! Bisous, Tope",
+  );
+  await page.getByRole("button", { name: /^Submit/ }).click();
+  await page.getByRole("button", { name: /Grade with AI/ }).click();
+  const outcome = await Promise.race([
+    page.getByText(/\/\s?20/).first().waitFor({ timeout: 120_000 }).then(() => "graded"),
+    page.locator(".notice.bad").first().waitFor({ timeout: 120_000 }).then(async () => `error: ${await page.locator(".notice.bad").first().innerText()}`),
+  ]);
+  await shot("17-ai-graded");
+  ok(outcome === "graded", `real Gemini grading works (${outcome})`);
+}
 
 ok(errors.length === 0, `no console errors${errors.length ? ": " + errors.join(" | ") : ""}`);
 await browser.close();

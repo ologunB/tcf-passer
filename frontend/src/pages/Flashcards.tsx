@@ -2,7 +2,7 @@ import { useLiveQuery } from "dexie-react-hooks";
 import { useEffect, useMemo, useState } from "react";
 import { Icon } from "../components/Icon";
 import { Sheet } from "../components/Sheet";
-import { db, type CardState } from "../db";
+import { db, setSetting, type CardState } from "../db";
 import { useSetting } from "../hooks";
 import { cardById, decks, type Flashcard } from "../lib/content";
 import { logStudy } from "../lib/logStudy";
@@ -19,6 +19,8 @@ export function FlashcardsPage({ today }: { today: string }) {
   const [session, setSession] = useState<{ start: number; reviewed: number } | null>(null);
   const [browse, setBrowse] = useState<string | null>(null);
   const [logged, setLogged] = useState("");
+  const dir = useSetting<"fr-en" | "en-fr">("cardDir", "fr-en");
+  const rev = dir === "en-fr";
   const week = today < plan.start ? 1 : (findWeek(plan, today)?.week ?? 1);
 
   // Learning steps are minutes long, so re-check what's due every 15 s.
@@ -27,19 +29,30 @@ export function FlashcardsPage({ today }: { today: string }) {
     return () => clearInterval(t);
   }, []);
 
+  // Reverse (EN → FR) cards have their own schedule under `${id}#r`, and only unlock once the word
+  // has been reviewed at least twice French → English.
   const q = useMemo(() => {
     if (!states) return null;
-    const started = new Set(states.map((s) => s.id));
-    const newToday = states.filter((s) => s.introducedOn === today).length;
-    const due = states.filter((s) => s.due <= now).sort((a, b) => a.due - b.due);
-    const fresh = nextNewCards(started, week, Math.max(0, perDay - newToday));
-    const later = states.filter((s) => s.due > now).sort((a, b) => a.due - b.due)[0];
-    return { due, fresh, newToday, later, learned: states.length };
-  }, [states, now, today, week, perDay]);
+    const mine = states.filter((s) => s.id.endsWith("#r") === rev);
+    const started = new Set(mine.map((s) => s.id.replace(/#r$/, "")));
+    const newToday = mine.filter((s) => s.introducedOn === today).length;
+    const due = mine.filter((s) => s.due <= now).sort((a, b) => a.due - b.due);
+    const limit = Math.max(0, (rev ? Math.ceil(perDay / 2) : perDay) - newToday);
+    const fresh = rev
+      ? states
+          .filter((s) => !s.id.endsWith("#r") && Number((s.fsrs as { reps?: number }).reps ?? 0) >= 2 && !started.has(s.id))
+          .slice(0, limit)
+          .map((s) => cardById.get(s.id)!)
+          .filter(Boolean)
+      : nextNewCards(started, week, limit);
+    const later = mine.filter((s) => s.due > now).sort((a, b) => a.due - b.due)[0];
+    const reversible = states.filter((s) => !s.id.endsWith("#r") && Number((s.fsrs as { reps?: number }).reps ?? 0) >= 2).length;
+    return { due, fresh, newToday, later, learned: states.filter((s) => !s.id.endsWith("#r")).length, reversible };
+  }, [states, now, today, week, perDay, rev]);
 
   const current: { card: Flashcard; state?: CardState } | null = q
     ? q.due[0]
-      ? { card: cardById.get(q.due[0].id)!, state: q.due[0] }
+      ? { card: cardById.get(q.due[0].id.replace(/#r$/, ""))!, state: q.due[0] }
       : q.fresh[0]
         ? { card: q.fresh[0] }
         : null
@@ -47,17 +60,18 @@ export function FlashcardsPage({ today }: { today: string }) {
 
   useEffect(() => {
     setRevealed(false);
-    if (current && session && autoSpeak) speak(current.card.fr, { rate: 0.85 });
+    if (current && session && autoSpeak && !rev) speak(current.card.fr, { rate: 0.85 });
     return () => stop();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [current?.card.id, !!session]);
 
   if (!q) return null;
-  const pv = current ? previews(current.state ?? newState(current.card, today)) : null;
+  const fresh = (c: Flashcard) => (rev ? { ...newState(c, today), id: `${c.id}#r` } : newState(c, today));
+  const pv = current ? previews(current.state ?? fresh(current.card)) : null;
 
   const grade = async (g: Grade) => {
     if (!current) return;
-    const base = current.state ?? newState(current.card, today);
+    const base = current.state ?? fresh(current.card);
     await db.cards.put(review(base, g));
     setSession((s) => s && { ...s, reviewed: s.reviewed + 1 });
     setNow(Date.now());
@@ -72,7 +86,7 @@ export function FlashcardsPage({ today }: { today: string }) {
   };
 
   const deck = decks.find((d) => d.id === browse);
-  const learnedIn = (id: string) => (states ?? []).filter((s) => s.deck === id).length;
+  const learnedIn = (id: string) => (states ?? []).filter((s) => s.deck === id && !s.id.endsWith("#r")).length;
 
   if (session) {
     return (
@@ -86,15 +100,19 @@ export function FlashcardsPage({ today }: { today: string }) {
         </header>
         {current ? (
           <>
-            <div className="flash" onClick={() => setRevealed(true)}>
+            <div className="flash" onClick={() => { if (!revealed && rev) speak(current.card.fr, { rate: 0.85 }); setRevealed(true); }}>
               <button className="icon-btn speak" onClick={(e) => { e.stopPropagation(); speak(current.card.fr, { rate: 0.85 }); }} aria-label="Hear it">
                 <Icon name="listening" size={18} />
               </button>
               {!current.state && <span className="tag brand" style={{ justifySelf: "center" }}>New</span>}
-              <div className="flash-fr" lang="fr">{current.card.fr}</div>
+              {rev ? (
+                <div className="flash-fr">{current.card.en}</div>
+              ) : (
+                <div className="flash-fr" lang="fr">{current.card.fr}</div>
+              )}
               {revealed ? (
                 <>
-                  <div className="flash-en">{current.card.en}</div>
+                  {rev ? <div className="flash-en" lang="fr">{current.card.fr}</div> : <div className="flash-en">{current.card.en}</div>}
                   {current.card.ex && (
                     <button className="flash-ex" style={{ all: "unset", cursor: "pointer" }} lang="fr" onClick={(e) => { e.stopPropagation(); speak(current.card.ex!, { rate: 0.9 }); }}>
                       « {current.card.ex} » <Icon name="listening" size={13} />
@@ -102,7 +120,7 @@ export function FlashcardsPage({ today }: { today: string }) {
                   )}
                 </>
               ) : (
-                <div className="muted small">Say what it means, then tap to check</div>
+                <div className="muted small">{rev ? "Say it in French out loud, then tap to check" : "Say what it means, then tap to check"}</div>
               )}
             </div>
             {revealed ? (
@@ -113,7 +131,7 @@ export function FlashcardsPage({ today }: { today: string }) {
                 <button className="easy" onClick={() => grade(Rating.Easy)}>Easy<small>{pv![Rating.Easy]}</small></button>
               </div>
             ) : (
-              <button className="btn dark lg block" onClick={() => setRevealed(true)}>Show answer</button>
+              <button className="btn dark lg block" onClick={() => { if (rev) speak(current.card.fr, { rate: 0.85 }); setRevealed(true); }}>Show answer</button>
             )}
             <p className="muted tiny" style={{ textAlign: "center", margin: 0 }}>
               Again if you didn't know it · Good if you did · Easy if it was instant
@@ -142,8 +160,17 @@ export function FlashcardsPage({ today }: { today: string }) {
         </div>
       </header>
       {logged && <div className="notice"><Icon name="check" size={18} /><span>{logged}</span></div>}
+      <div className="seg" role="group" aria-label="Direction">
+        <button aria-pressed={!rev} onClick={() => setSetting("cardDir", "fr-en")}>French → English</button>
+        <button aria-pressed={rev} onClick={() => setSetting("cardDir", "en-fr")}>English → French</button>
+      </div>
+      {rev && (
+        <p className="muted tiny" style={{ margin: "-4px 4px 0" }}>
+          Production practice: you see English and say the French. Words join here after 2 reviews the other way ({q.reversible} ready). This is what makes vocabulary usable in writing and speaking.
+        </p>
+      )}
       <section className="focus" data-skill="vocabulary">
-        <div className="focus-label">Today</div>
+        <div className="focus-label">Today · {rev ? "English → French" : "French → English"}</div>
         <div className="focus-title num">{q.due.length} to review · {q.fresh.length} new</div>
         <div className="focus-meta">
           Spaced repetition (FSRS): each word comes back just before you'd forget it. New today: {q.newToday}/{perDay}.

@@ -6,6 +6,7 @@ import { countWords, SPEAKING_TASKS, speakingPrompts, type SpeakingPrompt } from
 import { nclcFor, rubricTo20 } from "../lib/scoring";
 import { rateForLevel, speak, stop as stopTts, ttsAvailable } from "../lib/tts";
 import { fmtClock } from "../timer";
+import { ModelAnswer } from "./ModelAnswer";
 import { Icon } from "./Icon";
 import { Ring } from "./Ring";
 import { Feedback, Rubric, ScoreLine, SPEAKING_CRITERIA } from "./Rubric";
@@ -234,7 +235,10 @@ export function SpeakingTask({ prompt, context, today, examMode = false, onSaved
 
   if (phase === "saved" && savedId != null) {
     return assess ? (
-      <SpeakingAssessment id={savedId} prompt={prompt} today={today} />
+      <>
+        <SpeakingAssessment id={savedId} prompt={prompt} today={today} />
+        <ModelAnswer promptId={prompt.id} spoken />
+      </>
     ) : (
       <div className="notice"><Icon name="check" size={18} /><span>Task {prompt.task} recorded · {fmtClock(duration.current * 1000)}.</span></div>
     );
