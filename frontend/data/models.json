@@ -1,0 +1,770 @@
+{
+  "note": "Model answers at a solid, achievable B2 (about 12/20 — above the NCLC 7 target of 10/20). Writing models respect the official word limits (words counted as space-separated tokens, punctuation excluded). Speaking models show one good way to answer, not a script to memorise: borrow the structure and phrases, and use your own real details.",
+  "models": {
+    "W1-01": {
+      "text": "Salut Chloé,\n\nComment vas-tu ? Je t'écris pour t'inviter à dîner chez moi samedi prochain, le 14 juin, vers 19 h. J'ai enfin fini de décorer mon nouvel appartement et j'aimerais fêter ça avec quelques amis.\n\nJ'habite au 245, rue Saint-Denis, appartement 3. La station de métro Sherbrooke est juste à côté.\n\nJe vais préparer un plat de mon pays : du riz jollof avec du poulet grillé et des bananes plantains frites. Ne t'inquiète pas, ce ne sera pas trop épicé ! Pour le dessert, je m'occupe de tout.\n\nSi tu veux, tu peux apporter quelque chose à boire. Réponds-moi avant jeudi, s'il te plaît.\n\nÀ samedi, j'espère !\nAde",
+      "notes": [
+        "Covers all four required points: date, time, address and menu",
+        "Informal register throughout: tu, « Salut », « À samedi »",
+        "Accurate future proche (je vais préparer) and imperatives (Réponds-moi, Ne t'inquiète pas)",
+        "Ends with a clear request (reply before Thursday), which makes the message purposeful"
+      ]
+    },
+    "W1-02": {
+      "text": "Salut Karim,\n\nJ'ai une bonne nouvelle : j'ai enfin déménagé ! Mon nouvel appartement est un 4 et demie, donc j'ai deux chambres, un salon, une cuisine et une salle de bain. Il se trouve dans le quartier Rosemont, à Montréal.\n\nCe que j'aime le plus, c'est la lumière : il y a de grandes fenêtres partout. Le quartier est calme, et il y a un parc et une épicerie à deux minutes à pied.\n\nPar contre, la cuisine est un peu petite et il n'y a pas d'ascenseur. Avec les sacs d'épicerie, monter au troisième étage, c'est du sport !\n\nViens le voir quand tu veux.\n\nBises,\nAde",
+      "notes": [
+        "Answers every point: number of rooms, neighbourhood, likes and dislikes",
+        "« Ce que j'aime le plus, c'est… » and « Par contre… » organise the likes/dislikes clearly",
+        "Canadian touch: « un 4 et demie » is how Quebecers describe a two-bedroom flat",
+        "A light joke and an invitation make the message natural and personal"
+      ]
+    },
+    "W1-03": {
+      "text": "Bonjour Julie,\n\nJe suis désolé, mais je ne pourrai pas venir au bureau demain. Mon fils a de la fièvre depuis hier soir et je dois l'emmener chez le médecin. Je pense revenir jeudi matin, si tout va bien.\n\nJ'ai un service à te demander : pourrais-tu présenter le rapport mensuel à la réunion de 10 h à ma place ? Le document est prêt, il se trouve dans notre dossier partagé, sous le nom « Rapport septembre ». Les chiffres importants sont à la page 3.\n\nMerci beaucoup pour ton aide, je te revaudrai ça ! N'hésite pas à m'écrire si tu as une question.\n\nAde",
+      "notes": [
+        "Gives the reason, the return date and the task to cover — all three points",
+        "Tu is normal between colleagues in Canada; the polite conditional « pourrais-tu » softens the request",
+        "Practical details (where the file is, which page) show the task is fully handled",
+        "Futur simple (je ne pourrai pas) and idiomatic thanks (je te revaudrai ça)"
+      ]
+    },
+    "W1-04": {
+      "text": "Salut tout le monde !\n\nQu'est-ce que vous diriez d'une journée de randonnée au parc national du Mont-Tremblant samedi prochain ? Je propose de partir à 8 h devant la station de métro Jean-Talon. On peut prendre ma voiture et celle de Marc.\n\nL'entrée du parc coûte environ 10 $ par personne et on partagera l'essence, donc comptez à peu près 25 $ au total.\n\nN'oubliez pas d'apporter de bonnes chaussures, une bouteille d'eau, un pique-nique et un imperméable, car la météo peut changer vite en montagne.\n\nDites-moi avant mercredi qui est partant, pour que je puisse organiser les voitures.\n\nÀ bientôt !\nAde",
+      "notes": [
+        "All required details: activity, place, time, cost and what to bring",
+        "Vous plural for a group of friends, with friendly formulas (Salut tout le monde, partant)",
+        "Suggestion formula « Qu'est-ce que vous diriez de… ? » and « pour que + subjonctif »",
+        "Cause connector « car » justifies the advice about the raincoat"
+      ]
+    },
+    "W1-05": {
+      "text": "Objet : Annulation de mon rendez-vous du mardi 12 mars\n\nMadame, Monsieur,\n\nJ'ai un rendez-vous avec la Dre Tremblay le mardi 12 mars à 14 h pour un nettoyage. Malheureusement, je dois l'annuler, car mon employeur m'a inscrit à une formation obligatoire ce jour-là.\n\nJe voudrais donc fixer un nouveau rendez-vous. Je suis disponible le jeudi 14 mars toute la journée ou le lundi 18 mars après 16 h. Si ces dates ne conviennent pas, je peux aussi venir un samedi matin.\n\nJe vous prie de m'excuser pour ce changement et je vous remercie de votre compréhension.\n\nCordialement,\nAde Okafor\n514 555-0123",
+      "notes": [
+        "Formal email conventions: subject line, « Madame, Monsieur », « Cordialement » and a signature",
+        "Identifies the appointment precisely before cancelling it",
+        "Gives a reason and proposes several concrete alternative dates",
+        "Polite formulas (Je vous prie de m'excuser, je vous remercie de votre compréhension)"
+      ]
+    },
+    "W1-06": {
+      "text": "Salut Fatou,\n\nTu veux apprendre le français ? Super idée ! Moi, je suis des cours dans une école de langues à Victoria Island depuis un mois et j'en suis très content.\n\nLes cours ont lieu le mardi et le jeudi de 18 h à 20 h, donc c'est pratique quand on travaille. Notre professeure est patiente et dynamique : elle nous fait beaucoup parler et elle corrige nos erreurs avec gentillesse. Une session de dix semaines coûte environ 120 000 nairas, livre compris.\n\nÀ mon avis, c'est un peu cher, mais la qualité est excellente et les groupes sont petits. Je te la recommande vraiment !\n\nSi tu veux, viens avec moi jeudi pour voir.\n\nÀ plus,\nAde",
+      "notes": [
+        "Covers schedule, teacher, price and gives a clear opinion",
+        "Opinion with nuance: « c'est un peu cher, mais… »",
+        "Pronoun use at B2 level: « j'en suis content », « je te la recommande »",
+        "Ends with a concrete invitation, making the message interactive"
+      ]
+    },
+    "W1-07": {
+      "text": "Salut Sophie,\n\nJe suis très content que tu viennes samedi ! Voici comment venir chez moi depuis la gare.\n\nÀ la sortie de la gare, prends l'autobus 24 en direction est. L'arrêt est juste en face, à côté d'une pharmacie. Descends à l'arrêt « Parc La Fontaine ». Le trajet dure environ vingt minutes.\n\nEnsuite, traverse le parc et tourne à droite après la grande église grise. J'habite dans la troisième maison à gauche, celle avec la porte rouge, au numéro 18.\n\nSi tu te perds, appelle-moi au 514 555-0147. Je peux aussi venir te chercher à l'arrêt.\n\nÀ samedi !\nAde",
+      "notes": [
+        "Gives transport, journey time and landmarks, as the task requires",
+        "Imperatives in the tu form (prends, descends, traverse, tourne) — the natural way to give directions",
+        "Sequencing words (À la sortie, Ensuite) make the route easy to follow",
+        "« Je suis content que tu viennes » — subjunctive after an emotion"
+      ]
+    },
+    "W1-08": {
+      "text": "Salut Tunde,\n\nTu cherches un nouveau téléphone ? Justement, j'en ai acheté un la semaine dernière ! C'est un modèle Android de milieu de gamme, avec un grand écran et une batterie qui dure presque deux jours.\n\nJe l'ai acheté dans un magasin d'électronique au centre commercial, près de chez moi. Le vendeur était très patient : il m'a tout expliqué et il a transféré mes contacts gratuitement. Je l'ai payé 450 $, avec une garantie de deux ans.\n\nJe te le recommande sans hésiter : il est rapide et les photos sont superbes. Le seul défaut, c'est qu'il est un peu lourd.\n\nSi tu veux, je te le montre ce week-end.\n\nÀ plus !\nAde",
+      "notes": [
+        "Describes the phone, the shop and the price, then gives a recommendation",
+        "Balanced judgement: strengths plus « Le seul défaut, c'est que… »",
+        "Accurate pronouns with passé composé (Je l'ai acheté, Je l'ai payé) and double pronoun (je te le recommande)",
+        "Relative clause « une batterie qui dure » adds precise detail"
+      ]
+    },
+    "W1-09": {
+      "text": "Coucou Émilie,\n\nJ'ai une merveilleuse nouvelle : je suis tonton ! Ma sœur a eu un petit garçon le 3 mai. Il s'appelle Tobi et il pèse 3,4 kilos. La maman et le bébé vont très bien.\n\nChez nous, on célèbre la naissance avec une grande fête pour donner officiellement son nom au bébé. Elle aura lieu samedi prochain chez mes parents. Toute la famille va venir : on va prier, chanter et danser, et ma mère va préparer beaucoup de plats traditionnels.\n\nTu me manques beaucoup ! Je t'enverrai des photos de la fête.\n\nGros bisous,\nAde",
+      "notes": [
+        "Gives the baby's name, date of birth and describes the celebration",
+        "Warm informal register (Coucou, Tu me manques, Gros bisous)",
+        "Mix of tenses: passé composé for the birth, futur proche and futur simple for the party",
+        "A cultural detail (the naming ceremony) explained simply for a foreign reader"
+      ]
+    },
+    "W1-10": {
+      "text": "Chers voisins, chères voisines,\n\nLe comité de quartier organise une journée de nettoyage du parc des Érables le samedi 20 septembre, de 9 h à midi. Le rendez-vous est à l'entrée principale du parc, rue Laurier.\n\nNotre but est simple : ramasser les déchets, nettoyer l'aire de jeux et planter des fleurs, pour que nos enfants profitent d'un parc propre et agréable. C'est aussi une belle occasion de faire connaissance entre voisins !\n\nMerci d'apporter des gants de jardinage et une bouteille d'eau. Les sacs et les outils seront fournis. Un dîner sera offert à tous les participants.\n\nNous comptons sur vous !\n\nLe comité de quartier",
+      "notes": [
+        "Covers purpose, date, place and what to bring",
+        "Collective vous and a formal-but-friendly opening (Chers voisins, chères voisines)",
+        "Passive voice (seront fournis, sera offert) suits an official notice",
+        "Canadian usage: « dîner » means lunch in Quebec"
+      ]
+    },
+    "W1-11": {
+      "text": "Salut Chinedu,\n\nFélicitations pour ton départ ! Voici quelques conseils pour tes premières semaines au Canada.\n\nD'abord, pour le logement, loue une chambre ou un appartement meublé pour un mois : tu auras le temps de visiter des quartiers avant de signer un bail.\n\nEnsuite, n'achète pas tous tes vêtements d'hiver à Lagos. Ici, les manteaux sont mieux adaptés au froid.\n\nPour les transports, prends une carte mensuelle : le métro et l'autobus sont pratiques.\n\nEnfin, fais vite tes démarches : numéro d'assurance sociale, carte d'assurance maladie et compte bancaire.\n\nBon courage, et appelle-moi dès que tu arrives !\nAde",
+      "notes": [
+        "One paragraph per required topic: housing, clothes, transport, paperwork",
+        "Ordering connectors (D'abord, Ensuite, Enfin) give a clear structure",
+        "Advice through imperatives, each followed by a short reason",
+        "Real Canadian vocabulary: bail, numéro d'assurance sociale, carte d'assurance maladie"
+      ]
+    },
+    "W1-12": {
+      "text": "Chers locataires,\n\nÀ partir du 1er octobre, de nouvelles règles de tri des déchets s'appliquent dans notre immeuble.\n\nLes ordures sont ramassées le lundi et le recyclage le jeudi. Merci de sortir vos bacs la veille, après 19 h.\n\nIl y a maintenant trois bacs : le bac bleu pour le papier, le carton, le verre et le plastique ; le bac brun pour les restes de nourriture ; et le bac noir pour tout le reste.\n\nAttention : il ne faut pas mettre de sacs en plastique dans le bac bleu, ni laisser de meubles ou d'appareils électroniques dans le local à déchets.\n\nMerci de votre collaboration !\n\nAde Okafor, responsable de l'immeuble",
+      "notes": [
+        "Covers collection days, the different bins and what not to do",
+        "Formal collective register (Chers locataires, Merci de…, Merci de votre collaboration)",
+        "Clear layout: one paragraph per type of information",
+        "Negative instructions with « il ne faut pas… ni… » used correctly"
+      ]
+    },
+    "W1-13": {
+      "text": "Salut Kevin,\n\nJ'ai besoin de ton aide ! Depuis hier, mon ordinateur portable ne fonctionne plus. Il s'allume, mais l'écran reste noir, et il fait un bruit bizarre au bout de quelques minutes.\n\nJ'ai déjà essayé plusieurs choses : je l'ai redémarré plusieurs fois, j'ai débranché le chargeur et j'ai même regardé des vidéos sur Internet, mais rien n'a marché.\n\nComme tu t'y connais en informatique, est-ce que tu pourrais y jeter un coup d'œil ? Je dois absolument récupérer des documents pour mon travail. Tu serais libre samedi après-midi ? Je t'invite à manger une pizza pour te remercier !\n\nMerci d'avance,\nAde",
+      "notes": [
+        "Describes the problem, what was tried, and proposes a time to meet",
+        "Passé composé list of attempts, closed with « mais rien n'a marché »",
+        "Polite request in the conditional (est-ce que tu pourrais…, Tu serais libre…)",
+        "Idiomatic B2 expressions: s'y connaître en, jeter un coup d'œil"
+      ]
+    },
+    "W2-01": {
+      "text": "Chers amis de Surulere,\n\nMe voici enfin à Montréal ! Je voulais vous raconter ma première semaine.\n\nCe qui m'a le plus surpris, c'est le calme : dans le métro, les gens parlent doucement et personne ne klaxonne. J'ai aussi été étonné par la diversité : mes voisins viennent d'Haïti, du Vietnam et du Maroc.\n\nPar contre, les premiers jours ont été difficiles. J'ai dû remplir beaucoup de formulaires et, comme les Québécois parlent vite, j'ai souvent demandé aux gens de répéter. Et le froid ! En octobre, il faisait déjà cinq degrés le matin.\n\nHeureusement, j'ai aussi vécu de beaux moments. Samedi, je me suis promené sur le mont Royal et j'ai goûté ma première poutine. Délicieux, mais très lourd !\n\nFinalement, je crois que je vais me plaire ici. Mais vous me manquez déjà !",
+      "notes": [
+        "Follows the three required angles in order: surprises, difficulties, what I liked",
+        "Passé composé for events, imparfait for description (il faisait déjà cinq degrés) — accurate and controlled",
+        "Connectors signal each part: Ce qui m'a le plus surpris, Par contre, Heureusement, Finalement",
+        "Ends with a personal comment, which task 2 expects after the narration"
+      ]
+    },
+    "W2-02": {
+      "text": "Lundi dernier, j'ai commencé mon nouveau poste d'analyste financier dans une entreprise de Montréal. J'étais stressé en arrivant, mais l'accueil a été chaleureux : ma responsable m'a présenté à toute l'équipe et un collègue m'a invité à dîner avec lui.\n\nLe matin, j'ai reçu mon ordinateur et j'ai suivi une formation sur les logiciels de l'entreprise. L'après-midi, j'ai participé à ma première réunion. Honnêtement, je n'ai pas tout compris, car mes collègues utilisaient beaucoup d'expressions québécoises !\n\nCe qui m'a plu, c'est l'ambiance détendue : tout le monde se tutoie, même la directrice. En revanche, la journée m'a paru longue, avec beaucoup d'informations à retenir. Le soir, je suis rentré fatigué, mais content.\n\nEn somme, je suis satisfait de ce poste. Les tâches sont intéressantes et je sens que je vais beaucoup apprendre.",
+      "notes": [
+        "Covers welcome, tasks, likes/dislikes and overall impressions",
+        "Correct mix of imparfait (J'étais stressé, utilisaient) and passé composé (j'ai reçu, j'ai participé)",
+        "Time markers structure the day: Lundi dernier, Le matin, L'après-midi",
+        "Balanced impressions with « Ce qui m'a plu, c'est… » / « En revanche » and a conclusion (En somme)"
+      ]
+    },
+    "W2-03": {
+      "text": "Il y a trois ans, je suis allé au Ghana avec deux amis pour Noël. Nous avons pris l'autobus de Lagos jusqu'à Accra : douze heures de route et trois frontières à traverser !\n\nÀ Accra, nous avons visité le musée national et nous sommes allés à la plage. Le soir, nous mangions du poisson grillé au bord de la mer. Ensuite, nous avons passé deux jours à Cape Coast, où nous avons découvert le château des esclaves. Cette visite m'a beaucoup ému.\n\nLe dernier jour, j'ai perdu mon portefeuille au marché. Heureusement, une commerçante l'a retrouvé et elle a refusé toute récompense.\n\nCe voyage m'a appris deux choses : l'histoire de l'Afrique de l'Ouest est aussi mon histoire, et la générosité existe partout. Depuis, je voyage avec plus de curiosité et de confiance.",
+      "notes": [
+        "Includes every element asked: where, what we did, an incident, what the trip brought me",
+        "Passé composé with être and avoir (je suis allé, nous avons pris), plus imparfait for a habit (nous mangions)",
+        "Relative pronoun « où » and connectors (Ensuite, Heureusement) make the story flow",
+        "Final paragraph reflects on the experience — the « comment » part that lifts the mark"
+      ]
+    },
+    "W2-04": {
+      "text": "L'hiver dernier, le chauffage de mon appartement est tombé en panne en plein janvier. Il faisait moins vingt dehors et à peine quinze degrés dans mon salon ! Pendant trois nuits, j'ai dormi avec deux couvertures et mon manteau.\n\nJ'ai d'abord appelé mon propriétaire, mais il n'a pas répondu. Le lendemain, je lui ai envoyé un courriel avec des photos du thermomètre. Comme rien ne changeait, je me suis renseigné auprès du Tribunal administratif du logement. J'ai appris que le propriétaire est obligé de fournir un chauffage suffisant.\n\nJe lui ai donc envoyé une lettre officielle. Deux jours plus tard, un technicien est venu réparer l'appareil.\n\nMes conseils : gardez toujours une trace écrite de vos échanges, prenez des photos et informez-vous sur vos droits. Restez poli, mais ferme : c'est souvent la meilleure façon d'obtenir une solution rapide.",
+      "notes": [
+        "Tells the problem, the steps taken and how it was solved, then gives advice",
+        "Chronological markers (d'abord, Le lendemain, Deux jours plus tard) show control of narration",
+        "Imperatives addressed to readers (gardez, prenez, restez) fit a forum post",
+        "Canadian context: Tribunal administratif du logement is Quebec's housing tribunal"
+      ]
+    },
+    "W2-05": {
+      "text": "Il y a six mois, mon médecin m'a dit que je devais bouger davantage. J'ai donc pris une décision simple : descendre de l'autobus deux arrêts plus tôt et marcher trente minutes chaque matin.\n\nAu début, ce n'était vraiment pas facile. Je devais me lever plus tôt et, quand il pleuvait, j'avais envie d'abandonner. En hiver, j'ai dû acheter de bonnes bottes et un manteau chaud.\n\nPourtant, les résultats sont vite arrivés. J'ai perdu cinq kilos, je dors mieux et j'arrive au bureau plus calme et plus concentré. Mes collègues ont même remarqué la différence.\n\nChers collègues, je vous encourage à essayer, même une fois par semaine pour commencer. Vous verrez, on se sent tout de suite mieux. Et si vous voulez de la compagnie, écrivez-moi : on pourrait marcher ensemble !",
+      "notes": [
+        "Narrates the change, the difficulties and the results, then encourages colleagues",
+        "Imparfait for repeated past difficulties (je devais, quand il pleuvait) vs passé composé for events",
+        "« Pourtant » marks the turning point from difficulties to results",
+        "Direct address to readers (Chers collègues, Vous verrez) suits a company newsletter"
+      ]
+    },
+    "W2-06": {
+      "text": "Le mois dernier, j'ai passé quatre samedis comme bénévole dans une banque alimentaire de mon quartier. Mon rôle consistait à trier les dons, préparer des paniers et les distribuer aux familles.\n\nLe premier jour, j'ai été surpris par le nombre de personnes qui attendaient : des étudiants, des personnes âgées, mais aussi des parents qui travaillent. Une dame m'a remercié en me disant que, grâce à nous, ses enfants mangeraient bien toute la semaine. Je n'oublierai jamais ce moment.\n\nSelon moi, le bénévolat est important pour deux raisons. D'abord, il répond à des besoins réels que l'État ne peut pas toujours satisfaire. Ensuite, il crée des liens entre des gens qui ne se seraient jamais rencontrés. Donner quelques heures, c'est peu, mais cela change des vies.",
+      "notes": [
+        "Short narration with a vivid moment, then a clearly announced opinion (Selon moi… pour deux raisons)",
+        "Two reasons introduced with D'abord / Ensuite",
+        "B2 structures used naturally: gérondif (en me disant), conditionnel in reported speech (mangeraient)",
+        "Memorable final sentence sums up the argument"
+      ]
+    },
+    "W2-07": {
+      "text": "Quand je suis entré au secondaire, je détestais les mathématiques. J'avais de mauvaises notes et je pensais que je n'étais pas fait pour ça.\n\nEn deuxième année, j'ai eu Mme Adeyemi comme professeure. Un jour, après un examen raté, elle m'a demandé de rester après le cours. Au lieu de me critiquer, elle m'a expliqué mes erreurs une par une et m'a proposé des séances de soutien le samedi.\n\nPendant six mois, j'ai travaillé avec elle. Petit à petit, j'ai repris confiance et mes notes ont beaucoup augmenté. Plus tard, j'ai même choisi d'étudier la comptabilité !\n\nMme Adeyemi m'a appris que l'échec n'est pas une fatalité : avec du travail et de la patience, on peut progresser dans n'importe quel domaine. Aujourd'hui encore, je pense souvent à elle.",
+      "notes": [
+        "Clear before / meeting / after structure, as the contest asks",
+        "Imparfait for the background situation, passé composé for the key events",
+        "« Au lieu de + infinitif » and « Petit à petit » show B2 range",
+        "Ends with what the teacher taught — the lesson the prompt explicitly asks for"
+      ]
+    },
+    "W2-08": {
+      "text": "Le 5 novembre, j'ai commandé une paire de bottes d'hiver sur ce site. Le prix était intéressant et la livraison était annoncée en cinq jours ouvrables.\n\nDeux semaines plus tard, je n'avais toujours rien reçu, alors que le suivi indiquait « colis livré ». J'ai écrit au service client : pas de réponse. J'ai ensuite essayé le clavardage, mais on m'a simplement demandé d'attendre encore dix jours.\n\nFinalement, j'ai été remboursé, mais seulement parce que j'avais contacté ma banque pour contester le paiement. Entre-temps, j'avais dû acheter d'autres bottes en magasin, plus chères. Sans bottes, je ne pouvais pas sortir avec mes enfants dans la neige.\n\nJe ne recommande pas ce site. Les produits sont peut-être bons, mais un service client qui ne répond pas, c'est inacceptable. Achetez plutôt chez un commerçant qui assume ses responsabilités.",
+      "notes": [
+        "Tells what happened, how customer service reacted, and gives a clear recommendation",
+        "Plus-que-parfait (n'avais reçu, avais contacté, avais dû) to show what happened earlier — a B2 marker",
+        "Opposition with « alors que » and « mais seulement parce que »",
+        "Canadian vocabulary: « clavardage » (online chat)"
+      ]
+    },
+    "W2-09": {
+      "text": "La semaine dernière, j'ai tenté une expérience : laisser mon téléphone dans un tiroir pendant sept jours.\n\nLes deux premiers jours ont été vraiment difficiles. Je cherchais mon téléphone toutes les dix minutes et, sans GPS, je me suis perdu en allant chez un ami !\n\nPourtant, à partir du troisième jour, j'ai découvert des choses. J'ai lu un roman en entier, j'ai mieux dormi et j'ai eu de vraies conversations au souper avec ma famille. J'ai aussi remarqué que, dans l'autobus, presque tout le monde regardait son écran.\n\nÀ mon avis, nous sommes devenus trop dépendants de nos téléphones. Il ne s'agit pas de les abandonner, car ils sont très utiles, mais nous devrions apprendre à les éteindre de temps en temps. Essayez, ne serait-ce qu'une journée !",
+      "notes": [
+        "Covers what was difficult, what was discovered, and gives an opinion on screen dependency",
+        "Opinion is nuanced: « Il ne s'agit pas de…, mais… »",
+        "Gérondif (en allant) and conditionnel (nous devrions) for advice",
+        "Canadian usage: « souper » = dinner"
+      ]
+    },
+    "W2-10": {
+      "text": "Madame, Monsieur,\n\nJe voudrais raconter la journée du 15 janvier, quand une tempête de neige a paralysé notre quartier.\n\nCe matin-là, j'attendais l'autobus 55. Après quarante minutes dans le froid, j'ai appris qu'il avait été annulé. Le métro, lui, fonctionnait au ralenti. Sur le quai, il y avait tellement de monde qu'on ne pouvait pas entrer dans les wagons. Finalement, j'ai partagé un taxi avec deux voisins. Je suis arrivé au bureau avec deux heures de retard, mais au moins, j'ai fait de nouvelles connaissances !\n\nCette journée m'a montré que notre réseau n'est pas assez préparé aux tempêtes. Je propose donc trois améliorations : informer les usagers plus rapidement par texto, déneiger en priorité les arrêts d'autobus et installer des abris chauffés aux arrêts les plus fréquentés.\n\nJe vous remercie de publier mon témoignage.\n\nAde Okafor, résident du quartier",
+      "notes": [
+        "Letter format to a newspaper: formal greeting, thanks and signature",
+        "Narrates how I coped, then moves to concrete proposals as required",
+        "Plus-que-parfait passive (il avait été annulé) and a touch of humour",
+        "« Je propose donc trois améliorations : … » announces and lists the suggestions clearly"
+      ]
+    },
+    "W2-11": {
+      "text": "Depuis le printemps, notre quartier a un jardin communautaire, installé sur un ancien terrain vague derrière l'école. Chaque famille inscrite reçoit un petit lot pour cultiver ses légumes, et un bac de compost est partagé par tous.\n\nJ'y suis allé pour la première fois en mai. Je ne connaissais rien au jardinage, mais une voisine retraitée m'a montré comment planter des tomates et des piments. Tout l'été, j'y suis passé deux fois par semaine, et en août, j'ai récolté assez de légumes pour en donner à mes collègues !\n\nÀ mon avis, ce projet est très utile. D'une part, il permet de manger des produits frais et locaux. D'autre part, il crée des liens : j'ai rencontré plus de voisins en trois mois qu'en deux ans. J'espère que la ville soutiendra d'autres initiatives de ce genre.",
+      "notes": [
+        "Three parts matching the prompt: present the project, my participation, my opinion",
+        "Pronouns y and en used correctly (J'y suis allé, pour en donner)",
+        "D'une part / D'autre part organise the two benefits",
+        "Comparison « plus de voisins en trois mois qu'en deux ans » gives a concrete, persuasive example"
+      ]
+    },
+    "W2-12": {
+      "text": "Dans ma culture yoruba, au Nigeria, l'une des fêtes les plus importantes est le mariage traditionnel. L'année dernière, j'ai assisté à celui de mon cousin à Ibadan.\n\nLa cérémonie a commencé le matin : la famille du marié s'est présentée devant celle de la mariée pour demander officiellement sa main. Il y avait de la musique, des danses et des centaines d'invités, tous habillés dans le même tissu. La fête a duré jusqu'à minuit !\n\nAu Canada, d'après ce que j'ai observé, les mariages sont souvent plus petits et plus intimes, avec une centaine d'invités au maximum. Ils sont aussi plus organisés : chaque invité a sa place et le programme est très précis.\n\nPersonnellement, j'apprécie les deux styles : chez nous, on célèbre la communauté ; ici, on célèbre surtout le couple.",
+      "notes": [
+        "Tells a specific family celebration, then compares it with Canada as required",
+        "Comparatives (plus petits, plus intimes, plus organisés) are the core of the comparison",
+        "Demonstrative pronouns (celui de, celle de) avoid repetition — a B2 feature",
+        "Balanced personal conclusion with a neat parallel structure"
+      ]
+    },
+    "W2-13": {
+      "text": "J'ai commencé le français il y a deux ans, à Lagos, parce que je voulais immigrer au Canada. Au début, j'étais très motivé, mais j'ai vite découvert que ce n'était pas facile.\n\nMa plus grande difficulté a été la compréhension orale : les francophones parlent vite et avalent certaines syllabes ! La grammaire m'a aussi posé problème, surtout le subjonctif et les pronoms « y » et « en ».\n\nPourtant, j'ai fait de grands progrès. J'ai suivi des cours du soir, j'ai écouté des balados dans les embouteillages et j'ai trouvé un partenaire d'échange en ligne. Aujourd'hui, je peux tenir une conversation d'une demi-heure.\n\nMes conseils aux futurs apprenants : étudiez un peu chaque jour plutôt que beaucoup une fois par semaine, n'ayez pas peur de faire des erreurs et parlez dès que possible.",
+      "notes": [
+        "Follows the prompt: beginnings, difficulties, progress, advice",
+        "Specific difficulties and specific strategies make the text credible",
+        "« Pourtant » turns the text from problems to progress",
+        "Advice in the vous imperative, including the irregular « n'ayez pas peur »"
+      ]
+    },
+    "W3-01": {
+      "text": "Le télétravail divise l'opinion. D'un côté, le premier document affirme qu'il représente une libération : les employés ne perdent plus de temps dans les transports, ils concilient mieux travail et famille, et les entreprises réduisent leurs coûts. De l'autre, le second document souligne ses dangers : l'isolement, la perte de l'esprit d'équipe et la disparition de la frontière entre vie professionnelle et vie privée.\n\nÀ mon avis, le télétravail est positif, à condition de ne pas en abuser. En effet, à Lagos, je passais parfois trois heures par jour dans les embouteillages. Travailler de chez moi deux jours par semaine m'a permis de gagner du temps et d'être plus efficace.\n\nCependant, je reconnais que le contact avec les collègues est essentiel, surtout pour les nouveaux employés.\n\nC'est pourquoi la meilleure solution me semble être un modèle hybride : deux ou trois jours au bureau et le reste à la maison. Ainsi, on profite des avantages des deux systèmes.",
+      "notes": [
+        "Summarises both documents neutrally, in its own words, before giving an opinion",
+        "Clear position with a condition (à condition de…) supported by a personal example",
+        "Concession (Cependant, je reconnais que…) shows B2-level nuance",
+        "Conclusion proposes a practical compromise rather than repeating the opinion"
+      ]
+    },
+    "W3-02": {
+      "text": "L'interdiction du plastique à usage unique fait débat. Selon le premier document, cette mesure est indispensable, car des millions de tonnes de déchets polluent les océans chaque année, alors que des solutions de remplacement existent déjà. En revanche, le second document estime qu'elle pénalise les petits commerçants et que certains produits de remplacement polluent autant. Il propose plutôt d'améliorer le recyclage.\n\nPour ma part, je suis favorable à cette interdiction. Premièrement, le recyclage ne suffit pas : une grande partie du plastique n'est jamais recyclée. Deuxièmement, les habitudes changent vite. Au Canada, par exemple, la plupart des gens apportent aujourd'hui leurs propres sacs au supermarché sans difficulté.\n\nIl est vrai que les petits commerçants peuvent souffrir de cette mesure. C'est pourquoi le gouvernement devrait les aider pendant une période de transition.\n\nEn conclusion, protéger l'environnement a un prix, mais ne rien faire coûterait beaucoup plus cher aux générations futures.",
+      "notes": [
+        "Summarises both documents neutrally, in its own words, before giving an opinion",
+        "Two arguments signposted with Premièrement / Deuxièmement, each with a reason or example",
+        "Concession « Il est vrai que… » answered with a solution (help during a transition)",
+        "Strong closing sentence contrasting two costs (conditionnel: coûterait)"
+      ]
+    },
+    "W3-03": {
+      "text": "La place des réseaux sociaux dans la vie des adolescents inquiète beaucoup de parents. Le premier document les défend : ils permettent aux jeunes de s'exprimer, de garder le contact avec leurs amis et d'acquérir des compétences utiles. Le second document, au contraire, met en avant les risques : manque de sommeil, baisse des résultats, cyberharcèlement et fausses informations. Il recommande de limiter l'accès avant seize ans.\n\nPersonnellement, je partage en partie les deux opinions. Une interdiction totale serait inutile, car les adolescents trouveraient toujours un moyen de contourner la règle. En revanche, les parents doivent fixer des limites claires. Mon neveu de quatorze ans, par exemple, doit laisser son téléphone dans le salon après 21 h, et ses notes se sont nettement améliorées.\n\nEn somme, plutôt que d'interdire, il faut apprendre aux jeunes à utiliser les réseaux sociaux de manière responsable.",
+      "notes": [
+        "Summarises both documents neutrally, in its own words, before giving an opinion",
+        "A nuanced position (je partage en partie les deux opinions) is perfectly acceptable if justified",
+        "Hypothesis in the conditional (serait, trouveraient) to reject the ban",
+        "Concrete family example makes the argument convincing"
+      ]
+    },
+    "W3-04": {
+      "text": "La gratuité des transports en commun suscite un vif débat. Le premier document soutient qu'elle inciterait les habitants à laisser leur voiture, ce qui réduirait les embouteillages et la pollution. Elle permettrait aussi aux familles modestes de se déplacer librement. Le second document, lui, rappelle que ce sont les contribuables qui paieraient et que, sans investissements, le réseau serait vite saturé.\n\nSelon moi, la priorité doit être la qualité du service. En effet, si les autobus sont en retard ou bondés, les automobilistes ne changeront pas leurs habitudes, même si c'est gratuit. Quand je suis arrivé à Montréal, j'ai choisi le métro parce qu'il était rapide et fiable, pas pour son prix.\n\nCela dit, je comprends l'argument de l'égalité. On pourrait donc réserver la gratuité aux étudiants, aux personnes âgées et aux familles à faible revenu.\n\nPour conclure, un réseau efficace et accessible aux plus modestes vaut mieux qu'un réseau gratuit pour tous.",
+      "notes": [
+        "Summarises both documents neutrally, in its own words, before giving an opinion",
+        "Reports the documents' claims in the conditional (inciterait, réduirait) — natural for proposals",
+        "Takes a side (with document 2) and backs it with a personal experience",
+        "Concession « Cela dit » leads to a middle-ground proposal (free for some groups)"
+      ]
+    },
+    "W3-05": {
+      "text": "Faut-il acheter ou louer son logement ? D'après le premier document, acheter est un investissement : au lieu de payer un loyer, on rembourse un bien qui nous appartiendra, on peut l'aménager librement et, à la retraite, on n'a plus de loyer. Le second document défend au contraire la location, qui offre de la flexibilité et évite les réparations imprévues et les dettes à long terme. Selon lui, avec les prix actuels, acheter est devenu un piège.\n\nÀ mon avis, tout dépend de la situation de chacun. Pour un nouvel arrivant comme moi, louer est plus raisonnable : je ne sais pas encore dans quelle ville je trouverai un emploi stable, et je n'ai pas d'historique de crédit au Canada.\n\nToutefois, à long terme, je souhaite devenir propriétaire, car je veux laisser un patrimoine à mes enfants.\n\nEn conclusion, louer d'abord et acheter ensuite me semble être la stratégie la plus sage.",
+      "notes": [
+        "Summarises both documents neutrally, in its own words, before giving an opinion",
+        "Opens with a question that frames the debate — a simple, effective introduction",
+        "« Tout dépend de… » gives a nuanced opinion anchored in the writer's real situation",
+        "Toutefois introduces the long-term view, leading to a logical two-step conclusion"
+      ]
+    },
+    "W3-06": {
+      "text": "Les cours en ligne sont-ils l'avenir de l'éducation ? Le premier document les présente comme une révolution : on apprend à son rythme, de chez soi et à moindre coût, ce qui est idéal pour les adultes qui travaillent. Le second document affirme au contraire que rien ne remplace un vrai professeur : en ligne, beaucoup d'étudiants abandonnent, les échanges sont limités et tout le monde n'a pas un bon équipement.\n\nPour ma part, je crois que les deux formules sont complémentaires. J'ai commencé le français avec des applications, ce qui m'a permis d'étudier dans les embouteillages. Cependant, c'est en classe que j'ai vraiment progressé à l'oral, grâce aux corrections du professeur et aux discussions avec les autres élèves.\n\nIl faut reconnaître que les cours en ligne demandent beaucoup de discipline.\n\nPar conséquent, la meilleure solution est sans doute un enseignement hybride, qui combine la flexibilité du numérique et la richesse de la salle de classe.",
+      "notes": [
+        "Summarises both documents neutrally, in its own words, before giving an opinion",
+        "Opinion illustrated by the writer's own learning experience with both formats",
+        "Highlighting structure « c'est en classe que… » adds emphasis (B2 feature)",
+        "Cause and consequence connectors: ce qui m'a permis, grâce à, Par conséquent"
+      ]
+    },
+    "W3-07": {
+      "text": "Les nouveaux arrivants doivent-ils être obligés d'apprendre la langue ? Le premier document répond oui : sans la langue, il est difficile de trouver un emploi, d'aider ses enfants à l'école ou de participer à la vie du quartier. Le second document juge cette obligation injuste pour ceux qui travaillent beaucoup ou qui ont des enfants. Il préfère des cours gratuits et flexibles, et rappelle que l'intégration passe aussi par le travail.\n\nJe suis convaincu que la langue est essentielle, mais je suis contre l'obligation. Personnellement, j'apprends le français par choix, et c'est justement ma motivation qui me fait progresser. Une obligation risque de créer du stress plutôt que l'envie d'apprendre.\n\nDe plus, un parent qui travaille le soir ne peut pas assister à des cours à heures fixes. Des cours gratuits, en ligne ou le week-end, seraient donc beaucoup plus efficaces.\n\nEn bref, il vaut mieux encourager qu'imposer.",
+      "notes": [
+        "Summarises both documents neutrally, in its own words, before giving an opinion",
+        "Separates two ideas clearly: agrees on the importance of language, disagrees on the obligation",
+        "Personal motivation used as evidence, then a second argument introduced by « De plus »",
+        "Short, punchy conclusion (il vaut mieux encourager qu'imposer)"
+      ]
+    },
+    "W3-08": {
+      "text": "Faut-il taxer les boissons sucrées ? Selon le premier document, c'est une bonne idée, car l'obésité et le diabète coûtent très cher au système de santé, et une hausse des prix pousse les consommateurs, surtout les jeunes, vers des boissons plus saines. Le second document s'y oppose : cette taxe toucherait surtout les familles à faible revenu, et ce n'est pas à l'État de décider ce que nous buvons. Il privilégie l'éducation à la nutrition.\n\nÀ mon avis, cette taxe est utile, mais elle ne suffit pas. D'un côté, le prix influence vraiment nos choix : quand une boisson coûte plus cher, on en achète moins. De l'autre, je reconnais qu'elle pèse davantage sur les ménages modestes.\n\nC'est pourquoi l'argent récolté devrait financer des mesures concrètes, comme des fontaines d'eau dans les écoles ou des cours de nutrition gratuits.\n\nEn conclusion, la taxe et l'éducation ne s'opposent pas : elles devraient aller ensemble.",
+      "notes": [
+        "Summarises both documents neutrally, in its own words, before giving an opinion",
+        "« À mon avis, … utile, mais elle ne suffit pas » — a clear yet nuanced thesis",
+        "D'un côté / De l'autre weighs both sides inside the opinion paragraph",
+        "Conclusion reconciles the two documents, showing mature argumentation"
+      ]
+    },
+    "W3-09": {
+      "text": "Les achats en ligne menacent-ils nos quartiers ? Le premier document met en avant leurs avantages : c'est simple, rapide, souvent moins cher, et c'est un vrai service pour les personnes âgées ou isolées. Le second document, au contraire, estime que chaque achat en ligne fragilise les commerces de proximité, qui créent des emplois locaux et conseillent leurs clients. Il dénonce aussi la pollution des emballages et des livraisons.\n\nPersonnellement, j'achète en ligne, mais de façon raisonnable. Pour les livres ou l'électronique, Internet me permet de comparer les prix et de faire des économies. En revanche, pour la nourriture ou les vêtements, je préfère les petits commerces de mon quartier : le boulanger me connaît et me donne de bons conseils.\n\nJe reconnais toutefois que les commerçants locaux doivent aussi s'adapter, par exemple en proposant la vente en ligne.\n\nEn définitive, un équilibre entre les deux est possible, et c'est à chaque consommateur de le trouver.",
+      "notes": [
+        "Summarises both documents neutrally, in its own words, before giving an opinion",
+        "Opinion expressed through concrete personal habits (what I buy online vs locally)",
+        "En revanche contrasts the two uses clearly",
+        "Gérondif « en proposant » and a balanced conclusion with « En définitive »"
+      ]
+    },
+    "W3-10": {
+      "text": "Où doivent vivre nos parents âgés ? Le premier document défend la cohabitation entre générations : les grands-parents aident à garder les enfants, transmettent leurs traditions et ne souffrent pas de solitude. En outre, c'est économique. Le second document souligne que cette solution demande beaucoup de temps et d'énergie, et qu'elle crée des tensions. Selon lui, les résidences offrent des soins professionnels, et y installer ses parents, ce n'est pas les abandonner.\n\nDans ma culture nigériane, il est normal que les enfants s'occupent de leurs parents à la maison. J'ai grandi avec ma grand-mère, qui m'a transmis la langue yoruba et beaucoup d'histoires familiales. C'est pourquoi je suis plutôt favorable à la cohabitation.\n\nNéanmoins, certaines personnes âgées ont besoin de soins médicaux que la famille ne peut pas assurer. Dans ce cas, une résidence est un choix responsable.\n\nEn somme, la décision doit dépendre de la santé de la personne âgée et de ses propres souhaits.",
+      "notes": [
+        "Summarises both documents neutrally, in its own words, before giving an opinion",
+        "Cultural background used as a relevant argument, not just an anecdote",
+        "« Il est normal que + subjonctif » (s'occupent) and relative « qui » show B2 grammar",
+        "Néanmoins introduces a real limit, which makes the final position credible"
+      ]
+    },
+    "W3-11": {
+      "text": "Le bénévolat devrait-il être obligatoire à l'école ? Le premier document répond oui : quarante heures de bénévolat permettraient aux élèves de découvrir le monde associatif, de devenir plus responsables et d'acquérir une expérience utile pour leur premier emploi. Le second document considère qu'un bénévolat obligatoire perd son sens. Il rappelle que les élèves ont déjà beaucoup de devoirs et que certains travaillent pour aider leur famille.\n\nPour ma part, je suis plutôt favorable à cette obligation. Beaucoup de jeunes ne pensent pas au bénévolat simplement parce qu'ils ne le connaissent pas. Une fois sur le terrain, ils découvrent souvent qu'ils aiment aider. En Ontario, par exemple, les élèves doivent faire quarante heures de service communautaire, et beaucoup continuent ensuite.\n\nIl est vrai que certains élèves manquent de temps. Il faudrait donc proposer des horaires souples et des activités variées.\n\nEn conclusion, une petite obligation peut devenir un véritable engagement.",
+      "notes": [
+        "Summarises both documents neutrally, in its own words, before giving an opinion",
+        "Real Canadian example (Ontario's 40-hour requirement) strengthens the argument",
+        "Concession + solution pattern: Il est vrai que… Il faudrait donc…",
+        "Conclusion turns the key word « obligation » into « engagement » — a neat final idea"
+      ]
+    },
+    "W3-12": {
+      "text": "Le tourisme est-il une chance pour les communautés locales ? Le premier document insiste sur ses bienfaits : il fait vivre des régions entières, crée des emplois pour les jeunes et finance la préservation du patrimoine. Le second document dénonce au contraire le tourisme de masse, qui fait augmenter les loyers, envahit les rues, abîme l'environnement et pousse les habitants à quitter leur quartier.\n\nÀ mon avis, le tourisme est positif s'il est bien encadré. Au Nigeria comme au Canada, beaucoup de petites villes dépendent des visiteurs. Sans eux, de nombreux artisans et restaurateurs perdraient leur travail.\n\nCependant, je reconnais que les locations de courte durée posent un vrai problème. Dans certaines villes, il est devenu presque impossible de trouver un logement abordable. C'est pourquoi les municipalités doivent limiter ce type de location et répartir les touristes sur plusieurs sites.\n\nEn bref, il ne faut pas rejeter le tourisme, mais le rendre plus responsable.",
+      "notes": [
+        "Summarises both documents neutrally, in its own words, before giving an opinion",
+        "Conditional opinion (positif s'il est bien encadré) followed by a hypothesis (Sans eux, … perdraient)",
+        "Concession develops into concrete policy proposals",
+        "Final structure « il ne faut pas…, mais… » neatly sums up the position"
+      ]
+    },
+    "W3-13": {
+      "text": "La semaine de quatre jours est-elle une bonne idée ? Le premier document affirme qu'elle améliore la qualité de vie des employés, qui ont plus de temps pour leur famille et leurs loisirs. Les entreprises qui l'ont testée constatent que leurs salariés sont plus motivés et moins souvent malades. Le second document, lui, souligne qu'elle ne convient pas à tous les secteurs, comme les hôpitaux ou les écoles, et que des journées plus longues peuvent augmenter le stress.\n\nJe pense que cette organisation est intéressante, mais qu'elle ne peut pas être imposée partout. Dans un bureau, elle peut très bien fonctionner : une amie comptable travaille quatre jours par semaine et elle est beaucoup moins fatiguée qu'avant.\n\nEn revanche, pour une infirmière qui fait déjà des journées de douze heures, ce serait épuisant.\n\nPar conséquent, chaque secteur devrait pouvoir choisir le modèle qui lui convient, en consultant les employés.",
+      "notes": [
+        "Summarises both documents neutrally, in its own words, before giving an opinion",
+        "Two contrasting examples (an accountant vs a nurse) support a nuanced opinion",
+        "Passive « ne peut pas être imposée » and conditional « ce serait » used accurately",
+        "Par conséquent introduces a logical, practical conclusion"
+      ]
+    },
+    "S1-01": {
+      "text": "Bonjour ! Je m'appelle Ade, j'ai trente-quatre ans et je viens du Nigeria, plus précisément de Lagos, la plus grande ville du pays. Je suis marié et j'ai une fille de cinq ans.\n\nDans la vie, je suis comptable. Je travaille depuis huit ans dans une entreprise de télécommunications, où je m'occupe surtout des budgets et des rapports financiers. C'est un travail exigeant, mais j'aime beaucoup ça, parce que j'apprends toujours quelque chose de nouveau.\n\nPendant mon temps libre, je fais du jogging le samedi matin, quand il ne fait pas encore trop chaud. Je regarde aussi des matchs de football avec mes amis. Je suis un grand fan d'Arsenal ! Et depuis deux ans, le français occupe une bonne partie de mon temps libre : je suis des cours le soir et j'écoute des balados dans la voiture.\n\nPourquoi est-ce que je veux vivre au Canada ? Il y a plusieurs raisons. D'abord, pour ma carrière : le Canada recherche des professionnels qualifiés qui parlent français. Ensuite, pour ma famille : je voudrais que ma fille grandisse dans un pays sûr, avec un bon système scolaire. Enfin, j'aime l'idée de vivre dans un pays bilingue et multiculturel. Je sais que l'hiver sera difficile, mais je suis prêt à relever le défi !",
+      "notes": [
+        "Answers every question in order and adds a detail or reason to each (never just one word)",
+        "Uses « depuis + present » correctly for ongoing situations (Je travaille depuis huit ans)",
+        "Reasons for moving are organised with D'abord / Ensuite / Enfin — easy for the examiner to follow",
+        "Includes a subjunctive (je voudrais que ma fille grandisse) and a future (l'hiver sera) naturally"
+      ]
+    },
+    "S1-02": {
+      "text": "Alors, je viens d'une famille assez nombreuse : j'ai deux frères et une sœur, et je suis l'aîné. Mon frère cadet est ingénieur à Abuja, et ma sœur est infirmière au Royaume-Uni.\n\nOui, je suis marié depuis six ans. Ma femme est enseignante dans une école primaire, et nous avons deux enfants : un garçon de cinq ans et une petite fille de deux ans.\n\nMes parents habitent à Ibadan, à environ deux heures de Lagos. Mon père est retraité et ma mère tient encore un petit commerce de tissus. En ce moment, j'habite à Lagos avec ma femme et mes enfants, dans un appartement de trois chambres.\n\nLe week-end, on essaie de passer du temps ensemble. Le samedi, on fait les courses au marché et, le dimanche, après l'église, on dîne souvent chez mon oncle. Parfois, on emmène les enfants à la plage.\n\nLa personne la plus importante pour moi, c'est ma mère. Elle a beaucoup travaillé pour payer nos études, et elle m'a appris la patience et le courage.\n\nEst-ce que ma famille va venir avec moi au Canada ? Oui, c'est tout le projet ! Ma femme et mes enfants vont m'accompagner. Ce sera difficile pour mes parents, mais on se parlera par vidéo et j'espère qu'ils pourront nous rendre visite.",
+      "notes": [
+        "Covers all seven questions, each with at least one extra detail (job, place, age)",
+        "Family vocabulary used precisely: l'aîné, cadet, retraité",
+        "Uses « on » for the family routine — very natural in spoken French",
+        "Explains WHY (ma mère… elle m'a appris…) — reasons push an answer from A2 to B1/B2"
+      ]
+    },
+    "S1-03": {
+      "text": "Je suis développeur informatique. Plus précisément, je crée des applications pour une banque à Lagos. Je fais ce travail depuis sept ans ; avant, j'étais technicien dans une petite entreprise.\n\nUne journée typique ? Je me lève à cinq heures et demie pour éviter les embouteillages et j'arrive au bureau vers sept heures et demie. Le matin, on a une courte réunion d'équipe, puis je code, je teste et je corrige des erreurs. L'après-midi, je travaille souvent avec les autres services pour comprendre leurs besoins.\n\nCe que j'aime dans mon travail, c'est résoudre des problèmes : quand une application fonctionne enfin, c'est très satisfaisant. Par contre, je n'aime pas les longues heures ni la pression des délais. Parfois, je dois rester au bureau jusqu'à vingt heures pour terminer un projet.\n\nPour mes études, j'ai un baccalauréat en informatique de l'université, et j'ai obtenu plusieurs certifications professionnelles.\n\nPour aller au travail, je prends ma voiture, mais le trajet peut durer deux heures à cause de la circulation. J'ai hâte de prendre le métro au Canada !\n\nLà-bas, j'aimerais continuer dans le développement de logiciels, idéalement à Montréal ou à Ottawa. Je sais que le secteur technologique est très dynamique dans ces deux villes. Mais je suis réaliste : au début, j'accepterai peut-être un poste moins élevé pour acquérir une expérience canadienne.",
+      "notes": [
+        "Describes a typical day in the present with clear time markers (Le matin, L'après-midi)",
+        "« Ce que j'aime, c'est… » / « Par contre » structure likes and dislikes",
+        "Mixes tenses correctly: present, imparfait (j'étais), passé composé (j'ai obtenu), conditionnel, futur",
+        "Canadian term: « baccalauréat » = a bachelor's degree in Canada"
+      ]
+    },
+    "S1-04": {
+      "text": "J'habite à Lagos, dans un quartier qui s'appelle Yaba. C'est un quartier étudiant, très animé.\n\nJ'ai un appartement de deux chambres au deuxième étage d'un petit immeuble. Il y a un salon, une cuisine, une salle de bain et un petit balcon. Ce n'est pas très grand, mais c'est confortable.\n\nDans mon quartier, il y a de tout : des marchés, des églises, des mosquées, des restaurants, des universités et beaucoup de jeunes entreprises de technologie.\n\nCe que j'aime à Lagos, c'est l'énergie. La ville ne dort jamais, il y a toujours de la musique, et les gens sont drôles et débrouillards.\n\nMais la vie à Lagos, c'est aussi difficile. Le plus gros problème, ce sont les embouteillages : on peut passer trois heures par jour dans la voiture. Il y a aussi des coupures d'électricité, donc beaucoup de gens ont un générateur.\n\nCôté météo, il fait chaud toute l'année, entre vingt-cinq et trente-trois degrés. Il y a une saison des pluies, à peu près d'avril à octobre, et une saison sèche.\n\nPersonnellement, je préfère vivre en ville, parce qu'il y a plus d'opportunités de travail et de loisirs. Cela dit, pour les vacances, j'adore aller à la campagne chez mes grands-parents : c'est calme et l'air est pur.",
+      "notes": [
+        "Description vocabulary: il y a de tout, Ce n'est pas très grand, mais…",
+        "Balances positives and negatives of the city with « Mais… c'est aussi difficile »",
+        "Gives reasons for the city/country preference, then a nuance (Cela dit)",
+        "Weather answer uses precise figures and seasons — concrete detail scores better than « il fait chaud »"
+      ]
+    },
+    "S1-05": {
+      "text": "Pendant mon temps libre, j'aime surtout le sport et la cuisine. Je joue au football avec des amis le dimanche matin, et je vais à la salle de sport deux fois par semaine. Le football, c'est ma passion depuis l'enfance.\n\nLe week-end dernier, c'était l'anniversaire d'un ami, donc samedi soir, nous sommes allés au restaurant. On a bien mangé et on a dansé jusqu'à minuit ! Dimanche, je me suis reposé et j'ai regardé un film en famille.\n\nCôté musique, j'écoute beaucoup d'afrobeats, bien sûr, mais aussi du jazz. Pour les films, je préfère les comédies. En ce moment, je regarde des séries en français avec les sous-titres, pour améliorer ma compréhension. Ça m'aide beaucoup, même si je ne comprends pas encore tout.\n\nOui, j'adore voyager ! Mon meilleur souvenir, c'est un voyage au Kenya il y a trois ans. Nous avons fait un safari et j'ai vu des lions à quelques mètres de la voiture. C'était incroyable !\n\nLe week-end prochain, je vais aider mon frère à déménager et, si j'ai le temps, j'irai au cinéma.\n\nMon plat préféré, c'est la soupe egusi, à base de graines de melon et de légumes. Oui, je sais la préparer : c'est ma mère qui me l'a appris. J'espère trouver les ingrédients au Canada, dans les épiceries africaines !",
+      "notes": [
+        "Three time frames handled correctly: present habits, passé composé (le week-end dernier), future (je vais aider, j'irai)",
+        "Passé composé with être for reflexive verbs (je me suis reposé)",
+        "« Si j'ai le temps, j'irai… » — a simple, accurate si-clause",
+        "Explains a Nigerian dish in simple French instead of just naming it"
+      ]
+    },
+    "S1-06": {
+      "text": "Je veux m'installer au Canada pour trouver de meilleures opportunités professionnelles, offrir une bonne éducation à mes enfants et vivre dans un pays sûr et bien organisé.\n\nJ'aimerais vivre à Montréal, parce que c'est une grande ville francophone, mais aussi très internationale. Je pourrai pratiquer mon français tous les jours tout en utilisant mon anglais au travail.\n\nCe que je sais sur Montréal ? C'est la deuxième ville du Canada. Elle est connue pour ses festivals, comme le Festival de jazz, et pour ses universités. Je sais aussi que la vie y est un peu moins chère qu'à Toronto ou à Vancouver. Et il paraît que les hivers sont très longs !\n\nLà-bas, je voudrais travailler dans les ressources humaines, comme ici. Je devrai peut-être faire reconnaître mon diplôme ou suivre une formation complémentaire.\n\nCe qui va me manquer du Nigeria ? Ma famille, évidemment, mais aussi la nourriture, le soleil et l'ambiance des fêtes le dimanche. Et bien sûr, le riz jollof de ma mère !\n\nPour l'hiver, je vais acheter de bons vêtements sur place : un manteau chaud, des bottes et des gants. On m'a dit qu'il faut s'habiller en plusieurs couches. Et je vais essayer le patin à glace !\n\nDans cinq ans, j'espère avoir un emploi stable dans mon domaine, acheter une maison et, pourquoi pas, devenir citoyen canadien.",
+      "notes": [
+        "Shows real knowledge of the chosen city — examiners reward specific content",
+        "Future forms throughout (je pourrai, je devrai, je vais acheter) fit a question about plans",
+        "Gérondif « tout en utilisant » and pronoun « y » (la vie y est…) are good B2 markers",
+        "Repeats the examiner's question as a lead-in (Ce qui va me manquer ?) to buy thinking time naturally"
+      ]
+    },
+    "S1-07": {
+      "text": "J'apprends le français depuis environ deux ans. J'ai commencé avec une application, puis je me suis inscrit à des cours du soir dans une école de langues à Lagos.\n\nJe l'ai choisi d'abord pour mon projet d'immigration au Canada, parce que parler français donne plus de chances d'obtenir la résidence permanente. Mais aussi parce que le Nigeria est entouré de pays francophones, comme le Bénin et le Cameroun. C'est une langue utile dans notre région.\n\nComment j'étudie ? J'ai trois cours par semaine. En plus, chaque jour, je fais une demi-heure de grammaire et de vocabulaire, et j'écoute des balados dans la voiture. Le week-end, je fais des tests d'entraînement pour le TCF, avec un chronomètre.\n\nLe plus difficile pour moi, c'est la compréhension orale, surtout quand les gens parlent vite. La prononciation aussi, par exemple la différence entre « u » et « ou ».\n\nÀ Lagos, il y a quelques occasions de parler français : je vais à des clubs de conversation et je discute avec un collègue béninois.\n\nJe parle trois langues : l'anglais, le yoruba et le français. Ah, et le pidgin, comme tout le monde à Lagos ! Donc quatre, en fait.\n\nMon conseil pour un débutant : n'ayez pas peur de faire des erreurs, et pratiquez un peu tous les jours, même dix minutes.",
+      "notes": [
+        "Natural self-correction (« Ah, et le pidgin… Donc quatre, en fait ») — examiners value it",
+        "Gives specific study methods, not vague statements",
+        "Rhetorical lead-ins (Comment j'étudie ?) keep the monologue fluent",
+        "Advice with the vous imperative, including the irregular « n'ayez pas peur »"
+      ]
+    },
+    "S2-01": {
+      "text": "Candidat : Bonjour Monsieur, je vous appelle au sujet de l'annonce pour l'appartement de la rue Beaubien. Est-ce qu'il est toujours disponible ?\nExaminateur : Oui, il est encore libre.\nCandidat : Parfait. Pourriez-vous me dire combien de pièces il y a exactement ?\nExaminateur : C'est un 4 et demie : deux chambres, un salon, une cuisine et une salle de bain.\nCandidat : D'accord. Et quel est le montant du loyer ?\nExaminateur : 1 450 $ par mois.\nCandidat : Est-ce que le chauffage et l'électricité sont compris dans ce prix ?\nExaminateur : Le chauffage est compris, mais pas l'électricité.\nCandidat : Je vois. Et en moyenne, à combien s'élève la facture d'électricité ?\nExaminateur : Environ 60 $ par mois.\nCandidat : Très bien. L'appartement est-il proche des transports en commun ?\nExaminateur : Oui, la station de métro est à cinq minutes à pied.\nCandidat : C'est idéal, car je n'ai pas de voiture. Et le quartier, il est calme le soir ?\nExaminateur : Très calme, il y a beaucoup de familles.\nCandidat : Je voudrais savoir aussi si les animaux sont acceptés. J'ai un petit chat.\nExaminateur : Les chats, oui, mais pas les chiens.\nCandidat : Tant mieux ! À partir de quand l'appartement est-il disponible ?\nExaminateur : Le 1er juillet.\nCandidat : Et faut-il signer un bail d'un an ?\nExaminateur : Oui, un bail de douze mois.\nCandidat : Est-ce que je pourrais le visiter cette semaine ? Je suis libre jeudi après 17 h.\nExaminateur : Jeudi à 18 h, ça vous va ?\nCandidat : C'est parfait. Je vous remercie beaucoup pour toutes ces informations. À jeudi !",
+      "notes": [
+        "Opens by stating why you are calling, then moves from essential questions (price) to details (pets, lease)",
+        "Varies question forms: est-ce que, inversion (L'appartement est-il…?), Pourriez-vous…, Je voudrais savoir si…",
+        "Reacts before each new question (Parfait, Je vois, Tant mieux) and follows up on answers (the electricity bill)",
+        "Closes politely and confirms the arrangement"
+      ]
+    },
+    "S2-02": {
+      "text": "Candidat : Bonjour ! Je viens d'emménager dans le quartier et je voudrais m'inscrire. Pourriez-vous me présenter vos types d'abonnements ?\nExaminateur : Nous avons un abonnement mensuel, un abonnement annuel et des cartes de dix séances.\nCandidat : D'accord. Combien coûte l'abonnement mensuel ?\nExaminateur : 45 $ par mois.\nCandidat : Et l'abonnement annuel, il est plus avantageux ?\nExaminateur : Oui, 450 $ pour l'année, donc deux mois gratuits.\nCandidat : Intéressant. Y a-t-il des frais d'inscription en plus ?\nExaminateur : Normalement 30 $, mais ils sont offerts ce mois-ci.\nCandidat : Ah, tant mieux ! Quels sont vos horaires d'ouverture, surtout le week-end ?\nExaminateur : En semaine de 6 h à 23 h, et le week-end de 8 h à 20 h.\nCandidat : Est-ce que les cours collectifs sont compris dans l'abonnement ?\nExaminateur : Oui, tous les cours collectifs sont inclus.\nCandidat : Je voudrais savoir quels cours vous proposez. Est-ce qu'il y a du yoga ou de la danse ?\nExaminateur : Oui, les deux, plus du vélo et de la musculation.\nCandidat : Et est-il possible d'avoir un entraîneur personnel ?\nExaminateur : Oui, c'est 50 $ la séance.\nCandidat : Est-ce que je pourrais faire une séance d'essai gratuite avant de m'engager ?\nExaminateur : Bien sûr, une séance est offerte.\nCandidat : Dernière question : est-ce que je peux résilier mon abonnement à tout moment ?\nExaminateur : Pour le mensuel, oui, avec un mois de préavis.\nCandidat : Parfait. Je vais faire la séance d'essai demain, alors. Merci beaucoup !",
+      "notes": [
+        "Covers every area in the instructions: memberships, hours, classes and services",
+        "Follow-up questions build on the answers (annual vs monthly, which classes)",
+        "« Dernière question : … » signals the end of the exchange naturally",
+        "Short reactions (Intéressant, Ah, tant mieux !) keep it sounding like a real conversation"
+      ]
+    },
+    "S2-03": {
+      "text": "Candidat : Bonjour Madame, je vous appelle parce que je voudrais suivre des cours de français. Pourriez-vous me dire quels niveaux vous proposez ?\nExaminateur : Du niveau débutant jusqu'au niveau avancé, C1.\nCandidat : Est-ce qu'il y a un test de niveau avant l'inscription ?\nExaminateur : Oui, un test gratuit en ligne et un petit entretien oral.\nCandidat : Très bien. Combien d'élèves y a-t-il par classe ?\nExaminateur : Douze au maximum.\nCandidat : C'est raisonnable. Je travaille la journée : est-ce que les cours ont lieu le soir ou le week-end ?\nExaminateur : Oui, le soir de 18 h à 21 h, et le samedi matin.\nCandidat : Combien coûte une session, et combien de temps dure-t-elle ?\nExaminateur : Une session dure dix semaines et coûte 600 $.\nCandidat : Le matériel est-il compris dans ce prix ?\nExaminateur : Non, le livre coûte 50 $ en plus.\nCandidat : D'accord. Je prépare le TCF Canada. Est-ce que vous proposez aussi une préparation à cet examen ?\nExaminateur : Oui, nous avons un atelier TCF de six semaines.\nCandidat : Excellent ! Et proposez-vous des cours en ligne, au cas où je ne pourrais pas me déplacer ?\nExaminateur : Oui, tous nos cours du soir existent aussi en ligne.\nCandidat : Quand commence la prochaine session ?\nExaminateur : Le 8 septembre.\nCandidat : Et comment est-ce que je m'inscris ? Faut-il venir sur place ?\nExaminateur : Non, vous pouvez vous inscrire sur notre site.\nCandidat : Parfait, je vais faire le test de niveau ce week-end. Merci beaucoup pour votre aide, Madame. Bonne journée !",
+      "notes": [
+        "Gives a little context before some questions (Je travaille la journée…, Je prépare le TCF…) — this makes questions sound real",
+        "Mixes inversion (Combien d'élèves y a-t-il…?, Le matériel est-il…?) with est-ce que",
+        "Uses a B2 structure: « au cas où + conditionnel »",
+        "Finishes by saying what you will do next, then thanks the examiner"
+      ]
+    },
+    "S2-04": {
+      "text": "Candidat : Bonjour, je viens d'arriver dans la ville et je cherche un médecin de famille. Est-ce que vos médecins acceptent de nouveaux patients ?\nExaminateur : Oui, un de nos médecins en accepte en ce moment.\nCandidat : Excellent. Quels documents dois-je apporter pour m'inscrire ?\nExaminateur : Une pièce d'identité et votre carte d'assurance maladie.\nCandidat : Justement, je n'ai pas encore reçu ma carte d'assurance maladie. Est-ce que je peux m'inscrire quand même ?\nExaminateur : Oui, mais sans carte, la consultation sera payante.\nCandidat : Je vois. Et combien coûterait une consultation sans carte ?\nExaminateur : Environ 120 $.\nCandidat : D'accord. Combien de temps faut-il attendre pour un premier rendez-vous ?\nExaminateur : Environ trois semaines.\nCandidat : C'est un peu long. Est-ce que vous faites des consultations sans rendez-vous ?\nExaminateur : Oui, tous les matins à partir de 8 h, mais il faut arriver tôt.\nCandidat : Bon à savoir. Je voudrais savoir aussi s'il y a un médecin qui parle anglais. Mon français médical n'est pas encore parfait !\nExaminateur : Oui, la Dre Martin parle anglais.\nCandidat : Formidable. Pourriez-vous me dire si la clinique est ouverte le week-end ?\nExaminateur : Le samedi matin seulement.\nCandidat : Et que dois-je faire si j'ai un problème urgent le soir ?\nExaminateur : Vous pouvez appeler le 811 pour parler à une infirmière, ou aller aux urgences.\nCandidat : Très bien, merci. Est-ce que je peux prendre un premier rendez-vous dès maintenant ?\nExaminateur : Oui, bien sûr. Quel est votre nom ?\nCandidat : Ade Okafor. Merci beaucoup pour votre patience !",
+      "notes": [
+        "« Justement… » reacts to the answer and turns it into a new, logical question",
+        "Conditional for a hypothetical price (combien coûterait…) — accurate and polite",
+        "Reactions show understanding: C'est un peu long, Bon à savoir, Formidable",
+        "Canadian detail: 811 is the health info line in several provinces"
+      ]
+    },
+    "S2-05": {
+      "text": "Candidat : Bonjour Madame. Je viens d'arriver au Canada et je voudrais ouvrir un compte bancaire. Quels documents faut-il fournir ?\nExaminateur : Votre passeport, votre confirmation de résidence permanente et une adresse.\nCandidat : J'habite temporairement chez un ami. Est-ce que son adresse est acceptée ?\nExaminateur : Oui, sans problème.\nCandidat : Parfait. Quels types de comptes proposez-vous ?\nExaminateur : Un compte chèques pour le quotidien et un compte d'épargne.\nCandidat : Avez-vous une offre spéciale pour les nouveaux arrivants ?\nExaminateur : Oui, pas de frais mensuels pendant un an.\nCandidat : Et après la première année, combien coûtent les frais mensuels ?\nExaminateur : 15 $ par mois, ou rien si vous gardez 4 000 $ dans le compte.\nCandidat : Je comprends. Est-ce que je peux obtenir une carte de crédit, même sans historique de crédit au Canada ?\nExaminateur : Oui, avec une limite de 1 000 $ pour commencer.\nCandidat : C'est une bonne nouvelle, car je veux construire mon dossier de crédit. Comment puis-je envoyer de l'argent à ma famille au Nigeria, et quels sont les frais ?\nExaminateur : Par virement international, 30 $ par envoi.\nCandidat : C'est assez cher… Y a-t-il une option moins coûteuse ?\nExaminateur : Notre service en ligne coûte 10 $.\nCandidat : Justement, est-ce que je peux gérer mon compte en ligne et sur mon téléphone ?\nExaminateur : Oui, avec notre application mobile.\nCandidat : Et quand vais-je recevoir ma carte de débit ?\nExaminateur : Aujourd'hui même, avant de partir.\nCandidat : Formidable ! Merci beaucoup pour toutes ces explications.",
+      "notes": [
+        "Negotiates politely: « C'est assez cher… Y a-t-il une option moins coûteuse ? »",
+        "Explains personal circumstances to justify a question (no Canadian credit history, family in Nigeria)",
+        "Inversion questions (Avez-vous…?, Comment puis-je…?, Quand vais-je…?) sound more formal and polished",
+        "Canadian banking vocabulary: compte chèques, historique de crédit, carte de débit"
+      ]
+    },
+    "S2-06": {
+      "text": "Candidat : Bonjour ! Je voudrais louer une voiture pour un week-end à la campagne. Quels modèles avez-vous de disponibles ?\nExaminateur : Des voitures compactes, des berlines et des VUS.\nCandidat : Nous sommes quatre, avec des bagages. Qu'est-ce que vous me conseillez ?\nExaminateur : Une berline ou un petit VUS.\nCandidat : Quel est le tarif pour trois jours, pour un petit VUS ?\nExaminateur : 210 $ pour trois jours.\nCandidat : Est-ce que l'assurance est comprise dans le prix ?\nExaminateur : L'assurance de base, oui. L'assurance complète coûte 20 $ de plus par jour.\nCandidat : Et le kilométrage, il est illimité ?\nExaminateur : Oui, kilométrage illimité.\nCandidat : Très bien. J'ai un permis de conduire nigérian. Est-ce qu'il est accepté ?\nExaminateur : Oui, avec un permis international.\nCandidat : D'accord, j'en ai un. Faut-il rendre la voiture avec le plein d'essence ?\nExaminateur : Oui, sinon nous facturons l'essence plus cher.\nCandidat : Et y a-t-il des frais si je rends la voiture en retard ?\nExaminateur : Oui, 25 $ par heure de retard.\nCandidat : Je vois. Pourriez-vous me dire si la voiture a des pneus d'hiver ? On annonce de la neige.\nExaminateur : Oui, toutes nos voitures en ont.\nCandidat : Parfait. Est-ce que je peux réserver maintenant pour vendredi matin ?\nExaminateur : Bien sûr.\nCandidat : Merci beaucoup, vous m'avez bien aidé.",
+      "notes": [
+        "Asks for advice, not only facts (Qu'est-ce que vous me conseillez ?) — shows range",
+        "Spoken-style questions with a fronted topic (Et le kilométrage, il est illimité ?) are natural and correct",
+        "Pronoun « en » in answers and reactions (j'en ai un)",
+        "Canadian vocabulary: VUS (SUV), pneus d'hiver"
+      ]
+    },
+    "S2-07": {
+      "text": "Candidat : Bonjour, merci de me recevoir. J'aimerais faire du bénévolat dans votre organisme. Quelles sont les activités proposées aux bénévoles ?\nExaminateur : L'accueil, l'aide aux devoirs, l'accompagnement aux rendez-vous et des ateliers de conversation.\nCandidat : L'aide aux devoirs m'intéresse beaucoup. Combien d'heures par semaine faut-il donner ?\nExaminateur : Au moins trois heures par semaine.\nCandidat : Est-ce qu'il faut avoir une expérience particulière ?\nExaminateur : Non, seulement de la patience et de la motivation.\nCandidat : Tant mieux ! Offrez-vous une formation aux nouveaux bénévoles ?\nExaminateur : Oui, une formation de deux soirs.\nCandidat : Puisque je vais travailler avec des enfants, faut-il une vérification des antécédents judiciaires ?\nExaminateur : Oui, c'est obligatoire, et nous nous en occupons.\nCandidat : Est-ce que je peux choisir mes horaires ? Je travaille pendant la journée.\nExaminateur : L'aide aux devoirs a lieu de 16 h à 18 h.\nCandidat : Ah, c'est un peu tôt pour moi. Et le samedi, y a-t-il des activités ?\nExaminateur : Oui, des ateliers de conversation le samedi matin.\nCandidat : Ça me convient très bien. Pourriez-vous me dire si les frais de transport sont remboursés ?\nExaminateur : Oui, nous remboursons les billets d'autobus.\nCandidat : Parfait. Est-ce que vous pourriez me donner une lettre de référence après quelques mois ? Ce serait utile pour ma recherche d'emploi.\nExaminateur : Oui, après trois mois d'engagement.\nCandidat : Excellent. Comment dois-je m'inscrire ?\nExaminateur : Remplissez ce formulaire.\nCandidat : Je le remplis tout de suite. Merci beaucoup !",
+      "notes": [
+        "Adapts when an answer does not suit you (C'est un peu tôt pour moi. Et le samedi… ?) — real interaction",
+        "Justifies questions with « Puisque… » and « Ce serait utile pour… »",
+        "Wide variety of question forms across the exchange",
+        "Canadian context: police background check (vérification des antécédents judiciaires) for work with children"
+      ]
+    },
+    "S2-08": {
+      "text": "Candidat : Bonjour Madame, merci de me faire visiter. Avez-vous une place disponible pour un enfant de deux ans ?\nExaminateur : Oui, une place à partir de janvier.\nCandidat : Quels sont vos horaires d'ouverture ?\nExaminateur : De 7 h à 18 h, du lundi au vendredi.\nCandidat : Combien coûte une journée ?\nExaminateur : Nous sommes une garderie subventionnée : environ 9 $ par jour.\nCandidat : C'est très abordable ! Est-ce que les repas et les collations sont compris ?\nExaminateur : Oui, le dîner et deux collations.\nCandidat : Mon fils est allergique aux arachides. Comment gérez-vous les allergies ?\nExaminateur : Notre garderie est sans arachides.\nCandidat : Ça me rassure. Combien d'éducatrices y a-t-il par groupe ?\nExaminateur : Une éducatrice pour huit enfants de cet âge.\nCandidat : Quelles activités proposez-vous aux enfants ?\nExaminateur : Du bricolage, de la musique, des jeux et une sortie au parc chaque jour.\nCandidat : Même en hiver ?\nExaminateur : Oui, sauf s'il fait trop froid.\nCandidat : Et que se passe-t-il si mon enfant est malade ?\nExaminateur : S'il a de la fièvre, il doit rester à la maison.\nCandidat : Je voudrais savoir aussi si les éducatrices parlent anglais. Mon fils comprend encore peu le français.\nExaminateur : Certaines, oui, mais nous parlons français avec les enfants.\nCandidat : C'est très bien, il apprendra vite. Est-ce qu'il y a une liste d'attente ?\nExaminateur : Pour janvier, non, mais il faut confirmer avant vendredi.\nCandidat : Je vous confirme demain. Merci beaucoup pour la visite !",
+      "notes": [
+        "Very short follow-up questions (Même en hiver ?) show you are really listening",
+        "Raises a personal concern (allergy, language) — relevant, realistic questions score well",
+        "Reacts emotionally and appropriately: C'est très abordable, Ça me rassure",
+        "Quebec vocabulary: garderie subventionnée, dîner (lunch), collations, arachides"
+      ]
+    },
+    "S2-09": {
+      "text": "Candidat : Bonjour, je viens d'emménager et j'ai besoin d'Internet à la maison. Quels forfaits proposez-vous ?\nExaminateur : Trois forfaits : 100 mégabits, 500 mégabits et 1 gigabit.\nCandidat : Quelle est la différence de prix entre ces forfaits ?\nExaminateur : 55 $, 75 $ et 95 $ par mois.\nCandidat : Je travaille de la maison et je fais beaucoup d'appels vidéo. Quelle vitesse me conseillez-vous ?\nExaminateur : Le forfait de 500 mégabits.\nCandidat : Y a-t-il une promotion pour les nouveaux clients ?\nExaminateur : Oui, 20 $ de rabais par mois pendant six mois.\nCandidat : Et faut-il signer un contrat d'un an ou de deux ans ?\nExaminateur : Il y a des forfaits sans contrat, mais la promotion exige un an.\nCandidat : D'accord. Est-ce que l'installation est gratuite ?\nExaminateur : Avec la promotion, oui.\nCandidat : Dans combien de temps un technicien peut-il venir ?\nExaminateur : Jeudi prochain.\nCandidat : Ce serait possible avant ? Je dois reprendre le travail lundi.\nExaminateur : Mercredi matin, si vous préférez.\nCandidat : Parfait. Est-ce que je peux ajouter un forfait de téléphone mobile ?\nExaminateur : Oui, avec 10 % de rabais sur les deux.\nCandidat : Et que se passe-t-il si je déménage avant la fin du contrat ?\nExaminateur : Nous transférons le service à votre nouvelle adresse sans frais.\nCandidat : Très bien. Pourriez-vous m'envoyer un résumé de l'offre par courriel avant que je confirme ?\nExaminateur : Bien sûr.\nCandidat : Merci beaucoup, vous avez été très clair.",
+      "notes": [
+        "Negotiates a better installation date (Ce serait possible avant ?) with a reason",
+        "« avant que je confirme » — subjunctive after avant que, used naturally",
+        "Asks for advice based on your needs (Quelle vitesse me conseillez-vous ?)",
+        "Canadian vocabulary: forfait, rabais, courriel"
+      ]
+    },
+    "S2-10": {
+      "text": "Candidat : Bonjour. Je suis arrivé au Canada il y a deux mois et je cherche un emploi en comptabilité. Quels types de postes proposez-vous en ce moment ?\nExaminateur : Surtout des postes de commis comptable et de technicien en paie.\nCandidat : D'accord. Est-ce que vos services sont gratuits pour les candidats ?\nExaminateur : Oui, ce sont les employeurs qui nous paient.\nCandidat : Tant mieux. Proposez-vous des emplois temporaires ou permanents ?\nExaminateur : Les deux. Beaucoup de postes temporaires deviennent permanents.\nCandidat : Pourriez-vous m'aider à adapter mon CV au marché canadien ? Au Nigeria, par exemple, on met une photo et la date de naissance.\nExaminateur : Oui, et ici, on ne met ni photo ni date de naissance.\nCandidat : Ah, c'est bon à savoir ! Est-ce que les employeurs reconnaissent les diplômes étrangers ?\nExaminateur : Souvent, oui, mais une évaluation comparative des études aide beaucoup.\nCandidat : Où est-ce que je peux faire faire cette évaluation ?\nExaminateur : Auprès du ministère de l'Immigration. Nous vous donnerons le lien.\nCandidat : Merci. Organisez-vous des simulations d'entretien ?\nExaminateur : Oui, chaque mardi.\nCandidat : Est-ce qu'elles peuvent se faire en français ? Je voudrais m'entraîner.\nExaminateur : Bien sûr, en français ou en anglais.\nCandidat : Et en général, combien de temps faut-il pour trouver un poste ?\nExaminateur : Entre un et trois mois.\nCandidat : Je voudrais savoir si vous offrez aussi des formations, par exemple sur les logiciels de comptabilité utilisés ici.\nExaminateur : Oui, des ateliers gratuits.\nCandidat : Excellent. Comment est-ce que je m'inscris ?\nExaminateur : Déposez votre CV ici ou envoyez-le-nous par courriel.\nCandidat : Je vous l'envoie dès ce soir. Merci beaucoup !",
+      "notes": [
+        "Compares with the home country to ask a precise question (CV photo and date of birth)",
+        "« faire faire » (get something done) — a useful, accurate B2 structure",
+        "12 questions, each different in form or topic, with no dead time",
+        "Canadian context: évaluation comparative des études for foreign diplomas"
+      ]
+    },
+    "S2-11": {
+      "text": "Candidat : Bonjour ! Nous voudrions partir une semaine en vacances en famille, en mars. Quelles destinations nous conseillez-vous avec deux enfants de six et neuf ans ?\nExaminateur : Cuba, la République dominicaine ou le Mexique.\nCandidat : Combien coûte un forfait d'une semaine tout compris ?\nExaminateur : Environ 1 500 $ par adulte et 900 $ par enfant.\nCandidat : Est-ce que les vols sont inclus dans le prix ?\nExaminateur : Oui, les vols et les transferts.\nCandidat : Quel type d'hébergement proposez-vous ?\nExaminateur : Des hôtels quatre étoiles au bord de la plage.\nCandidat : Est-il possible d'avoir une chambre familiale ?\nExaminateur : Oui, avec deux grands lits.\nCandidat : Y a-t-il des activités pour les enfants ?\nExaminateur : Oui, un club pour enfants et une piscine avec toboggans.\nCandidat : Mes enfants ont un passeport nigérian. Faut-il un visa pour ces destinations ?\nExaminateur : Cela dépend du pays. Je vais vérifier pour vous.\nCandidat : Merci, c'est gentil. Quelles sont les conditions d'annulation ?\nExaminateur : Remboursement complet jusqu'à 45 jours avant le départ.\nCandidat : Et est-ce que je peux payer en plusieurs fois ?\nExaminateur : Oui, en trois versements.\nCandidat : Pourriez-vous me dire si une assurance voyage est comprise ?\nExaminateur : Non, c'est 80 $ par personne.\nCandidat : D'accord. Pourriez-vous me préparer une soumission pour la République dominicaine ?\nExaminateur : Avec plaisir.\nCandidat : Merci beaucoup. Je reviens la semaine prochaine avec ma femme pour réserver.",
+      "notes": [
+        "Gives family details up front so the agent can advise — relevant context earns credit",
+        "Covers destinations, price, accommodation, activities and conditions as instructed",
+        "Ends with a concrete request (une soumission) and next step",
+        "Canadian term: « soumission » = a quote"
+      ]
+    },
+    "S2-12": {
+      "text": "Candidat : Bonjour, je vous appelle au sujet de votre annonce pour le canapé gris. Est-ce qu'il est toujours disponible ?\nExaminateur : Oui, toujours.\nCandidat : Super. Quelles sont ses dimensions ?\nExaminateur : Deux mètres de long et 90 centimètres de profondeur.\nCandidat : Est-ce qu'il est convertible ?\nExaminateur : Non, ce n'est pas un canapé-lit.\nCandidat : D'accord. Depuis combien de temps l'avez-vous ?\nExaminateur : Trois ans.\nCandidat : Est-ce qu'il y a des taches ou des défauts ?\nExaminateur : Une petite tache sur un coussin, presque invisible.\nCandidat : Avez-vous des animaux ? Je vous le demande parce que mon fils est allergique aux chats.\nExaminateur : Non, pas d'animaux.\nCandidat : Tant mieux. Pourquoi est-ce que vous le vendez ?\nExaminateur : Je déménage dans un appartement plus petit.\nCandidat : Je comprends. Vous demandez 250 $. Le prix est-il négociable ?\nExaminateur : Je peux descendre à 220 $.\nCandidat : C'est raisonnable. Pourriez-vous le livrer, ou dois-je venir le chercher ?\nExaminateur : Il faut venir le chercher. C'est au deuxième étage, sans ascenseur.\nCandidat : Ah… Est-ce que vous pourriez m'aider à le descendre ?\nExaminateur : Oui, bien sûr.\nCandidat : Quand est-ce que je peux venir le voir ?\nExaminateur : Samedi matin, vers 10 h ?\nCandidat : Parfait, à samedi 10 h. Merci beaucoup !",
+      "notes": [
+        "Negotiates the price politely and reacts to the offer (C'est raisonnable)",
+        "Explains the reason behind a question (allergy) — sounds natural and purposeful",
+        "Follows up on an unexpected answer (no lift → can you help me carry it?)",
+        "Pronouns le/l' used consistently for « le canapé » (l'avez-vous, le livrer, le descendre)"
+      ]
+    },
+    "S2-13": {
+      "text": "Candidat : Bonjour ! Je viens d'arriver dans le quartier et je voudrais me renseigner sur vos activités. Qu'est-ce que vous proposez pour les adultes ?\nExaminateur : Du yoga, de la cuisine, de la couture et du badminton.\nCandidat : Et avez-vous des activités pour les enfants de 6 à 10 ans ? J'ai deux filles.\nExaminateur : Oui, du soccer, de la danse et un club de lecture.\nCandidat : Faut-il être membre pour participer ?\nExaminateur : Oui, la carte de membre coûte 20 $ par an.\nCandidat : Et combien coûte l'inscription à une activité ?\nExaminateur : Entre 40 $ et 80 $ par session de dix semaines.\nCandidat : Y a-t-il un tarif familial ?\nExaminateur : Oui, 20 % de réduction à partir du deuxième enfant.\nCandidat : C'est intéressant. Quels sont les horaires des activités pour enfants ?\nExaminateur : Le samedi matin et le mercredi après l'école.\nCandidat : Organisez-vous des ateliers de conversation en français ? Je prépare un examen.\nExaminateur : Oui, gratuits, le mardi soir.\nCandidat : C'est parfait pour moi. Est-ce qu'on peut aussi réserver une salle pour une fête ? Ma fille aura sept ans le mois prochain.\nExaminateur : Oui, 100 $ pour quatre heures.\nCandidat : Est-ce qu'il y a une cuisine dans la salle ?\nExaminateur : Oui, une petite cuisine équipée.\nCandidat : Je voudrais savoir si les inscriptions se font en ligne.\nExaminateur : En ligne ou ici, à l'accueil.\nCandidat : Alors je vais m'inscrire tout de suite. Merci beaucoup !",
+      "notes": [
+        "Covers activities for yourself AND your children, as the instructions require",
+        "Adds short personal context to make questions natural (J'ai deux filles, Je prépare un examen)",
+        "Follow-up on price (tarif familial) and on the room (kitchen)",
+        "Canadian vocabulary: soccer, carte de membre"
+      ]
+    },
+    "S2-14": {
+      "text": "Candidat : Bonjour, je déménage de Montréal à Québec dans un mois et je voudrais obtenir un devis. Êtes-vous disponibles le 1er juillet ?\nExaminateur : C'est une date très demandée, mais il nous reste une équipe l'après-midi.\nCandidat : Tant mieux. Comment calculez-vous le prix ?\nExaminateur : C'est un tarif horaire, plus des frais de déplacement pour une autre ville.\nCandidat : D'accord. C'est un 4 et demie. Combien de temps faut-il prévoir, à peu près ?\nExaminateur : Environ six heures, avec le trajet.\nCandidat : Est-ce que vous fournissez les boîtes en carton ?\nExaminateur : Oui, nous les vendons 3 $ chacune.\nCandidat : Pouvez-vous démonter et remonter les meubles ?\nExaminateur : Oui, c'est inclus.\nCandidat : Mes affaires sont-elles assurées en cas de dommage ?\nExaminateur : Oui, une assurance de base est incluse.\nCandidat : Et pour les objets fragiles, comme ma télévision ?\nExaminateur : Nous proposons une assurance complémentaire.\nCandidat : Combien de déménageurs viendront ?\nExaminateur : Trois déménageurs, avec un camion.\nCandidat : Faut-il verser un acompte ?\nExaminateur : Oui, 200 $ à la réservation.\nCandidat : Est-ce que cet acompte est remboursable si j'annule ?\nExaminateur : Oui, jusqu'à deux semaines avant.\nCandidat : Parfait. Pouvez-vous m'envoyer un devis par courriel ?\nExaminateur : Bien sûr, donnez-moi votre adresse.\nCandidat : C'est ade.okafor@exemple.ca. Merci beaucoup, j'attends votre courriel.",
+      "notes": [
+        "Gives the size of the apartment so the question about duration makes sense",
+        "Follow-up questions dig into the answers (fragile items, refundable deposit)",
+        "Inversion used accurately with a noun subject: « Mes affaires sont-elles assurées ? »",
+        "Canadian detail: 1 July is Quebec's traditional moving day"
+      ]
+    },
+    "S2-15": {
+      "text": "Candidat : Bonjour, je voudrais réserver pour l'anniversaire d'une collègue. Avez-vous une table pour quinze personnes vendredi soir ?\nExaminateur : Oui, à partir de 19 h.\nCandidat : Parfait. Est-ce que vous avez une salle privée ?\nExaminateur : Oui, une petite salle au fond.\nCandidat : Y a-t-il des frais pour la salle ?\nExaminateur : Non, si vous prenez le menu de groupe.\nCandidat : Justement, proposez-vous un menu de groupe ? À quel prix ?\nExaminateur : 45 $ par personne : entrée, plat et dessert.\nCandidat : Avez-vous des plats végétariens ou sans gluten ? Deux collègues sont végétariens.\nExaminateur : Oui, il y a toujours une option végétarienne.\nCandidat : Est-ce que je peux apporter un gâteau d'anniversaire ?\nExaminateur : Oui, avec un supplément de 2 $ par personne pour le service.\nCandidat : D'accord. Faut-il verser un acompte pour réserver ?\nExaminateur : Oui, 100 $.\nCandidat : Le service est-il compris dans le prix ?\nExaminateur : Non, nous ajoutons 15 % pour les groupes.\nCandidat : Je vois. Serait-il possible d'avoir des factures séparées ?\nExaminateur : Oui, sans problème.\nCandidat : Jusqu'à quelle heure pouvons-nous rester ?\nExaminateur : Jusqu'à 23 h.\nCandidat : Excellent. Je réserve pour 19 h, au nom d'Ade Okafor. Merci beaucoup !",
+      "notes": [
+        "« Justement » links a new question to the examiner's answer",
+        "Polite conditional inversion: « Serait-il possible de… ? »",
+        "Practical, realistic questions for a group (dietary needs, separate bills, cake)",
+        "Canadian usage: factures séparées (separate bills); service is usually not included"
+      ]
+    },
+    "S2-16": {
+      "text": "Candidat : Bonjour, je voudrais inscrire mon fils à des cours de natation. À partir de quel âge les enfants peuvent-ils s'inscrire ?\nExaminateur : Dès quatre ans pour les cours sans parent.\nCandidat : Mon fils a six ans et il ne sait pas du tout nager. Avez-vous un niveau pour débutants ?\nExaminateur : Oui, le niveau 1.\nCandidat : Combien de séances y a-t-il par session ?\nExaminateur : Dix séances de 45 minutes.\nCandidat : Quels jours ont lieu les cours ?\nExaminateur : Le samedi matin ou le mercredi à 17 h.\nCandidat : Quel est le tarif pour les résidents du quartier ?\nExaminateur : 60 $ la session, et 90 $ pour les non-résidents.\nCandidat : Comment est-ce qu'on prouve qu'on est résident ?\nExaminateur : Avec une facture à votre adresse.\nCandidat : D'accord. Combien d'enfants y a-t-il par groupe ?\nExaminateur : Six au maximum.\nCandidat : Est-ce que les parents peuvent rester pendant le cours ?\nExaminateur : Oui, dans les gradins.\nCandidat : Faut-il apporter un équipement particulier ?\nExaminateur : Un maillot, un bonnet et une serviette.\nCandidat : Et comment se passe l'inscription ?\nExaminateur : En ligne, à partir du 15 août à 9 h.\nCandidat : Les places partent vite ?\nExaminateur : Oui, en quelques heures.\nCandidat : Alors je me connecterai à 9 h pile ! Merci beaucoup pour ces renseignements.",
+      "notes": [
+        "Gives the child's age and level first so the questions are relevant",
+        "Follow-up on the answer about residents (how do we prove it?)",
+        "Intonation-only question (Les places partent vite ?) is fine in speaking — vary with inversion elsewhere",
+        "Humorous, natural closing that shows you understood the key information"
+      ]
+    },
+    "S2-17": {
+      "text": "Candidat : Bonjour. Je voudrais obtenir mon permis de conduire canadien. Combien de cours théoriques et pratiques faut-il suivre ?\nExaminateur : Normalement, douze cours théoriques et quinze cours pratiques.\nCandidat : J'ai conduit pendant dix ans au Nigeria. Est-ce que cette expérience permet de réduire le nombre de cours ?\nExaminateur : Oui, avec une attestation, vous pouvez suivre un programme réduit.\nCandidat : Quel document dois-je fournir exactement ?\nExaminateur : Une lettre officielle de l'autorité de votre pays.\nCandidat : D'accord. Combien coûte le programme complet ? Et le programme réduit ?\nExaminateur : 1 000 $ pour le complet, 500 $ pour le réduit.\nCandidat : Est-ce que les cours pratiques ont lieu le soir ?\nExaminateur : Oui, jusqu'à 20 h, et aussi le samedi.\nCandidat : Est-ce que vous m'aidez à préparer l'examen ?\nExaminateur : Oui, avec des examens blancs et un cours de préparation.\nCandidat : L'examen théorique se fait-il en français ?\nExaminateur : En français ou en anglais, au choix.\nCandidat : Est-ce que je peux utiliser votre voiture le jour de l'examen ?\nExaminateur : Oui, pour 80 $.\nCandidat : Et une dernière question : combien de temps faut-il pour obtenir le permis ?\nExaminateur : Pour vous, environ deux ou trois mois.\nCandidat : Parfait. Est-ce que je pourrais commencer la semaine prochaine ?\nExaminateur : Oui, le lundi soir.\nCandidat : Merci beaucoup. Je passerai m'inscrire demain.",
+      "notes": [
+        "Uses your own background (ten years of driving) to ask a smart, specific question",
+        "Double question (Et le programme réduit ?) is a natural follow-up",
+        "Signals the end with « Et une dernière question : … »",
+        "Closes with a clear next step in the futur simple (Je passerai…)"
+      ]
+    },
+    "S3-01": {
+      "text": "Alors, la question est de savoir si on devrait interdire les téléphones portables à l'école. C'est un sujet très actuel, car aujourd'hui presque tous les élèves ont un téléphone, parfois dès l'âge de dix ans. Personnellement, je suis plutôt favorable à cette interdiction, en tout cas pendant les cours, et je vais expliquer pourquoi.\n\nPremièrement, le téléphone empêche les élèves de se concentrer. Il suffit d'une notification pour qu'un élève perde le fil du cours. Ma sœur est enseignante au secondaire à Lagos, et elle me dit souvent que les élèves regardent leur téléphone sous la table au lieu d'écouter. Résultat : ils comprennent moins bien et leurs notes baissent. Et ce n'est pas seulement un problème pour l'élève lui-même : quand un téléphone sonne, c'est toute la classe qui est dérangée.\n\nDeuxièmement, l'école doit être un lieu de rencontre. Pendant la récréation, les enfants devraient jouer, discuter et apprendre à régler leurs conflits face à face. Or, quand chacun est sur son écran, ils ne se parlent plus. D'ailleurs, plusieurs provinces canadiennes, comme le Québec et l'Ontario, ont déjà limité l'usage des téléphones en classe, et beaucoup d'enseignants constatent une ambiance plus calme.\n\nTroisièmement, l'interdiction peut protéger les élèves contre le cyberharcèlement. Beaucoup de photos ou de vidéos humiliantes sont prises à l'école même. Si les téléphones sont rangés, ce risque diminue. Une fois qu'une vidéo est publiée sur les réseaux sociaux, il est presque impossible de la faire disparaître, et la victime peut en souffrir pendant des années.\n\nCela dit, je reconnais que le téléphone peut être utile. Les parents veulent pouvoir joindre leurs enfants en cas d'urgence, et certains enseignants utilisent des applications éducatives. C'est un argument valable.\n\nC'est pourquoi je ne propose pas une interdiction totale, mais une règle claire : les élèves peuvent apporter leur téléphone, mais ils doivent le laisser dans leur casier pendant la journée, sauf si l'enseignant en a besoin pour une activité précise.\n\nEn conclusion, je pense que limiter fortement les téléphones à l'école est une bonne décision, pour la concentration, pour les relations entre élèves et pour leur sécurité. Le téléphone est un outil formidable, mais à l'école, la priorité doit rester l'apprentissage.",
+      "notes": [
+        "States a clear position in the first 20 seconds, then announces the plan (je vais expliquer pourquoi)",
+        "Three arguments signposted with Premièrement / Deuxièmement / Troisièmement, each with an example",
+        "Concession (Cela dit, je reconnais que…) followed by a practical compromise",
+        "B2 structures: il suffit de… pour que + subjonctif, Or, si + présent"
+      ]
+    },
+    "S3-02": {
+      "text": "Le sujet, c'est l'idée de faire payer chaque foyer en fonction de la quantité de déchets qu'il jette. Autrement dit, plus on jette, plus on paie. C'est un sujet important, car nos poubelles débordent et les sites d'enfouissement se remplissent rapidement. À mon avis, c'est une bonne idée, à condition qu'elle soit bien appliquée.\n\nTout d'abord, c'est une question de justice. Aujourd'hui, en général, la collecte des déchets est financée par les taxes municipales : une famille qui recycle tout et qui composte paie donc la même chose qu'une famille qui jette tout à la poubelle. Ce n'est pas logique. Avec ce système, chacun paie pour ce qu'il produit, un peu comme pour l'électricité ou l'eau.\n\nEnsuite, c'est une mesure efficace pour changer les comportements. Quand on touche au porte-monnaie, les gens font attention. Par exemple, en Suisse et en Belgique, on doit souvent acheter des sacs-poubelle spéciaux assez chers. Résultat : les habitants trient beaucoup plus, et la quantité de déchets a nettement diminué.\n\nEnfin, cela pousse aussi les entreprises à changer. Si les consommateurs veulent moins de déchets, ils vont choisir des produits avec moins d'emballages, et les fabricants devront s'adapter. On le voit déjà dans certains supermarchés, où l'on peut acheter du riz ou des pâtes en vrac, avec ses propres contenants.\n\nBien sûr, il y a des risques. Le premier, c'est que certaines personnes jettent leurs déchets dans la nature ou dans la poubelle du voisin pour ne pas payer. Le deuxième, c'est l'injustice pour les familles nombreuses ou modestes : une famille avec un bébé produit forcément plus de déchets, avec les couches par exemple.\n\nPour ces raisons, la taxe doit être accompagnée d'autres mesures. Il faut des contrôles et des amendes contre les dépôts sauvages. Il faut aussi des réductions pour les familles à faible revenu ou avec de jeunes enfants. Et surtout, la ville doit faciliter le recyclage et le compost, avec des bacs gratuits et des collectes régulières.\n\nPour conclure, je suis favorable à cette taxe, parce qu'elle est plus juste et qu'elle encourage chacun à réduire ses déchets. Mais sans information et sans aide, elle risque d'être très mal acceptée.",
+      "notes": [
+        "Reformulates the statement at the start (Autrement dit, plus on jette, plus on paie) — shows understanding",
+        "Conditional position: « à condition qu'elle soit » (subjunctive)",
+        "International example (Switzerland, Belgium) gives weight to the argument",
+        "Anticipates objections, then answers them with concrete measures before concluding"
+      ]
+    },
+    "S3-03": {
+      "text": "On me demande si la semaine de travail de quatre jours devrait devenir la norme. C'est une idée qui séduit beaucoup de travailleurs. Pour ma part, je pense que c'est une excellente idée pour beaucoup d'entreprises, mais qu'on ne peut pas en faire une règle pour tout le monde.\n\nD'abord, les avantages sont réels. Avec trois jours de repos, les employés ont plus de temps pour leur famille, le sport ou leurs projets personnels. Ils reviennent au travail plus reposés et plus motivés. Des expériences au Royaume-Uni et en Islande ont montré que la productivité restait la même, voire augmentait, et que les employés étaient moins souvent malades.\n\nEnsuite, c'est un bon moyen d'attirer et de garder les employés. Aujourd'hui, beaucoup de jeunes ne regardent pas seulement le salaire, mais aussi la qualité de vie. Un ami qui travaille dans une entreprise de logiciels à Toronto a refusé une offre mieux payée justement parce que son employeur actuel lui laisse le vendredi libre.\n\nDe plus, il y a un avantage pour l'environnement : un jour de moins sur la route, c'est moins d'embouteillages et moins de pollution. Moins de déplacements, c'est aussi moins de dépenses d'essence pour les familles.\n\nCependant, cette organisation ne convient pas à tous les secteurs. Dans les hôpitaux, les écoles, les commerces ou les transports, il faut quelqu'un tous les jours. Pour ces métiers, il faudrait embaucher plus de personnel, et cela coûterait très cher. Par ailleurs, si on fait quarante heures en quatre jours, les journées de dix heures peuvent devenir épuisantes, surtout pour les parents de jeunes enfants.\n\nC'est pourquoi je ne suis pas d'accord pour l'imposer comme norme obligatoire. Je préfère que chaque entreprise ait la possibilité de l'essayer, en discutant avec ses employés. Le gouvernement pourrait encourager des projets pilotes et partager les résultats. D'ailleurs, certaines entreprises proposent déjà une formule souple : les employés choisissent entre cinq journées normales et quatre journées plus longues. Je trouve que c'est une bonne façon de tester l'idée sans l'imposer.\n\nEn résumé, la semaine de quatre jours a de grands avantages pour la santé, la motivation et l'environnement. Mais pour qu'elle réussisse, elle doit être adaptée à chaque secteur, et non imposée partout de la même manière.",
+      "notes": [
+        "Nuanced thesis from the start: good idea, but not as a universal rule",
+        "Mix of evidence: real trials abroad, a friend's experience, a general environmental point",
+        "Cependant / Par ailleurs present the limits clearly before the final position",
+        "Subjunctive after « je préfère que » and « pour que » used accurately"
+      ]
+    },
+    "S3-04": {
+      "text": "La phrase dit que, pour bien s'intégrer, il faut adopter les habitudes culturelles de son pays d'accueil. C'est un sujet qui me touche personnellement, puisque je prépare mon installation au Canada. Mon opinion est nuancée : je pense qu'il faut adopter certaines habitudes, mais pas abandonner sa propre culture.\n\nD'un côté, il est vrai que connaître et respecter les habitudes locales est indispensable. Par exemple, au Canada, on est très ponctuel, on fait la file sans pousser et on respecte beaucoup l'espace personnel. Si un nouvel arrivant ignore ces règles, il risque de créer des malentendus, au travail comme dans la vie quotidienne. De même, apprendre la langue, c'est la base : sans le français ou l'anglais, il est difficile de trouver un emploi ou de se faire des amis.\n\nEnsuite, participer à la culture locale aide à se sentir chez soi. Aller à la cabane à sucre au printemps, fêter la Saint-Jean ou regarder un match de hockey avec des collègues, ce sont des occasions de créer des liens. Un ami nigérian installé à Québec m'a raconté qu'il s'était vraiment senti intégré le jour où ses collègues l'ont invité à faire du ski de fond.\n\nCependant, je ne suis pas d'accord avec l'idée qu'il faut tout adopter. Le Canada a choisi le multiculturalisme : on ne demande pas aux immigrants d'oublier leurs origines. Au contraire, la diversité est une richesse. Les restaurants, les festivals et les musiques du monde entier rendent les villes canadiennes plus vivantes. À Toronto, par exemple, il y a un grand festival caribéen chaque été, et tout le monde y participe.\n\nEn plus, garder sa culture est important pour l'équilibre personnel et pour les enfants. Je veux que mes enfants parlent yoruba, connaissent nos traditions et soient fiers de leurs racines, tout en étant pleinement canadiens.\n\nEn conclusion, je dirais que s'intégrer, ce n'est pas remplacer une culture par une autre, c'est en ajouter une. Il faut respecter les valeurs et les règles du pays d'accueil, apprendre la langue et s'ouvrir aux habitudes locales, mais on peut garder sa cuisine, sa langue et ses fêtes. C'est justement cet équilibre qui fait la force d'un pays comme le Canada.",
+      "notes": [
+        "Announces a nuanced opinion and then develops both sides in order (D'un côté… Cependant…)",
+        "Canadian cultural references (cabane à sucre, Saint-Jean, hockey) show knowledge of the host society",
+        "Plus-que-parfait in reported speech (il m'a raconté qu'il s'était senti) — a B2 marker",
+        "Memorable conclusion: « ce n'est pas remplacer…, c'est en ajouter une »"
+      ]
+    },
+    "S3-05": {
+      "text": "Le sujet, c'est la gratuité des études universitaires pour tous. C'est une question importante, parce que l'éducation détermine souvent l'avenir d'une personne. Je suis en grande partie d'accord avec cette idée, mais je pense qu'il faut quelques conditions.\n\nMon premier argument, c'est l'égalité des chances. Aujourd'hui, au Canada comme ailleurs, beaucoup de jeunes renoncent à l'université parce qu'ils ne peuvent pas payer les frais de scolarité, ou alors ils terminent leurs études avec des dettes énormes. Un jeune brillant issu d'une famille modeste devrait avoir les mêmes chances qu'un jeune de famille riche. En Allemagne, par exemple, l'université publique est pratiquement gratuite, et cela permet à beaucoup plus de jeunes de faire des études supérieures.\n\nDeuxièmement, c'est un investissement pour la société. Un pays a besoin de médecins, d'ingénieurs et d'enseignants. Des diplômés mieux formés trouvent de meilleurs emplois, paient plus d'impôts et contribuent à l'économie. Donc, à long terme, l'argent investi revient à la société.\n\nTroisièmement, sans dette, les jeunes diplômés sont plus libres. Ils peuvent choisir un métier qui les passionne, créer une entreprise ou fonder une famille plus tôt, au lieu de passer dix ans à rembourser un prêt. Je connais plusieurs amis qui ont renoncé à leurs rêves parce qu'ils devaient d'abord rembourser leurs études ou aider leur famille.\n\nCela dit, je reconnais que la gratuité a un coût important. Ce sont les contribuables qui paient, y compris ceux qui ne sont jamais allés à l'université. Certains disent aussi que, quand c'est gratuit, les étudiants sont moins motivés et abandonnent plus facilement. Et puis, un gouvernement doit aussi financer les hôpitaux, les routes et les écoles primaires. Il faut donc faire des choix.\n\nC'est pourquoi je propose une gratuité avec des conditions. Par exemple, les étudiants devraient réussir leurs cours pour la conserver. On pourrait aussi demander aux diplômés en médecine de travailler quelques années dans les régions éloignées, qui manquent de professionnels.\n\nEn conclusion, je pense que l'université gratuite est une bonne idée, car elle favorise l'égalité et profite à toute la société. Mais pour qu'elle fonctionne, il faut responsabiliser les étudiants et bien gérer l'argent public.",
+      "notes": [
+        "« Mon premier argument, c'est… » — an easy, clear way to launch the body of the answer",
+        "Each argument is a different angle: fairness, society, individual freedom",
+        "Concession presents two real counter-arguments before proposing conditions",
+        "Conditional for proposals (devraient, On pourrait) — typical of a B2 argument"
+      ]
+    },
+    "S3-06": {
+      "text": "On affirme que l'intelligence artificielle va détruire plus d'emplois qu'elle n'en créera. C'est une inquiétude que beaucoup de gens partagent aujourd'hui. Personnellement, je ne suis pas tout à fait d'accord : je pense que l'IA va surtout transformer les emplois, même si la transition sera difficile pour certains.\n\nD'abord, il faut reconnaître que l'IA remplace déjà certaines tâches. Dans mon domaine, la comptabilité, des logiciels peuvent maintenant classer des factures ou préparer des rapports en quelques secondes. Les centres d'appels utilisent des robots conversationnels. Donc oui, certains postes vont disparaître, surtout ceux qui sont répétitifs.\n\nMais l'histoire nous montre que chaque révolution technologique crée aussi de nouveaux métiers. Quand l'ordinateur est arrivé, beaucoup de gens pensaient que les secrétaires et les comptables allaient disparaître. En réalité, on a vu apparaître des informaticiens, des développeurs web, des spécialistes en cybersécurité… des métiers qui n'existaient pas il y a quarante ans. Avec l'IA, ce sera pareil : il faudra des personnes pour concevoir ces outils, les contrôler et les utiliser.\n\nEnsuite, l'IA peut rendre le travail plus intéressant. Si une machine fait les tâches ennuyeuses, l'employé peut se concentrer sur ce qui demande du jugement, de la créativité ou des relations humaines. Par exemple, un médecin qui utilise l'IA pour analyser des radiographies a plus de temps pour parler avec ses patients. De la même façon, un comptable qui n'a plus besoin de saisir des chiffres peut passer plus de temps à conseiller ses clients.\n\nCependant, je ne veux pas être naïf. Les nouveaux emplois ne seront pas forcément pour les mêmes personnes. Un employé de cinquante ans dont le poste disparaît ne va pas devenir ingénieur en IA du jour au lendemain. Il y a donc un vrai risque d'inégalités.\n\nC'est pourquoi les gouvernements et les entreprises ont une grande responsabilité. Ils doivent investir dans la formation continue, pour que les travailleurs puissent apprendre de nouvelles compétences tout au long de leur carrière.\n\nEn conclusion, je ne pense pas que l'IA va détruire plus d'emplois qu'elle n'en créera, mais elle va profondément changer le marché du travail. La vraie question n'est pas « combien d'emplois ? », mais « est-ce que nous serons prêts ? ». Et la réponse dépend surtout de la formation.",
+      "notes": [
+        "Starts by conceding a true point (AI already replaces tasks) before arguing the opposite",
+        "Historical comparison (the arrival of computers) is a strong, easy-to-reuse argument type",
+        "« Je ne veux pas être naïf » — natural spoken way to introduce the limits of your own view",
+        "Rhetorical-question ending gives the conclusion impact"
+      ]
+    },
+    "S3-07": {
+      "text": "La proposition est d'interdire les voitures dans le centre des grandes villes. C'est une idée radicale, mais de plus en plus de villes y réfléchissent. Pour ma part, je suis favorable à une forte réduction des voitures au centre-ville, mais une interdiction totale me paraît difficile à appliquer.\n\nPremièrement, moins de voitures, c'est un air plus propre et donc une meilleure santé. Les gaz d'échappement causent des maladies respiratoires, surtout chez les enfants et les personnes âgées. Je viens de Lagos, où les embouteillages sont terribles : on respire la pollution toute la journée. Je sais donc à quel point un air propre est précieux.\n\nDeuxièmement, un centre-ville sans voitures est plus agréable à vivre. On peut marcher, faire du vélo, s'asseoir sur une terrasse sans bruit. Par exemple, à Montréal, plusieurs rues deviennent piétonnes en été, et elles sont pleines de monde. Au début, certains commerçants étaient inquiets, mais beaucoup constatent aujourd'hui que les piétons s'arrêtent plus souvent dans les boutiques.\n\nTroisièmement, cela encourage les transports en commun. Si on ne peut plus se garer au centre, on prend le métro ou l'autobus, ce qui réduit les embouteillages pour tout le monde. Et l'argent économisé sur les stationnements pourrait être investi dans de nouvelles lignes.\n\nCependant, il faut penser à ceux qui ont vraiment besoin d'une voiture : les personnes handicapées, les personnes âgées, les livreurs, les ambulances, les artisans avec leurs outils. Il faut aussi penser aux habitants de la banlieue, qui n'ont pas toujours un bon service de transport. Et en hiver, au Canada, marcher par moins vingt-cinq n'est pas toujours réaliste !\n\nC'est pourquoi je propose une solution progressive : des zones piétonnes dans les rues les plus fréquentées, des exceptions pour les véhicules d'urgence et les personnes à mobilité réduite, des stationnements incitatifs à l'entrée de la ville et, surtout, plus de métros et d'autobus.\n\nEn conclusion, je pense que réduire fortement les voitures au centre des grandes villes est une bonne direction, pour la santé, pour la qualité de vie et pour l'environnement. Mais une interdiction totale, du jour au lendemain, créerait trop de problèmes. Il faut avancer étape par étape.",
+      "notes": [
+        "Distinguishes « forte réduction » (yes) from « interdiction totale » (no) — a precise, defensible position",
+        "Personal experience (Lagos traffic) and a Canadian example (pedestrian streets in Montreal)",
+        "Concession lists who would be harmed, then the solution answers each group",
+        "Canadian vocabulary: stationnements incitatifs (park-and-ride)"
+      ]
+    },
+    "S3-08": {
+      "text": "Le sujet, c'est de savoir si les aliments trop sucrés ou trop gras devraient être davantage taxés. Mon opinion est plutôt favorable, mais avec une condition importante : l'argent de cette taxe doit servir à rendre les aliments sains plus accessibles.\n\nTout d'abord, les problèmes de santé liés à l'alimentation coûtent très cher. L'obésité, le diabète et les maladies cardiaques augmentent partout, y compris au Canada et au Nigeria. Or, ce sont les systèmes de santé publics, donc tous les contribuables, qui paient les soins. Il est logique que les produits qui causent ces problèmes participent au financement.\n\nEnsuite, le prix influence vraiment nos choix. Plusieurs pays ont déjà testé cette mesure. Au Mexique et au Royaume-Uni, par exemple, la taxe sur les boissons sucrées a fait baisser la consommation, et certains fabricants ont même réduit la quantité de sucre dans leurs produits pour éviter la taxe. C'est donc efficace.\n\nEnfin, cette taxe envoie un message clair. Quand un produit coûte plus cher, les gens comprennent qu'il n'est pas anodin, un peu comme pour le tabac. Il y a trente ans, tout le monde fumait au restaurant ; aujourd'hui, c'est impensable. Les taxes ont joué un rôle dans ce changement.\n\nCela dit, je comprends les critiques. D'abord, cette taxe touche surtout les familles modestes, qui achètent souvent des produits transformés parce qu'ils sont moins chers et plus rapides à préparer. Ensuite, certains pensent que ce n'est pas le rôle de l'État de décider ce que nous mangeons. C'est une question de liberté individuelle, et je la respecte.\n\nC'est pour ça que, selon moi, la taxe ne doit pas être une punition. L'argent récolté devrait financer des mesures concrètes : baisser le prix des fruits et des légumes, offrir des repas sains dans les écoles ou organiser des cours de cuisine gratuits. Comme ça, les familles modestes ne sont pas perdantes : elles paient plus pour les produits malsains, mais moins pour les produits sains.\n\nEn conclusion, je pense que taxer davantage les aliments très sucrés ou très gras est une mesure utile pour la santé publique. Mais elle doit faire partie d'une stratégie plus large, qui combine le prix, l'éducation et l'accès à une alimentation de qualité.",
+      "notes": [
+        "Opinion with a condition announced immediately, so the whole answer has a clear direction",
+        "Evidence from real policies (Mexico, UK sugar taxes) and an analogy with tobacco",
+        "Concession treats two different objections (fairness and freedom) respectfully",
+        "Solution answers the strongest objection directly: the tax money helps modest families"
+      ]
+    },
+    "S3-09": {
+      "text": "On dit qu'aujourd'hui, les parents laissent trop de liberté à leurs enfants. C'est une remarque qu'on entend souvent, surtout chez les grands-parents ! Mon avis est nuancé : je pense que les enfants ont plus de liberté dans certains domaines, mais beaucoup moins dans d'autres.\n\nD'un côté, il est vrai que les enfants ont aujourd'hui une grande liberté numérique. Beaucoup d'enfants de dix ans ont un téléphone et peuvent regarder presque n'importe quoi sur Internet, souvent sans contrôle. Leurs parents travaillent beaucoup, ils sont fatigués, et c'est plus facile de donner une tablette que de dire non. À mon avis, c'est là que se trouve le vrai problème.\n\nDe plus, dans certaines familles, les enfants participent à toutes les décisions : le menu, les vacances, l'heure du coucher… Quand j'étais petit, au Nigeria, c'était impensable ! Mes parents décidaient, et on obéissait. Je ne dis pas que c'était parfait, mais nous avions des règles claires, et cela nous donnait un cadre rassurant.\n\nD'un autre côté, dans la vie réelle, les enfants ont moins de liberté qu'avant. Autrefois, on jouait dehors avec les voisins et on allait à l'école à pied, tout seul. Aujourd'hui, beaucoup de parents ont peur et accompagnent leurs enfants partout, même à douze ans. Les enfants ont aussi des horaires très chargés : école, sport, musique, devoirs… Ils ont peu de temps libre pour inventer des jeux et apprendre à se débrouiller.\n\nIl faut aussi reconnaître que donner un peu de liberté est important. Un enfant qui fait ses propres choix, et parfois ses propres erreurs, développe sa confiance en lui et son sens des responsabilités. Un enfant trop protégé risque d'avoir du mal à devenir autonome plus tard.\n\nDonc, pour moi, la question n'est pas « trop » ou « pas assez » de liberté, mais quel type de liberté. Je pense que les parents devraient être plus stricts avec les écrans, mais laisser plus d'autonomie dans la vie réelle : aller à l'école seul, jouer dehors, gérer un peu d'argent de poche.\n\nEn conclusion, je ne suis pas complètement d'accord avec cette affirmation. En général, les parents ne donnent pas trop de liberté, mais ils la donnent parfois au mauvais endroit. Ce qu'il faut aux enfants, c'est à la fois de l'amour, des limites claires et de la confiance.",
+      "notes": [
+        "Reframes the question (not « how much » freedom but « what kind ») — a sophisticated but simple move",
+        "Imparfait for childhood memories (Quand j'étais petit… on obéissait) contrasted with the present",
+        "D'un côté / D'un autre côté organise the two halves of the argument",
+        "Concrete proposals (stricter with screens, more real-world autonomy) before the conclusion"
+      ]
+    },
+    "S3-10": {
+      "text": "L'affirmation dit que nous achetons beaucoup trop de choses dont nous n'avons pas besoin. Je suis globalement d'accord avec cette idée, et je vais l'illustrer avec quelques exemples, y compris personnels.\n\nPremièrement, la publicité et les réseaux sociaux nous poussent sans arrêt à consommer. On voit un influenceur avec un nouveau téléphone ou de nouvelles chaussures, et tout à coup, on a l'impression d'en avoir besoin. Des événements comme le Vendredi fou créent une urgence artificielle : « Achetez maintenant, sinon vous allez rater l'occasion ! » Moi-même, l'année dernière, j'ai acheté une montre connectée en solde… et je ne la porte presque jamais.\n\nDeuxièmement, les achats en ligne rendent la consommation trop facile. En un clic, le produit arrive le lendemain. On n'a plus le temps de réfléchir. Résultat : nos placards sont pleins de vêtements qu'on ne porte pas, et nos tiroirs de gadgets inutiles.\n\nTroisièmement, cette surconsommation a des conséquences graves pour la planète. Fabriquer un simple jean demande des milliers de litres d'eau. Les vêtements bon marché sont portés quelques fois, puis jetés. D'ailleurs, sur les marchés d'Afrique de l'Ouest, on voit arriver des tonnes de vêtements d'occasion venant d'Europe et d'Amérique du Nord, et une partie finit dans des décharges.\n\nCela dit, il faut nuancer. Tout le monde ne surconsomme pas. Beaucoup de familles ont du mal à acheter l'essentiel : la nourriture, le loyer, les vêtements d'hiver pour les enfants. Pour elles, le problème n'est pas d'acheter trop, mais de ne pas pouvoir acheter assez. De plus, la consommation fait tourner l'économie et crée des emplois. Si tout le monde arrêtait d'acheter du jour au lendemain, beaucoup de commerces fermeraient.\n\nAlors, que faire ? Je crois qu'il faut consommer de façon plus réfléchie. Avant d'acheter, on peut se poser deux questions simples : « Est-ce que j'en ai vraiment besoin ? Est-ce que je peux l'emprunter ou l'acheter d'occasion ? » Au Canada, par exemple, les friperies et les sites de vente d'occasion sont très populaires, et certaines villes ont même des bibliothèques d'outils.\n\nEn conclusion, oui, dans les pays riches et dans les classes moyennes du monde entier, nous achetons trop. Mais la solution n'est pas d'arrêter de consommer : c'est d'acheter moins, mais mieux.",
+      "notes": [
+        "Personal, slightly self-mocking example (the smartwatch) makes the argument credible and natural",
+        "Nuance through social inequality: not everyone over-consumes",
+        "Hypothesis with si + imparfait → conditionnel (Si tout le monde arrêtait…, fermeraient)",
+        "Quebec vocabulary: Vendredi fou (Black Friday), friperies"
+      ]
+    },
+    "S3-11": {
+      "text": "La phrase affirme que voyager à l'étranger est la meilleure façon d'apprendre. Je suis d'accord que le voyage est une façon extraordinaire d'apprendre, mais je ne dirais pas que c'est forcément la meilleure, ni la seule.\n\nCommençons par les avantages. D'abord, voyager nous oblige à sortir de notre zone de confort. On doit se débrouiller dans une autre langue, comprendre d'autres règles, s'adapter à une autre nourriture. Quand je suis allé au Bénin pour la première fois, j'ai dû utiliser mon français pour négocier au marché de Cotonou. En une semaine, j'ai appris plus de vocabulaire utile qu'en un mois de cours !\n\nEnsuite, le voyage change notre regard sur le monde. On découvre que nos habitudes ne sont pas les seules possibles. On devient plus tolérant, plus curieux. Lire un livre sur l'histoire de l'esclavage, ce n'est pas la même chose que visiter la Porte du non-retour à Ouidah. Ce jour-là, j'ai ressenti l'histoire au lieu de simplement l'apprendre.\n\nEnfin, voyager développe l'autonomie. Organiser son trajet, gérer son budget, résoudre un problème quand on a raté un train… ce sont des compétences très utiles dans la vie professionnelle.\n\nCependant, il faut être réaliste. Premièrement, voyager coûte cher, et tout le monde ne peut pas se le permettre. Si c'était la meilleure façon d'apprendre, l'éducation serait réservée aux riches. Deuxièmement, beaucoup de touristes voyagent sans rien apprendre : ils restent à l'hôtel, mangent comme chez eux et ne parlent qu'avec d'autres touristes. Le voyage n'enseigne rien si on n'est pas ouvert. Troisièmement, certaines connaissances s'apprennent mieux avec un professeur et des livres : les mathématiques, la médecine ou la grammaire d'une langue, par exemple.\n\nD'ailleurs, on peut découvrir d'autres cultures sans partir loin. Dans une ville comme Toronto ou Montréal, on peut rencontrer des gens du monde entier dans son propre quartier, goûter leur cuisine et participer à leurs fêtes.\n\nEn conclusion, je dirais que le voyage est un excellent complément à l'éducation, surtout pour apprendre les langues, l'ouverture d'esprit et l'autonomie. Mais la meilleure façon d'apprendre, c'est de combiner l'étude, l'expérience et la curiosité. Et la curiosité, elle, ne demande pas de billet d'avion.",
+      "notes": [
+        "Partial agreement stated precisely: « extraordinary », but not « the best » or « the only »",
+        "Vivid personal travel examples (Cotonou market, Ouidah) instead of generalities",
+        "Hypothesis to challenge the statement: « Si c'était la meilleure façon…, l'éducation serait réservée aux riches »",
+        "Final line is memorable and sums up the position"
+      ]
+    },
+    "S3-12": {
+      "text": "Le sujet est de savoir si le bénévolat devrait être obligatoire pour les élèves du secondaire. Je suis plutôt favorable à cette idée, à condition que l'obligation reste raisonnable et flexible.\n\nMon premier argument, c'est que le bénévolat permet aux jeunes de découvrir la réalité de leur communauté. À quinze ou seize ans, beaucoup d'adolescents vivent un peu dans leur bulle : l'école, les amis, les réseaux sociaux. En aidant dans une banque alimentaire ou dans une résidence pour personnes âgées, ils découvrent la pauvreté, la solitude, la maladie. Cela développe l'empathie et le sens des responsabilités.\n\nDeuxièmement, c'est une première expérience très utile pour l'avenir. Les jeunes apprennent à être ponctuels, à travailler en équipe et à parler avec des adultes. Ils peuvent aussi découvrir un métier. Par exemple, un jeune qui aide dans un hôpital peut se rendre compte qu'il veut devenir infirmier. Et puis, c'est une ligne intéressante sur un premier CV. Les employeurs canadiens apprécient beaucoup ce type d'expérience.\n\nTroisièmement, l'obligation permet d'atteindre tous les jeunes, pas seulement ceux qui ont déjà l'habitude de s'engager. En Ontario, les élèves doivent faire quarante heures de service communautaire pour obtenir leur diplôme d'études secondaires. Beaucoup commencent par obligation, puis continuent parce qu'ils ont aimé l'expérience. Moi-même, j'ai commencé à aider dans mon église parce que ma mère me l'avait demandé, et j'ai continué pendant des années.\n\nÉvidemment, il y a des objections sérieuses. Certains disent qu'un bénévolat obligatoire n'est plus vraiment du bénévolat. C'est vrai, sur le plan des principes. Et puis, certains élèves ont déjà un emploi à temps partiel pour aider leur famille, ou ils s'occupent de leurs frères et sœurs. Pour eux, quarante heures de plus, ça peut être lourd.\n\nC'est pourquoi je pense que l'obligation doit être souple. Il faudrait un nombre d'heures raisonnable, réparti sur plusieurs années, avec un large choix d'activités. On pourrait aussi reconnaître l'aide familiale ou certaines activités culturelles comme une forme d'engagement.\n\nEn conclusion, je pense qu'un bénévolat obligatoire, bien organisé, est une bonne chose pour les jeunes et pour la société. Au départ, c'est une obligation, mais pour beaucoup d'élèves, cela devient une vraie passion.",
+      "notes": [
+        "Real Canadian fact (Ontario's 40 hours) plus a personal story that mirrors it",
+        "Gérondif « En aidant… » and plus-que-parfait « me l'avait demandé » used naturally",
+        "Concession admits the strongest objection (« n'est plus vraiment du bénévolat ») honestly",
+        "Proposals in the conditional (Il faudrait, On pourrait) make the position constructive"
+      ]
+    },
+    "S3-13": {
+      "text": "La phrase dit qu'il vaut mieux être locataire que propriétaire de son logement. C'est une question que beaucoup de gens se posent, surtout avec la hausse des prix de l'immobilier au Canada. À mon avis, il n'y a pas de réponse universelle : cela dépend du moment de la vie. Mais pour moi, à long terme, être propriétaire reste préférable.\n\nD'abord, reconnaissons les avantages de la location. Le locataire est plus flexible : s'il trouve un emploi dans une autre ville, il peut déménager facilement. Il n'a pas à payer les grosses réparations, comme un nouveau toit ou une nouvelle fournaise. Et surtout, il n'a pas besoin d'une grosse mise de fonds. Pour un nouvel arrivant comme moi, qui ne connaît pas encore bien le marché du travail et qui n'a pas d'historique de crédit, louer est clairement la meilleure option au début.\n\nCependant, à long terme, je pense que devenir propriétaire a de grands avantages. Premièrement, c'est un investissement. Quand on paie un loyer, cet argent disparaît chaque mois. Quand on rembourse une hypothèque, on construit un patrimoine. Au bout de vingt-cinq ans, la maison nous appartient.\n\nDeuxièmement, c'est une question de stabilité et de liberté. Un locataire peut devoir partir si le propriétaire décide de vendre ou de reprendre son logement. Quand on est propriétaire, ce risque n'existe pas. On peut aussi aménager son chez-soi comme on veut : peindre les murs, refaire la cuisine, avoir un chien.\n\nTroisièmement, à la retraite, ne plus avoir de loyer à payer, c'est une grande sécurité. Dans ma culture, d'ailleurs, posséder sa maison est un signe de réussite et un héritage pour ses enfants. Mon père a mis quinze ans à construire la maison familiale, et il en est très fier.\n\nBien sûr, il faut être prudent. Acheter trop tôt, ou trop cher, peut devenir un piège. Si les taux d'intérêt augmentent, les paiements peuvent devenir très lourds. Il faut donc bien calculer son budget et garder une réserve pour les imprévus.\n\nEn conclusion, je dirais que la location est idéale au début, pour les jeunes ou pour les nouveaux arrivants qui ont besoin de flexibilité. Mais quand la situation est stable, devenir propriétaire est, selon moi, le meilleur choix pour l'avenir. Donc, je ne suis pas tout à fait d'accord avec l'affirmation.",
+      "notes": [
+        "Starts with the opposing side's advantages (Reconnaissons…) before defending your own view — strong structure",
+        "Contrast in parallel sentences: « Quand on paie un loyer… Quand on rembourse une hypothèque… »",
+        "Real-life vocabulary for Canada: mise de fonds, hypothèque, fournaise, historique de crédit",
+        "Conclusion explicitly answers the statement (je ne suis pas tout à fait d'accord)"
+      ]
+    },
+    "S3-14": {
+      "text": "L'affirmation dit que les personnes âgées devraient vivre avec leur famille plutôt qu'en résidence. Comme je viens du Nigeria, où il est normal que les parents âgés vivent avec leurs enfants, j'ai une opinion assez claire, mais je veux aussi la nuancer.\n\nJe suis plutôt d'accord avec cette idée, pour plusieurs raisons. Premièrement, la famille offre une affection et une présence que personne d'autre ne peut remplacer. La solitude est un grave problème pour les personnes âgées, surtout dans les pays froids, où elles sortent peu en hiver. Vivre avec ses enfants et ses petits-enfants, c'est rester entouré et se sentir utile.\n\nDeuxièmement, c'est un enrichissement pour toute la famille. Les grands-parents transmettent leur langue, leurs histoires et leurs traditions. Moi, j'ai grandi avec ma grand-mère : c'est elle qui m'a appris le yoruba et qui m'a raconté l'histoire de notre famille. Sans elle, j'aurais perdu une partie de mes racines. En plus, les grands-parents peuvent aider à garder les enfants, ce qui est précieux quand les deux parents travaillent.\n\nTroisièmement, c'est souvent plus économique. Les résidences privées coûtent très cher au Canada, parfois plusieurs milliers de dollars par mois.\n\nCela dit, je reconnais que ce n'est pas toujours possible. Quand une personne âgée souffre d'une maladie grave, comme l'alzheimer, ou qu'elle a besoin de soins jour et nuit, la famille ne peut pas tout faire. Les enfants travaillent, les logements sont petits, et s'occuper d'un parent malade peut provoquer un épuisement terrible. Dans ce cas, une bonne résidence, avec du personnel qualifié, est un choix responsable, pas un abandon.\n\nIl faut aussi respecter le choix de la personne âgée elle-même. Certaines personnes préfèrent leur indépendance et ne veulent pas déranger leurs enfants. Elles apprécient les activités et la compagnie des autres résidents.\n\nIl existe d'ailleurs des solutions intermédiaires : un petit appartement près de la famille, une maison intergénérationnelle avec un logement séparé, ou des services d'aide à domicile. Au Québec, par exemple, on voit de plus en plus de maisons avec un petit appartement pour les grands-parents.\n\nEn conclusion, je pense que, lorsque c'est possible, vivre en famille est la meilleure solution pour les personnes âgées. Mais ce ne doit pas être une règle absolue : la santé et les souhaits de la personne doivent passer en premier.",
+      "notes": [
+        "Uses cultural background as a legitimate argument, then broadens to the Canadian context",
+        "Past conditional for a hypothesis (Sans elle, j'aurais perdu…) — a clear B2+ marker",
+        "Strong concession: a residence can be « un choix responsable, pas un abandon »",
+        "Suggests intermediate solutions, showing balanced thinking before concluding"
+      ]
+    },
+    "S3-15": {
+      "text": "Le sujet, c'est de savoir si le salaire est le critère le plus important dans le choix d'un emploi. À mon avis, le salaire est très important, surtout au début d'une carrière ou quand on arrive dans un nouveau pays, mais ce n'est pas le seul critère, ni toujours le plus important.\n\nD'abord, il faut être honnête : on travaille d'abord pour gagner sa vie. Le salaire permet de payer le loyer, de nourrir sa famille et de préparer l'avenir. Pour un nouvel arrivant au Canada, qui doit payer un logement, des vêtements d'hiver et parfois envoyer de l'argent à sa famille, un bon salaire est évidemment une priorité. Je ne vais pas faire semblant du contraire !\n\nCependant, un bon salaire ne suffit pas pour être heureux au travail. Premièrement, l'ambiance et les relations avec les collègues comptent énormément. J'ai un ami à Lagos qui gagnait très bien sa vie dans une grande banque, mais son directeur l'humiliait régulièrement. Au bout de deux ans, il était épuisé et il a démissionné pour un poste moins bien payé. Aujourd'hui, il dit qu'il ne regrette rien.\n\nDeuxièmement, l'équilibre entre vie professionnelle et vie personnelle est essentiel. Un poste très bien payé qui demande soixante heures par semaine laisse peu de temps pour sa famille ou sa santé. De plus en plus de jeunes préfèrent un salaire un peu plus bas avec des horaires flexibles ou du télétravail.\n\nTroisièmement, les perspectives d'évolution et de formation sont importantes. Un emploi où l'on apprend beaucoup peut mener, dans quelques années, à un poste beaucoup mieux payé. C'est un investissement à long terme.\n\nEnfin, pour beaucoup de gens, le sens du travail compte aussi : se sentir utile, aider les autres, être fier de ce qu'on fait. C'est pour ça que certaines personnes choisissent d'être infirmières, enseignantes ou travailleuses sociales, même si ces métiers ne sont pas les mieux payés.\n\nEn conclusion, je dirais que le salaire est un critère nécessaire : il doit être suffisant pour vivre dignement. Mais une fois ce minimum atteint, d'autres critères deviennent plus importants, comme l'ambiance, l'équilibre de vie et les possibilités d'évoluer. Personnellement, entre deux offres, je choisirais celle où je peux progresser et être respecté, même si elle est un peu moins bien payée.",
+      "notes": [
+        "Honest concession first (« il faut être honnête… ») makes the later counter-arguments more convincing",
+        "Four supporting criteria, each introduced by a clear ordinal connector",
+        "Story with imparfait + passé composé (gagnait, l'humiliait / a démissionné) as evidence",
+        "Personal decision in the conditional (je choisirais celle où…) ends the answer concretely"
+      ]
+    },
+    "S3-16": {
+      "text": "Selon l'affirmation, les réseaux sociaux ont plus d'effets négatifs que positifs sur notre vie. C'est un débat très actuel. Pour ma part, je ne suis pas complètement d'accord : je pense que les réseaux sociaux sont un outil, et que leurs effets dépendent surtout de la façon dont on les utilise.\n\nCommençons par les aspects négatifs, qui sont réels. D'abord, les réseaux sociaux sont conçus pour nous rendre dépendants. On pense regarder cinq minutes, et une heure plus tard, on est toujours en train de faire défiler des vidéos. Cela nuit au sommeil, à la concentration et à la productivité. Ensuite, ils peuvent affecter la santé mentale, surtout chez les jeunes : on se compare sans arrêt à des vies qui semblent parfaites. Enfin, il y a le problème des fausses informations, qui se propagent très vite, comme on l'a vu pendant la pandémie.\n\nMais les réseaux sociaux ont aussi des effets très positifs. Premièrement, ils permettent de garder le contact avec ses proches. Pour les immigrants, c'est essentiel. Grâce aux messageries et aux appels vidéo, je parle tous les jours avec ma famille, et quand je serai au Canada, je pourrai voir grandir mes neveux, même à des milliers de kilomètres.\n\nDeuxièmement, ils offrent des opportunités professionnelles. Beaucoup de gens trouvent un emploi grâce aux réseaux professionnels. À Lagos, beaucoup de petites entreprises, comme les couturières ou les traiteurs, vendent leurs produits en ligne sans avoir besoin d'une boutique.\n\nTroisièmement, ils donnent une voix à ceux qui n'en avaient pas. Au Nigeria, en 2020, le mouvement #EndSARS contre les violences policières s'est organisé en grande partie sur les réseaux sociaux. Sans eux, beaucoup de jeunes n'auraient jamais été entendus.\n\nAlors, que faut-il faire ? Selon moi, il faut apprendre à bien utiliser ces outils : limiter le temps passé sur les applications, vérifier les informations avant de les partager et protéger les enfants avec des règles claires. Les plateformes aussi ont une responsabilité : elles doivent mieux lutter contre le harcèlement et les fausses nouvelles.\n\nEn conclusion, les réseaux sociaux ne sont ni bons ni mauvais en eux-mêmes. Ils ont des effets négatifs importants, mais aussi des avantages qu'on ne peut pas ignorer. Tout dépend de l'usage qu'on en fait.",
+      "notes": [
+        "Deals with the negatives first and fully, then builds the counter-argument — a clear two-part plan",
+        "Specific Nigerian example (#EndSARS, 2020) gives real weight to the « voice » argument",
+        "Past conditional in a hypothesis: « Sans eux, … n'auraient jamais été entendus »",
+        "« Alors, que faut-il faire ? » turns the discussion towards solutions before concluding"
+      ]
+    },
+    "S3-17": {
+      "text": "On affirme que tout le monde devrait parler au moins deux langues. Je suis tout à fait d'accord avec cette idée, d'autant plus que, dans mon pays, c'est déjà la réalité pour la majorité des gens.\n\nMon premier argument est professionnel. Dans un monde globalisé, parler deux langues ou plus ouvre énormément de portes. Au Canada, par exemple, les personnes bilingues français-anglais ont accès à plus de postes, notamment dans la fonction publique fédérale. C'est d'ailleurs l'une des raisons pour lesquelles j'apprends le français : cela augmente mes chances d'immigration et d'emploi.\n\nDeuxièmement, apprendre une autre langue, c'est découvrir une autre culture. Une langue n'est pas seulement du vocabulaire : c'est une façon de voir le monde. Quand on comprend les expressions, l'humour et les chansons d'un peuple, on le comprend mieux. Cela nous rend plus ouverts et plus tolérants.\n\nTroisièmement, il y a des avantages pour le cerveau. Plusieurs études suggèrent que les personnes bilingues passent plus facilement d'une tâche à l'autre, et certaines recherches indiquent même que le bilinguisme pourrait retarder certains effets du vieillissement.\n\nAu Nigeria, par exemple, la plupart des gens parlent au moins deux langues : leur langue maternelle, comme le yoruba, l'igbo ou le haoussa, et l'anglais, la langue officielle. Beaucoup parlent aussi le pidgin. Ce multilinguisme est naturel, et personne ne le trouve extraordinaire.\n\nCela dit, je reconnais qu'il y a des obstacles. Apprendre une langue à l'âge adulte demande beaucoup de temps et d'argent. Je le sais par expérience : le français m'a déjà demandé des centaines d'heures ! Pour une personne qui travaille beaucoup ou qui a peu de moyens, ce n'est pas facile. De plus, dans certaines régions du monde, on peut vivre toute sa vie avec une seule langue sans aucun problème.\n\nC'est pourquoi il faut commencer tôt. L'école est le meilleur endroit : les enfants apprennent les langues facilement et avec une meilleure prononciation. Les programmes d'immersion française au Canada en sont un bon exemple : des milliers d'enfants anglophones y deviennent bilingues.\n\nEn conclusion, je pense que parler au moins deux langues devrait être un objectif pour tous, parce que c'est un atout professionnel, culturel et intellectuel. Et comme on dit, un homme qui parle deux langues en vaut deux.",
+      "notes": [
+        "Strong agreement backed by three different kinds of arguments: professional, cultural, cognitive",
+        "Careful, honest wording about research (études suggèrent, pourrait retarder) — avoids overclaiming",
+        "Relative structure « l'une des raisons pour lesquelles » and pronoun « en » (en sont, en vaut) at B2 level",
+        "Ends with a well-known French proverb — a memorable close"
+      ]
+    },
+    "S3-18": {
+      "text": "L'affirmation dit que les petits gestes individuels ne suffiront pas à protéger la planète. Je suis d'accord avec cette idée, mais je voudrais ajouter que ces gestes restent quand même utiles.\n\nD'abord, pourquoi est-ce qu'ils ne suffisent pas ? Tout simplement à cause des chiffres. La plus grande partie des émissions de gaz à effet de serre vient de la production d'énergie, de l'industrie, des transports et de l'agriculture. Je peux éteindre la lumière, trier mes déchets et prendre des douches courtes, c'est bien. Mais si l'électricité de mon pays est produite avec du charbon ou du pétrole, mon impact reste limité. Au Nigeria, par exemple, beaucoup de familles utilisent des générateurs à essence à cause des coupures de courant. Ce n'est pas un choix individuel : c'est un problème d'infrastructures.\n\nEnsuite, certains changements ne sont possibles que si les gouvernements et les entreprises agissent. Je ne peux pas prendre le métro s'il n'y a pas de métro dans ma ville. Je ne peux pas acheter une voiture électrique s'il n'y a pas de bornes de recharge ou si elle coûte trop cher. Ce sont les gouvernements qui doivent investir dans les transports en commun et les énergies renouvelables, et les entreprises qui doivent réduire leur pollution.\n\nCependant, je ne veux pas dire que les gestes individuels sont inutiles. Au contraire, ils ont trois avantages. Premièrement, additionnés, ils ont un effet réel : si des millions de personnes mangent moins de viande ou prennent moins l'avion, cela compte. Deuxièmement, nos choix de consommation influencent les entreprises : si les clients refusent les emballages en plastique, les magasins s'adaptent. Troisièmement, et c'est peut-être le plus important, les citoyens qui changent leurs habitudes sont plus susceptibles de soutenir des politiques écologiques et de voter pour elles.\n\nAu Québec, par exemple, la consigne sur les bouteilles et la collecte du compost fonctionnent parce que les citoyens participent, mais aussi parce que les gouvernements ont créé le système. C'est la preuve que les deux niveaux doivent travailler ensemble.\n\nEn conclusion, je pense que les petits gestes sont nécessaires, mais pas suffisants. Pour protéger la planète, il faut que les citoyens, les entreprises et les gouvernements agissent ensemble. Les gestes individuels sont le point de départ, pas la solution complète.",
+      "notes": [
+        "Agrees, but immediately adds a nuance — the answer is structured around « not enough, but still useful »",
+        "« ne… que si » and « Ce sont les gouvernements qui… » show B2 grammatical range",
+        "Examples from both Nigeria (generators) and Quebec (bottle deposits, compost)",
+        "Conclusion with « il faut que + subjonctif » (agissent) summarises the shared responsibility"
+      ]
+    },
+    "S3-19": {
+      "text": "La phrase dit qu'il est préférable de vivre à la campagne plutôt qu'en ville. Personnellement, je ne suis pas d'accord, en tout cas à ce moment de ma vie. Je pense que chaque endroit a ses avantages, mais pour une personne active ou pour un nouvel arrivant, la ville offre plus d'opportunités.\n\nJe reconnais d'abord que la campagne a de vrais atouts. L'air est plus pur, il y a moins de bruit et moins de stress. Les logements sont moins chers et plus grands : avec le prix d'un petit appartement à Toronto, on peut acheter une maison avec un grand terrain en région. Pour les enfants, c'est aussi un environnement sain, où ils peuvent jouer dehors en sécurité. Quand je vais chez mes grands-parents, dans un village près d'Abeokuta, je dors toujours beaucoup mieux qu'à Lagos !\n\nCependant, je préfère la ville, pour trois raisons. Premièrement, l'emploi. La plupart des emplois qualifiés, surtout dans mon domaine, la finance, se trouvent dans les grandes villes. À la campagne, les choix sont limités, et on doit parfois faire de longs trajets.\n\nDeuxièmement, les services. En ville, les hôpitaux, les universités, les écoles et les administrations sont proches. À la campagne, il faut parfois conduire une heure pour voir un médecin spécialiste. Pour une famille avec des enfants ou pour une personne âgée, c'est un vrai problème.\n\nTroisièmement, la vie sociale et culturelle. La ville offre des restaurants, des cinémas, des festivals et une grande diversité de gens. Pour un immigrant, c'est très important : dans une grande ville comme Montréal, on trouve des communautés de tous les pays, des épiceries africaines, des églises… On se sent moins seul. À la campagne, il peut être plus difficile de s'intégrer, et il n'y a pas toujours de transports en commun, donc il faut absolument une voiture.\n\nCela dit, les choses changent avec le télétravail. Aujourd'hui, certaines personnes peuvent travailler pour une entreprise en ville tout en habitant à la campagne. C'est peut-être la meilleure solution pour ceux qui le peuvent.\n\nEn conclusion, je dirais que la campagne est idéale pour la tranquillité et la nature, mais que la ville reste préférable pour le travail, les services et l'intégration. Peut-être que dans vingt ans, à la retraite, je changerai d'avis et j'irai vivre au bord d'un lac au Québec !",
+      "notes": [
+        "Position is qualified in time (« à ce moment de ma vie ») — honest and nuanced",
+        "Concedes the countryside's advantages FIRST, then gives three reasons for the city",
+        "Short topic headings (Premièrement, l'emploi. Deuxièmement, les services.) are very effective when speaking",
+        "Light, personal ending in the future tense leaves a good impression"
+      ]
+    },
+    "S3-20": {
+      "text": "Le sujet, c'est de savoir si le sport devrait occuper plus de place à l'école. Je suis tout à fait d'accord avec cette idée, pour des raisons de santé, mais aussi pour la réussite scolaire et le développement personnel des élèves.\n\nPremièrement, les jeunes ne bougent pas assez. Aujourd'hui, beaucoup d'enfants passent des heures assis : en classe, devant les devoirs, puis devant les écrans. Les spécialistes recommandent au moins une heure d'activité physique par jour pour les enfants, mais la majorité n'y arrive pas. Or, le manque d'activité favorise l'obésité, le diabète et même l'anxiété. L'école est le seul endroit où tous les enfants, riches ou pauvres, peuvent faire du sport régulièrement.\n\nDeuxièmement, le sport améliore les résultats scolaires. On pourrait penser que les heures de sport sont prises sur les mathématiques ou le français, et que c'est une perte de temps. En réalité, bouger améliore la concentration et la mémoire. Je le remarque sur moi-même : quand je fais du jogging le matin, j'étudie mon français beaucoup plus efficacement le soir.\n\nTroisièmement, le sport apprend des valeurs importantes : l'esprit d'équipe, le respect des règles, la persévérance et la gestion de l'échec. Quand j'étais au secondaire, je jouais au football dans l'équipe de l'école. C'est là que j'ai appris à accepter la défaite et à encourager mes coéquipiers. Ces leçons m'ont servi plus tard dans mon travail.\n\nBien sûr, il y a des difficultés. Les programmes sont déjà très chargés, et certaines écoles n'ont pas de gymnase ni d'équipement. Il faut aussi penser aux élèves qui n'aiment pas le sport ou qui ont un handicap : ils ne doivent pas se sentir humiliés ou exclus.\n\nC'est pourquoi je propose de varier les activités : pas seulement des sports de compétition, mais aussi la danse, le yoga, la marche ou la natation, pour que chacun trouve quelque chose qu'il aime. On pourrait aussi intégrer le mouvement dans les autres cours, avec de courtes pauses actives toutes les heures. Et en hiver, au Canada, pourquoi ne pas proposer du patin ou de la raquette ?\n\nEn conclusion, je pense que l'école devrait donner plus de place au sport, parce qu'il améliore la santé, la réussite scolaire et la vie en groupe. Un élève en bonne santé est un élève qui apprend mieux. C'est un investissement pour l'avenir de toute la société.",
+      "notes": [
+        "Anticipates a counter-argument inside an argument (« On pourrait penser que… En réalité… »)",
+        "Personal evidence from school days and from current French study",
+        "Solution section addresses inclusion (students who dislike sport, disabilities)",
+        "« pour que chacun trouve » — subjunctive after pour que; « pourquoi ne pas… ? » for suggestions"
+      ]
+    },
+    "S3-21": {
+      "text": "On affirme qu'on ne peut plus faire confiance aux informations que l'on trouve sur Internet. Je comprends cette inquiétude, mais je trouve cette phrase trop générale. À mon avis, on peut encore faire confiance à certaines informations en ligne, à condition de savoir les vérifier.\n\nIl est vrai que les fausses informations sont partout. Sur les réseaux sociaux, n'importe qui peut publier n'importe quoi, et les nouvelles choquantes se partagent beaucoup plus vite que les vraies. Par exemple, dans les groupes de discussion de ma famille, je reçois régulièrement des messages sur de faux remèdes miracles ou sur des événements qui n'ont jamais eu lieu. Pendant la pandémie, ces rumeurs ont même mis des vies en danger.\n\nEn plus, avec l'intelligence artificielle, il est de plus en plus difficile de distinguer le vrai du faux. On peut maintenant créer de fausses photos, et même de fausses vidéos d'hommes politiques, très réalistes. C'est vraiment inquiétant, surtout pendant les élections.\n\nCependant, dire qu'on ne peut plus faire confiance à Internet, c'est oublier qu'Internet contient aussi les meilleures sources d'information du monde. Les sites des gouvernements, des universités, des grands médias comme Radio-Canada, ou d'organisations comme l'Organisation mondiale de la santé publient des informations sérieuses et vérifiées. Moi-même, pour préparer mon immigration, j'ai trouvé toutes les informations officielles sur le site du gouvernement du Canada. Sans Internet, cela aurait été beaucoup plus compliqué et beaucoup plus cher.\n\nLe vrai problème, ce n'est donc pas Internet, mais notre manière de l'utiliser. Il faut apprendre à vérifier : qui a écrit l'article ? Quelle est la source ? Est-ce que d'autres médias sérieux disent la même chose ? Est-ce que la date est récente ? Ce sont des réflexes simples, mais essentiels.\n\nC'est pourquoi je pense que l'éducation aux médias devrait être enseignée à l'école, dès le primaire. Les plateformes aussi doivent prendre leurs responsabilités, en signalant les contenus faux ou trompeurs.\n\nEn conclusion, je ne suis pas d'accord avec l'idée qu'on ne peut plus faire confiance à Internet. Il faut simplement être plus prudent, plus critique, et ne pas croire tout ce qu'on lit. Internet, c'est comme une immense bibliothèque : on y trouve d'excellents livres, mais aussi beaucoup de mauvais.",
+      "notes": [
+        "Criticises the wording of the statement itself (« trop générale ») — a good B2 strategy",
+        "Concession comes first here: the real dangers (rumours, deepfakes) are fully acknowledged",
+        "Series of short questions (qui ? quelle source ?) gives a practical, lively middle section",
+        "Closing analogy (Internet = a huge library) makes the conclusion memorable"
+      ]
+    },
+    "S3-22": {
+      "text": "L'affirmation dit que le télétravail rend les employés plus productifs. Mon opinion est nuancée : je pense que le télétravail peut augmenter la productivité pour certaines tâches et certaines personnes, mais pas pour tout le monde.\n\nD'abord, il y a de bonnes raisons de penser que le télétravail améliore la productivité. Le premier avantage, c'est le temps gagné. À Lagos, je passe parfois trois heures par jour dans les embouteillages. Quand je travaille de chez moi, ce temps devient du temps de travail ou de repos, et j'arrive devant mon ordinateur beaucoup moins fatigué.\n\nDeuxièmement, à la maison, il y a moins d'interruptions. Au bureau, les collègues viennent discuter, le téléphone sonne, il y a du bruit. Pour un travail qui demande de la concentration, comme rédiger un rapport ou analyser des chiffres, le calme de la maison est idéal. Personnellement, je garde mes tâches les plus difficiles pour les jours de télétravail.\n\nTroisièmement, le télétravail donne plus de flexibilité. Les employés peuvent organiser leur journée selon leur rythme. Un parent peut aller chercher son enfant à l'école et finir son travail le soir. Des employés plus satisfaits sont souvent plus motivés et restent plus longtemps dans l'entreprise.\n\nCependant, le télétravail a aussi des limites. Tout le monde n'a pas un bureau calme à la maison : avec de jeunes enfants ou dans un petit appartement, il est parfois impossible de se concentrer. Ensuite, certaines personnes ont besoin d'un cadre pour rester motivées ; seules chez elles, elles se laissent facilement distraire. Enfin, la collaboration et la créativité en souffrent parfois : les meilleures idées naissent souvent d'une conversation informelle devant la machine à café. Pour les nouveaux employés, il est aussi plus difficile d'apprendre et de s'intégrer à distance.\n\nD'ailleurs, les études sur le sujet ne sont pas toutes d'accord : certaines montrent une hausse de la productivité, d'autres une baisse. Cela montre bien que tout dépend du contexte.\n\nC'est pourquoi je pense que la meilleure solution est le mode hybride : deux ou trois jours de télétravail pour les tâches individuelles, et le reste au bureau pour les réunions et le travail d'équipe.\n\nEn conclusion, le télétravail peut rendre les employés plus productifs, mais seulement dans de bonnes conditions. Ce n'est pas une solution magique : c'est un outil qu'il faut bien organiser.",
+      "notes": [
+        "Nuanced thesis: productive « for certain tasks and certain people »",
+        "Three advantages then three limits — a symmetrical, easy-to-follow plan",
+        "Uses the mixed research evidence to justify the nuance (tout dépend du contexte)",
+        "Practical hybrid proposal before a short, clear conclusion"
+      ]
+    }
+  }
+}

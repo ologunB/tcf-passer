@@ -7,10 +7,18 @@ Mobile-first, works offline, and all data stays on your device.
 
 1. Research and the 37-week plan.
 2. Dashboard, daily tasks with rollover, study timer and logging.
-3. Flashcards (FSRS spaced repetition with French audio), grammar and verb drills, and the mistake bank.
+3. Flashcards (FSRS spaced repetition with French audio, both directions), grammar and verb drills, dictation, a phrase bank, and the mistake bank.
 4. TCF-style listening and reading practice, the placement test and a progress check every 2 weeks.
 5. Writing tasks with word limits, and speaking recordings with the real timers. Both have a self-assessment rubric and optional AI grading.
 6. The full mock exam, level-over-time analytics, a weekly review, and a plan that adapts to your weakest skill.
+
+**Content included (all original, all in `frontend/data/`):**
+
+- 2,819 flashcards across 31 weekly decks (A1 → B2).
+- 466 grammar drills covering weeks 1–36, plus generated drills for 26 verbs.
+- 296 TCF-style questions: 148 listening and 148 reading, A1 → C2, each with an explanation.
+- 39 writing prompts and 46 speaking prompts, each with a B2 model answer.
+- A phrase bank of 232 phrases in 17 groups.
 
 ## Run it
 
@@ -34,6 +42,7 @@ cd frontend
 npm test                                   # unit tests: scoring, rollover, SRS, adaptive plan, AI parsing, backup
 npm run build && npx vite preview --port 4173 &
 node scripts/e2e.mjs                       # real browser on a phone-sized screen (37 checks)
+GEMINI_KEY=… node scripts/e2e.mjs          # optional: also runs a real AI grading through the Writing screen
 ```
 
 ## Where things live

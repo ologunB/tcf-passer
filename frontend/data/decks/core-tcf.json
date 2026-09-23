@@ -4,89 +4,338 @@
   "week": 7,
   "level": "A2",
   "cards": [
-    ["et", "and"],
-    ["mais", "but"],
-    ["ou", "or"],
-    ["donc", "so / therefore", "Il pleut, donc je reste à la maison."],
-    ["alors", "so / then"],
-    ["car", "because (written)"],
-    ["pourtant", "yet / however"],
-    ["cependant", "however"],
-    ["en revanche", "on the other hand"],
-    ["par contre", "on the other hand (spoken)"],
-    ["d'une part… d'autre part", "on the one hand… on the other hand"],
-    ["de plus", "moreover"],
-    ["en outre", "furthermore"],
-    ["par exemple", "for example"],
-    ["en effet", "indeed"],
-    ["c'est-à-dire", "that is to say"],
-    ["grâce à", "thanks to", "Grâce à Internet, on peut travailler à distance."],
-    ["à cause de", "because of (negative)"],
-    ["c'est pourquoi", "that's why"],
-    ["par conséquent", "consequently"],
-    ["bien que + subjonctif", "although", "Bien qu'il soit fatigué, il travaille."],
-    ["même si", "even if"],
-    ["malgré", "despite"],
-    ["alors que", "whereas / while"],
-    ["tandis que", "whereas"],
-    ["pour conclure", "to conclude"],
-    ["en conclusion", "in conclusion"],
-    ["finalement", "finally / in the end"],
-    ["tout d'abord", "first of all"],
-    ["à mon avis", "in my opinion"],
-    ["selon moi", "according to me / in my view"],
-    ["je pense que", "I think that"],
-    ["je crois que", "I believe that"],
-    ["je trouve que", "I find that"],
-    ["il me semble que", "it seems to me that"],
-    ["je suis d'accord avec", "I agree with"],
-    ["je ne suis pas d'accord", "I disagree"],
-    ["je suis pour / contre", "I'm for / against"],
-    ["il est vrai que", "it is true that"],
-    ["il faut reconnaître que", "one must admit that"],
-    ["l'avantage (m.)", "advantage"],
-    ["l'inconvénient (m.)", "disadvantage"],
-    ["le point de vue", "point of view"],
-    ["l'argument (m.)", "argument"],
-    ["la société", "society / company"],
-    ["l'environnement (m.)", "environment"],
-    ["la pollution", "pollution"],
-    ["le réchauffement climatique", "global warming"],
-    ["la technologie", "technology"],
-    ["les réseaux sociaux (m.)", "social media"],
-    ["le télétravail", "remote work"],
-    ["l'emploi (m.)", "employment / job"],
-    ["le chômage", "unemployment"],
-    ["le salaire", "salary"],
-    ["le logement", "housing"],
-    ["la santé", "health"],
-    ["l'éducation (f.)", "education"],
-    ["l'immigration (f.)", "immigration"],
-    ["s'intégrer", "to integrate", "Il est important de s'intégrer dans son nouveau pays."],
-    ["le citoyen / la citoyenne", "citizen"],
-    ["les jeunes (m.)", "young people"],
-    ["les personnes âgées", "elderly people"],
-    ["le gouvernement", "government"],
-    ["la loi", "law"],
-    ["le problème", "problem"],
-    ["la solution", "solution"],
-    ["améliorer", "to improve"],
-    ["augmenter", "to increase"],
-    ["diminuer", "to decrease"],
-    ["permettre de", "to allow / enable", "Le vélo permet de faire du sport."],
-    ["éviter", "to avoid"],
-    ["protéger", "to protect"],
-    ["encourager", "to encourage"],
-    ["favoriser", "to favour / promote"],
-    ["à long terme", "in the long term"],
-    ["de nos jours", "nowadays"],
-    ["aujourd'hui", "today / nowadays"],
-    ["de plus en plus", "more and more"],
-    ["de moins en moins", "less and less"],
-    ["Je voudrais savoir si…", "I would like to know if… (speaking task 2)"],
-    ["Pourriez-vous me dire… ?", "Could you tell me…? (speaking task 2)"],
-    ["Est-ce qu'il est possible de… ?", "Is it possible to…?"],
-    ["Quels sont les horaires ?", "What are the opening hours?"],
-    ["Quel est le tarif ?", "What is the price/rate?"]
+    [
+      "et",
+      "and"
+    ],
+    [
+      "mais",
+      "but"
+    ],
+    [
+      "ou",
+      "or"
+    ],
+    [
+      "donc",
+      "so / therefore",
+      "Il pleut, donc je reste à la maison."
+    ],
+    [
+      "alors",
+      "so / then"
+    ],
+    [
+      "car",
+      "because (written)"
+    ],
+    [
+      "pourtant",
+      "yet / however"
+    ],
+    [
+      "cependant",
+      "however"
+    ],
+    [
+      "en revanche",
+      "on the other hand"
+    ],
+    [
+      "par contre",
+      "on the other hand (spoken)"
+    ],
+    [
+      "d'une part… d'autre part",
+      "on the one hand… on the other hand"
+    ],
+    [
+      "de plus",
+      "moreover"
+    ],
+    [
+      "en outre",
+      "furthermore"
+    ],
+    [
+      "par exemple",
+      "for example"
+    ],
+    [
+      "en effet",
+      "indeed"
+    ],
+    [
+      "c'est-à-dire",
+      "that is to say"
+    ],
+    [
+      "grâce à",
+      "thanks to",
+      "Grâce à Internet, on peut travailler à distance."
+    ],
+    [
+      "à cause de",
+      "because of (negative)"
+    ],
+    [
+      "c'est pourquoi",
+      "that's why"
+    ],
+    [
+      "par conséquent",
+      "consequently"
+    ],
+    [
+      "bien que + subjonctif",
+      "although",
+      "Bien qu'il soit fatigué, il travaille."
+    ],
+    [
+      "même si",
+      "even if"
+    ],
+    [
+      "malgré",
+      "despite"
+    ],
+    [
+      "alors que",
+      "whereas / while"
+    ],
+    [
+      "tandis que",
+      "whereas"
+    ],
+    [
+      "pour conclure",
+      "to conclude"
+    ],
+    [
+      "en conclusion",
+      "in conclusion"
+    ],
+    [
+      "finalement",
+      "finally / in the end"
+    ],
+    [
+      "tout d'abord",
+      "first of all"
+    ],
+    [
+      "à mon avis",
+      "in my opinion"
+    ],
+    [
+      "selon moi",
+      "according to me / in my view"
+    ],
+    [
+      "je pense que",
+      "I think that"
+    ],
+    [
+      "je crois que",
+      "I believe that"
+    ],
+    [
+      "je trouve que",
+      "I find that"
+    ],
+    [
+      "il me semble que",
+      "it seems to me that"
+    ],
+    [
+      "je suis d'accord avec",
+      "I agree with"
+    ],
+    [
+      "je ne suis pas d'accord",
+      "I disagree"
+    ],
+    [
+      "je suis pour / contre",
+      "I'm for / against"
+    ],
+    [
+      "il est vrai que",
+      "it is true that"
+    ],
+    [
+      "il faut reconnaître que",
+      "one must admit that"
+    ],
+    [
+      "l'avantage (m.)",
+      "advantage"
+    ],
+    [
+      "l'inconvénient (m.)",
+      "disadvantage"
+    ],
+    [
+      "le point de vue",
+      "point of view"
+    ],
+    [
+      "l'argument (m.)",
+      "argument"
+    ],
+    [
+      "la société",
+      "society / company"
+    ],
+    [
+      "l'environnement (m.)",
+      "environment"
+    ],
+    [
+      "la pollution",
+      "pollution"
+    ],
+    [
+      "le réchauffement climatique",
+      "global warming"
+    ],
+    [
+      "la technologie",
+      "technology"
+    ],
+    [
+      "les réseaux sociaux (m.)",
+      "social media"
+    ],
+    [
+      "le télétravail",
+      "remote work"
+    ],
+    [
+      "l'emploi (m.)",
+      "employment / job"
+    ],
+    [
+      "le salaire",
+      "salary"
+    ],
+    [
+      "le logement",
+      "housing"
+    ],
+    [
+      "la santé",
+      "health"
+    ],
+    [
+      "l'éducation (f.)",
+      "education"
+    ],
+    [
+      "l'immigration (f.)",
+      "immigration"
+    ],
+    [
+      "s'intégrer",
+      "to integrate",
+      "Il est important de s'intégrer dans son nouveau pays."
+    ],
+    [
+      "le citoyen / la citoyenne",
+      "citizen"
+    ],
+    [
+      "les jeunes (m.)",
+      "young people"
+    ],
+    [
+      "les personnes âgées",
+      "elderly people"
+    ],
+    [
+      "le gouvernement",
+      "government"
+    ],
+    [
+      "la loi",
+      "law"
+    ],
+    [
+      "le problème",
+      "problem"
+    ],
+    [
+      "la solution",
+      "solution"
+    ],
+    [
+      "améliorer",
+      "to improve"
+    ],
+    [
+      "augmenter",
+      "to increase"
+    ],
+    [
+      "diminuer",
+      "to decrease"
+    ],
+    [
+      "permettre de",
+      "to allow / enable",
+      "Le vélo permet de faire du sport."
+    ],
+    [
+      "éviter",
+      "to avoid"
+    ],
+    [
+      "protéger",
+      "to protect"
+    ],
+    [
+      "encourager",
+      "to encourage"
+    ],
+    [
+      "favoriser",
+      "to favour / promote"
+    ],
+    [
+      "à long terme",
+      "in the long term"
+    ],
+    [
+      "de nos jours",
+      "nowadays"
+    ],
+    [
+      "de plus en plus",
+      "more and more"
+    ],
+    [
+      "de moins en moins",
+      "less and less"
+    ],
+    [
+      "Je voudrais savoir si…",
+      "I would like to know if… (speaking task 2)"
+    ],
+    [
+      "Pourriez-vous me dire… ?",
+      "Could you tell me…? (speaking task 2)"
+    ],
+    [
+      "Est-ce qu'il est possible de… ?",
+      "Is it possible to…?"
+    ],
+    [
+      "Quels sont les horaires ?",
+      "What are the opening hours?"
+    ],
+    [
+      "Quel est le tarif ?",
+      "What is the price/rate?"
+    ]
   ]
 }

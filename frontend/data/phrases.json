@@ -1,0 +1,356 @@
+{
+  "note": "Phrase bank for TCF Canada writing and speaking (target NCLC 7 / B2). Each phrase is [French, English]. Learn a few from each group well rather than all of them badly; reuse them in every practice answer.",
+  "groups": [
+    {
+      "id": "open-close-informal",
+      "title": "Opening and closing informal messages",
+      "use": "Writing task 1 (and task 2 blog posts) when you write to a friend, a family member or a group of friends. Use tu (or vous for a group).",
+      "phrases": [
+        ["Salut Marie,", "Hi Marie,"],
+        ["Coucou tout le monde !", "Hi everyone! (very friendly)"],
+        ["Comment vas-tu ? J'espère que tout va bien.", "How are you? I hope all is well."],
+        ["Ça fait longtemps ! Comment ça va chez toi ?", "Long time no see! How are things with you?"],
+        ["Je t'écris pour te donner une bonne nouvelle.", "I'm writing to give you some good news."],
+        ["Je t'écris parce que j'ai besoin de ton aide.", "I'm writing because I need your help."],
+        ["Merci encore pour ton message.", "Thanks again for your message."],
+        ["Réponds-moi vite !", "Get back to me soon!"],
+        ["Dis-moi si ça te convient.", "Let me know if that works for you."],
+        ["J'ai hâte de te voir !", "I can't wait to see you!"],
+        ["À samedi ! / À bientôt ! / À plus !", "See you Saturday! / See you soon! / Later!"],
+        ["Bises, / Gros bisous,", "Love, / Lots of love,"],
+        ["Amitiés,", "Best wishes, (friendly)"],
+        ["Prends soin de toi.", "Take care."]
+      ]
+    },
+    {
+      "id": "open-close-formal",
+      "title": "Opening and closing formal messages",
+      "use": "Writing task 1 or 2 when you write to a clinic, company, landlord, newspaper, neighbours or tenants. Always use vous and a formula at both ends.",
+      "phrases": [
+        ["Madame, Monsieur,", "Dear Sir or Madam,"],
+        ["Chers voisins, chères voisines,", "Dear neighbours,"],
+        ["Objet : annulation de mon rendez-vous", "Subject: cancellation of my appointment"],
+        ["Je me permets de vous écrire au sujet de…", "I am writing to you regarding…"],
+        ["Je vous écris afin de…", "I am writing in order to…"],
+        ["Suite à notre conversation téléphonique,…", "Following our phone conversation,…"],
+        ["Je souhaiterais obtenir des renseignements sur…", "I would like to obtain information about…"],
+        ["Je vous serais reconnaissant(e) de bien vouloir…", "I would be grateful if you could…"],
+        ["Je reste à votre disposition pour tout renseignement complémentaire.", "I remain available for any further information."],
+        ["Je vous remercie de votre compréhension.", "Thank you for your understanding."],
+        ["Dans l'attente de votre réponse,", "Looking forward to your reply,"],
+        ["Merci de votre collaboration.", "Thank you for your cooperation."],
+        ["Cordialement,", "Kind regards,"],
+        ["Veuillez agréer, Madame, Monsieur, mes salutations distinguées.", "Yours faithfully, (very formal)"]
+      ]
+    },
+    {
+      "id": "invite-accept-decline",
+      "title": "Inviting, accepting and declining",
+      "use": "Writing task 1 invitations and replies; speaking task 2 when arranging a visit or a booking.",
+      "phrases": [
+        ["Est-ce que tu es libre samedi soir ?", "Are you free on Saturday evening?"],
+        ["Ça te dirait de venir dîner chez moi ?", "Would you like to come to dinner at my place?"],
+        ["Qu'est-ce que vous diriez d'une sortie au parc ?", "How about an outing to the park?"],
+        ["Je t'invite à fêter mon anniversaire.", "I'm inviting you to celebrate my birthday."],
+        ["Je serais ravi(e) que tu viennes.", "I'd be delighted if you came."],
+        ["Avec plaisir ! C'est très gentil de ta part.", "With pleasure! That's very kind of you."],
+        ["Bonne idée, je suis partant(e) !", "Good idea, count me in!"],
+        ["Je viendrai volontiers.", "I'll gladly come."],
+        ["Je te remercie pour l'invitation, mais malheureusement je ne peux pas.", "Thanks for the invitation, but unfortunately I can't."],
+        ["Je suis désolé(e), je suis déjà pris(e) ce jour-là.", "Sorry, I'm already busy that day."],
+        ["Ce sera pour une prochaine fois !", "Maybe next time!"],
+        ["Est-ce qu'on pourrait remettre ça à la semaine prochaine ?", "Could we postpone it to next week?"],
+        ["Tu peux apporter quelque chose à boire, si tu veux.", "You can bring something to drink if you like."],
+        ["Confirme-moi ta présence avant jeudi.", "Confirm whether you're coming before Thursday."]
+      ]
+    },
+    {
+      "id": "narrate-past",
+      "title": "Describing and narrating the past",
+      "use": "Writing task 2 (recount an experience) and speaking task 1 (last weekend, a trip, your career). Passé composé for events, imparfait for background and description.",
+      "phrases": [
+        ["Il y a deux ans, je suis allé(e) au Ghana.", "Two years ago, I went to Ghana."],
+        ["L'année dernière, j'ai commencé un nouvel emploi.", "Last year I started a new job."],
+        ["Quand je suis arrivé(e), il faisait très froid.", "When I arrived, it was very cold."],
+        ["J'étais un peu stressé(e), mais tout s'est bien passé.", "I was a bit stressed, but everything went well."],
+        ["Au début, c'était difficile.", "At first, it was hard."],
+        ["Tout à coup, / Soudain,", "Suddenly,"],
+        ["Pendant que j'attendais l'autobus, il a commencé à neiger.", "While I was waiting for the bus, it started to snow."],
+        ["Ensuite, / Puis, / Après ça,", "Then, / Next, / After that,"],
+        ["Le lendemain, / La veille,", "The next day, / The day before,"],
+        ["Finalement, / Au bout du compte,", "In the end,"],
+        ["Ce qui m'a le plus surpris, c'est…", "What surprised me most was…"],
+        ["Je n'oublierai jamais ce moment.", "I'll never forget that moment."],
+        ["Cette expérience m'a appris que…", "This experience taught me that…"],
+        ["Depuis, je…", "Since then, I…"],
+        ["Si j'avais su, je serais parti(e) plus tôt.", "If I had known, I would have left earlier."]
+      ]
+    },
+    {
+      "id": "give-opinion",
+      "title": "Giving your opinion",
+      "use": "Writing task 3 and speaking task 3 (state your position in the first 20 seconds), plus the comment part of writing task 2.",
+      "phrases": [
+        ["À mon avis, …", "In my opinion, …"],
+        ["Selon moi, … / D'après moi, …", "In my view, …"],
+        ["Pour ma part, … / Personnellement, …", "For my part, … / Personally, …"],
+        ["Je pense que… / Je crois que… / Je trouve que…", "I think that… / I believe that… / I find that…"],
+        ["Je suis convaincu(e) que…", "I'm convinced that…"],
+        ["Il me semble que…", "It seems to me that…"],
+        ["Je suis pour / contre cette idée.", "I'm for / against this idea."],
+        ["Je suis plutôt favorable à…", "I'm rather in favour of…"],
+        ["Je ne pense pas que ce soit une bonne idée.", "I don't think it's a good idea. (subjunctive after negative opinion)"],
+        ["Mon opinion est nuancée.", "My opinion is nuanced / mixed."],
+        ["Ce qui me paraît essentiel, c'est…", "What seems essential to me is…"],
+        ["La question est de savoir si…", "The question is whether…"],
+        ["C'est un sujet qui me touche personnellement.", "It's a topic that affects me personally."]
+      ]
+    },
+    {
+      "id": "agree-disagree",
+      "title": "Agreeing and disagreeing",
+      "use": "Speaking task 3 when the examiner challenges you, and writing task 3 when you react to each document.",
+      "phrases": [
+        ["Je suis tout à fait d'accord avec…", "I completely agree with…"],
+        ["Je partage cet avis.", "I share this view."],
+        ["Vous avez raison sur ce point.", "You're right on that point."],
+        ["C'est exactement ce que je pense.", "That's exactly what I think."],
+        ["Je suis d'accord en partie, mais…", "I partly agree, but…"],
+        ["Je ne suis pas tout à fait d'accord.", "I don't entirely agree."],
+        ["Je ne suis pas du tout d'accord.", "I don't agree at all."],
+        ["Je ne partage pas ce point de vue.", "I don't share this point of view."],
+        ["Je vois les choses autrement.", "I see things differently."],
+        ["C'est vrai, mais il ne faut pas oublier que…", "That's true, but we mustn't forget that…"],
+        ["Je comprends votre point de vue, cependant…", "I understand your point of view; however…"],
+        ["Cet argument me paraît un peu exagéré.", "This argument seems a bit exaggerated to me."],
+        ["Ce n'est pas si simple.", "It's not that simple."]
+      ]
+    },
+    {
+      "id": "concession-nuance",
+      "title": "Concession and nuance",
+      "use": "Every task 3 answer (writing and speaking) should include one concession: admit the other side has a point, then return to your position. This is a key B2 marker.",
+      "phrases": [
+        ["Il est vrai que…, mais…", "It's true that…, but…"],
+        ["Certes, …, mais…", "Admittedly, …, but…"],
+        ["Je reconnais que…", "I admit that…"],
+        ["Cela dit, …", "That said, …"],
+        ["Cependant, / Pourtant, / Toutefois,", "However, / Yet, / Nevertheless,"],
+        ["Néanmoins, …", "Nonetheless, …"],
+        ["Bien que ce soit cher, …", "Although it is expensive, … (+ subjunctive)"],
+        ["Même si c'est difficile, …", "Even if it's difficult, … (+ indicative)"],
+        ["Malgré les difficultés, …", "Despite the difficulties, …"],
+        ["En revanche, / Par contre,", "On the other hand, / However,"],
+        ["D'un côté, … De l'autre, …", "On one hand, … On the other, …"],
+        ["à condition que + subjonctif / à condition de + infinitif", "provided that…"],
+        ["Tout dépend de…", "It all depends on…"],
+        ["Il ne faut pas pour autant…", "That doesn't mean we should…"]
+      ]
+    },
+    {
+      "id": "cause-consequence",
+      "title": "Cause and consequence",
+      "use": "Justifying every argument in writing task 3 and speaking task 3; explaining reasons in writing task 1 (absence, cancellation).",
+      "phrases": [
+        ["parce que… / car…", "because…"],
+        ["puisque…", "since… (known reason)"],
+        ["comme il neigeait, …", "as it was snowing, … (at start of sentence)"],
+        ["grâce à…", "thanks to… (positive cause)"],
+        ["à cause de…", "because of… (negative cause)"],
+        ["en raison de…", "due to… (formal)"],
+        ["étant donné que…", "given that…"],
+        ["donc / alors", "so / therefore"],
+        ["c'est pourquoi… / c'est pour ça que…", "that's why…"],
+        ["par conséquent, …", "consequently, …"],
+        ["si bien que… / de sorte que…", "so that / with the result that…"],
+        ["Cela entraîne… / Cela provoque…", "This leads to… / This causes…"],
+        ["Cela permet de…", "This makes it possible to…"],
+        ["Résultat : …", "The result: … (spoken, punchy)"]
+      ]
+    },
+    {
+      "id": "add-order",
+      "title": "Adding and ordering ideas",
+      "use": "Structuring any answer longer than a few sentences. Examiners reward visible organisation: first, second, finally.",
+      "phrases": [
+        ["Tout d'abord, / Premièrement,", "First of all, / Firstly,"],
+        ["Ensuite, / Deuxièmement,", "Next, / Secondly,"],
+        ["Enfin, / Troisièmement,", "Finally, / Thirdly,"],
+        ["D'une part, … d'autre part, …", "On the one hand… on the other hand… (adding two points)"],
+        ["De plus, / En plus,", "Moreover, / What's more,"],
+        ["En outre, …", "Furthermore, … (formal)"],
+        ["Par ailleurs, …", "Besides, / In addition, …"],
+        ["D'ailleurs, …", "Besides, / Incidentally, … (supporting detail)"],
+        ["Non seulement…, mais aussi…", "Not only…, but also…"],
+        ["Sans parler de…", "Not to mention…"],
+        ["Quant à…", "As for…"],
+        ["Mon premier argument, c'est que…", "My first argument is that…"],
+        ["Passons maintenant à…", "Let's now move on to…"]
+      ]
+    },
+    {
+      "id": "examples",
+      "title": "Giving examples",
+      "use": "Every argument needs an example, ideally personal or Canadian. This is what turns a B1 answer into a B2 answer.",
+      "phrases": [
+        ["Par exemple, …", "For example, …"],
+        ["Prenons l'exemple de…", "Let's take the example of…"],
+        ["comme… / tel que…", "such as…"],
+        ["notamment…", "in particular / notably…"],
+        ["C'est le cas de…", "This is the case of…"],
+        ["Je pense notamment à…", "I'm thinking in particular of…"],
+        ["Moi-même, j'ai…", "I myself have…"],
+        ["Dans mon cas, …", "In my case, …"],
+        ["Au Nigeria, par exemple, …", "In Nigeria, for example, …"],
+        ["Au Canada, c'est différent : …", "In Canada it's different: …"],
+        ["Un ami m'a raconté que…", "A friend told me that…"],
+        ["Plusieurs études montrent que…", "Several studies show that…"],
+        ["Il suffit de regarder…", "You only have to look at…"]
+      ]
+    },
+    {
+      "id": "summarise-documents",
+      "title": "Summarising two documents",
+      "use": "Writing task 3, first part: present both documents neutrally in your own words (never copy whole sentences) before giving your opinion.",
+      "phrases": [
+        ["Le premier document affirme que…", "The first document states that…"],
+        ["Selon le premier document, …", "According to the first document, …"],
+        ["L'auteur du premier texte est favorable à…", "The author of the first text is in favour of…"],
+        ["Il met en avant… / Il insiste sur…", "It highlights… / It stresses…"],
+        ["Le second document, au contraire, estime que…", "The second document, on the contrary, believes that…"],
+        ["En revanche, le deuxième texte souligne…", "On the other hand, the second text emphasises…"],
+        ["Il dénonce… / Il critique…", "It denounces… / It criticises…"],
+        ["Il s'oppose à… / Il défend…", "It opposes… / It defends…"],
+        ["Il propose plutôt de…", "It suggests instead that we…"],
+        ["Il rappelle que…", "It points out / reminds us that…"],
+        ["Les deux documents s'opposent sur…", "The two documents disagree on…"],
+        ["Ce sujet divise l'opinion. / Ce sujet fait débat.", "This topic divides opinion. / This topic is debated."],
+        ["D'un côté…, de l'autre…", "On one side…, on the other…"],
+        ["Pour résumer les deux positions, …", "To sum up the two positions, …"]
+      ]
+    },
+    {
+      "id": "conclude",
+      "title": "Concluding",
+      "use": "The last one or two sentences of writing task 2/3 and speaking task 3. Restate your position briefly, ideally with a solution or a memorable final line.",
+      "phrases": [
+        ["En conclusion, …", "In conclusion, …"],
+        ["Pour conclure, …", "To conclude, …"],
+        ["En résumé, / En somme, / En bref,", "In summary, / All in all, / In short,"],
+        ["En définitive, …", "Ultimately, …"],
+        ["Finalement, je pense que…", "In the end, I think that…"],
+        ["Pour toutes ces raisons, …", "For all these reasons, …"],
+        ["C'est pourquoi je reste convaincu(e) que…", "That's why I remain convinced that…"],
+        ["La meilleure solution serait de…", "The best solution would be to…"],
+        ["Il ne s'agit pas de…, mais de…", "It's not about…, but about…"],
+        ["Il faut trouver un équilibre entre… et…", "We need to find a balance between… and…"],
+        ["Voilà pourquoi je suis pour / contre.", "That's why I'm for / against."],
+        ["Je vous remercie de votre attention.", "Thank you for your attention. (speaking, optional)"]
+      ]
+    },
+    {
+      "id": "ask-politely",
+      "title": "Asking for information politely",
+      "use": "Speaking task 2: you ask the examiner questions. Vary the forms — don't use est-ce que for all ten questions.",
+      "phrases": [
+        ["Bonjour, je vous appelle au sujet de votre annonce.", "Hello, I'm calling about your advertisement."],
+        ["J'aurais quelques questions à vous poser.", "I'd have a few questions to ask you."],
+        ["Est-ce que le chauffage est compris ?", "Is heating included?"],
+        ["Le prix est-il négociable ?", "Is the price negotiable? (inversion)"],
+        ["Combien coûte l'abonnement mensuel ?", "How much does the monthly membership cost?"],
+        ["Pourriez-vous me dire quels sont vos horaires ?", "Could you tell me your opening hours?"],
+        ["Je voudrais savoir si vous acceptez de nouveaux patients.", "I'd like to know if you accept new patients."],
+        ["Serait-il possible de visiter cette semaine ?", "Would it be possible to visit this week?"],
+        ["Y a-t-il des frais supplémentaires ?", "Are there any additional fees?"],
+        ["Faut-il réserver à l'avance ?", "Do I need to book in advance?"],
+        ["Quels documents dois-je apporter ?", "Which documents should I bring?"],
+        ["Qu'est-ce qui est inclus dans le prix ?", "What's included in the price?"],
+        ["Est-ce que vous pourriez m'envoyer ça par courriel ?", "Could you send me that by email?"],
+        ["Dernière question : …", "One last question: …"],
+        ["Merci beaucoup pour tous ces renseignements.", "Thank you very much for all this information."]
+      ]
+    },
+    {
+      "id": "react-follow-up",
+      "title": "Reacting and asking follow-up questions",
+      "use": "Speaking task 2 and 3: react to what the examiner says before your next question. It proves you understood and makes the exchange natural.",
+      "phrases": [
+        ["Ah, d'accord. / Je vois.", "Ah, OK. / I see."],
+        ["Parfait ! / Très bien. / Excellent !", "Perfect! / Very good. / Excellent!"],
+        ["Tant mieux ! / Dommage…", "Great! / Too bad…"],
+        ["C'est bon à savoir.", "That's good to know."],
+        ["Ça me rassure.", "That reassures me."],
+        ["C'est un peu cher, non ?", "That's a bit expensive, isn't it?"],
+        ["C'est-à-dire ?", "Meaning? / What do you mean?"],
+        ["Pouvez-vous préciser ?", "Could you be more specific?"],
+        ["Et dans ce cas, comment ça se passe ?", "And in that case, how does it work?"],
+        ["Justement, j'allais vous demander…", "Actually, I was about to ask you…"],
+        ["Et si jamais…, qu'est-ce qui se passe ?", "And if ever…, what happens?"],
+        ["Y a-t-il une option moins chère ?", "Is there a cheaper option?"],
+        ["Si je comprends bien, …", "If I understand correctly, …"],
+        ["Ah bon ? Je ne savais pas.", "Really? I didn't know."]
+      ]
+    },
+    {
+      "id": "buy-time-self-correct",
+      "title": "Buying time and self-correcting",
+      "use": "Speaking, all tasks: fill silences in French instead of English or silence, ask for repetition, and fix your own mistakes (self-correction is viewed positively).",
+      "phrases": [
+        ["Alors… / Bon… / Eh bien…", "So… / Well…"],
+        ["C'est une bonne question.", "That's a good question."],
+        ["Laissez-moi réfléchir un instant.", "Let me think for a moment."],
+        ["Comment dire… ?", "How can I put it…?"],
+        ["Je ne connais pas le mot exact, mais c'est une sorte de…", "I don't know the exact word, but it's a kind of…"],
+        ["Pardon, pourriez-vous répéter, s'il vous plaît ?", "Sorry, could you repeat, please?"],
+        ["Pourriez-vous parler un peu plus lentement ?", "Could you speak a bit more slowly?"],
+        ["Si j'ai bien compris, vous me demandez si…", "If I've understood correctly, you're asking me whether…"],
+        ["Pardon, je veux dire…", "Sorry, I mean…"],
+        ["Enfin, plutôt…", "Or rather…"],
+        ["Je reformule : …", "Let me rephrase: …"],
+        ["Où en étais-je ? Ah oui, …", "Where was I? Ah yes, …"],
+        ["Pour revenir à la question, …", "To come back to the question, …"]
+      ]
+    },
+    {
+      "id": "hypotheses",
+      "title": "Hypotheses (si + imparfait, conditionnel)",
+      "use": "Speaking task 3 and writing task 3 to imagine consequences; speaking task 1 for plans and dreams. Si + imparfait → conditionnel présent.",
+      "phrases": [
+        ["Si les transports étaient gratuits, plus de gens les utiliseraient.", "If transport were free, more people would use it."],
+        ["Si j'avais le choix, je vivrais à Montréal.", "If I had the choice, I would live in Montreal."],
+        ["Si on interdisait les voitures, le centre-ville serait plus calme.", "If cars were banned, downtown would be quieter."],
+        ["Si j'étais ministre, je commencerais par…", "If I were a minister, I would start with…"],
+        ["Si c'était possible, j'aimerais…", "If it were possible, I'd like to…"],
+        ["Si tu veux, je peux venir te chercher.", "If you want, I can come and pick you up. (si + présent → présent/futur)"],
+        ["Si tu as un problème, appelle-moi.", "If you have a problem, call me."],
+        ["Dans ce cas, il faudrait…", "In that case, it would be necessary to…"],
+        ["Ce serait une bonne solution.", "It would be a good solution."],
+        ["On pourrait aussi…", "We could also…"],
+        ["Sans cette aide, beaucoup de familles ne pourraient pas…", "Without this help, many families couldn't…"],
+        ["À ta place, je louerais d'abord un appartement meublé.", "If I were you, I'd rent a furnished apartment first."],
+        ["J'aimerais bien… / Je voudrais…", "I'd really like… / I would like…"]
+      ]
+    },
+    {
+      "id": "wishes-suggestions",
+      "title": "Wishes, suggestions and necessity (subjonctif)",
+      "use": "Proposing solutions in task 3 and giving advice in writing task 1. Il faut que / je souhaite que / il est important que + subjonctif.",
+      "phrases": [
+        ["Il faut que le gouvernement investisse davantage.", "The government must invest more."],
+        ["Il est important que les enfants fassent du sport.", "It's important that children do sport."],
+        ["Il est essentiel que chacun puisse se soigner.", "It's essential that everyone can get medical care."],
+        ["Je souhaite que ma fille grandisse dans un pays sûr.", "I want my daughter to grow up in a safe country."],
+        ["J'aimerais que tu viennes samedi.", "I'd like you to come on Saturday."],
+        ["Je voudrais que les écoles soient mieux équipées.", "I'd like schools to be better equipped."],
+        ["Il vaudrait mieux que les parents fixent des limites.", "It would be better for parents to set limits."],
+        ["Je propose que la ville crée plus de pistes cyclables.", "I suggest that the city create more bike lanes."],
+        ["Je te conseille de… / Je vous conseille de…", "I advise you to…"],
+        ["Tu devrais… / Vous devriez…", "You should…"],
+        ["Pourquoi ne pas… ?", "Why not…?"],
+        ["N'oublie pas de… / N'hésitez pas à…", "Don't forget to… / Don't hesitate to…"],
+        ["Pour que tout le monde soit content, …", "So that everyone is happy, … (pour que + subjonctif)"],
+        ["Avant que les prix n'augmentent, …", "Before prices go up, … (avant que + subjonctif)"]
+      ]
+    }
+  ]
+}
